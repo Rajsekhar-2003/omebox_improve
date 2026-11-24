@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Share Text Online with a Link – No Login | OmeBox</title>
+    <meta name="description" content="Share text or code instantly online for free. No registration or login. Get a link, 6-digit code and QR code that auto-expire.">
+    <meta name="author" content="OmeBox">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="theme-color" content="#2563EB">
+    <link rel="canonical" href="https://omebox.com/share/text">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1DNNDQWSD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-H1DNNDQWSD');
+    </script>
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Share Text &amp; Code Online Instantly">
+    <meta property="og:description" content="Paste and share text or code instantly. No login required. Free, temporary link sharing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://omebox.com/share/text">
+    <meta property="og:site_name" content="OmeBox">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://omebox.com/static/og-text.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="OmeBox – Free online text and code sharing without login">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Share Text &amp; Code Online Instantly">
+    <meta name="twitter:description" content="Free online text and code sharing. Paste and share instantly without registration.">
+    <meta name="twitter:image" content="https://omebox.com/static/og-text.jpg">
+    <meta name="twitter:image:alt" content="OmeBox – Free online text and code sharing without login">
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', path='logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', path='logo.png') }}">
+
+    <!-- Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-1872078023246662">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1872078023246662" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='text.css') }}">
+</head>
+<body>
+<a href="#main-text-share" class="skip-link">Skip to main content</a>
+
+<nav class="navbar navbar-expand-lg navbar-glass sticky-top px-3 px-md-4" aria-label="Main navigation">
+    <div class="container">
+         <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-3" href="/" aria-label="OmeBox Home">
+            <img src="/static/logo.png" alt="OmeBox logo" height="48" width="48" onerror="this.style.display='none'">
+            <span style="color:#2563EB;">OmeBox</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars fs-3" aria-hidden="true"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mx-auto gap-1 gap-lg-2 mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2" href="/"><i class="fas fa-home me-1" aria-hidden="true"></i>Home</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2 active" href="/share/text" aria-current="page"><i class="fas fa-align-left me-1" aria-hidden="true"></i>Share Text</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2" href="/share/files"><i class="fas fa-paperclip me-1" aria-hidden="true"></i>Share Files</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2" href="/access"><i class="fas fa-download me-1" aria-hidden="true"></i>Receiver</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2" href="/webnotepad" target="_blank" rel="noopener noreferrer"><i class="fas fa-edit me-1" aria-hidden="true"></i>Web Notepad</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<noscript>
+    <div class="alert alert-warning text-center m-3" role="alert">
+        <i class="fas fa-exclamation-triangle me-2" aria-hidden="true"></i>OmeBox text sharing requires JavaScript. Please enable it in your browser.
+    </div>
+</noscript>
+
+<main id="main-text-share" tabindex="-1">
+<div class="container py-4 py-lg-5">
+<div class="row justify-content-center">
+<div class="col-lg-10 col-xl-9">
+
+    <h1 class="h3 fw-bold text-primary mb-3">Free Online Text and Code Sharing – Paste and Share Instantly</h1>
+
+    <!-- MAIN SHARE CARD -->
+    <div class="glass-card mb-4">
+        <div class="card-header-custom d-flex justify-content-between align-items-center flex-wrap">
+            <div><i class="fas fa-paper-plane me-2" aria-hidden="true"></i><strong>Smart Text Share</strong> — 6-digit code + QR</div>
+            <a href="/share/files" class="text-white text-decoration-none small"><i class="fas fa-paperclip me-1" aria-hidden="true"></i>Switch to Files</a>
+        </div>
+        <div class="card-body p-4">
+            <div class="mb-3">
+                <label for="textContent" class="form-label fw-bold"><i class="fas fa-paragraph me-1" style="color:#2563EB;" aria-hidden="true"></i>Your text</label>
+                <textarea id="textContent" class="form-control" rows="12" maxlength="200000" placeholder="Paste or write your text here… (max 200,000 characters). Ctrl/Cmd + Enter to share." aria-describedby="charCounter"></textarea>
+                <div class="d-flex justify-content-between align-items-center mt-2">
+                    <div class="char-counter" id="charCounter" role="status" aria-live="polite">0 / 200,000 characters</div>
+                    <div class="d-flex gap-2">
+                        <button type="button" id="pasteBtn" class="btn btn-sm btn-outline-secondary rounded-pill"><i class="fas fa-paste me-1" aria-hidden="true"></i>Paste clipboard</button>
+                        <button type="button" id="clearTextBtn" class="btn btn-sm btn-outline-secondary rounded-pill"><i class="fas fa-eraser me-1" aria-hidden="true"></i>Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="expirySelect" class="form-label fw-bold"><i class="fas fa-hourglass-half me-2" style="color:#2563EB;" aria-hidden="true"></i>Expires after</label>
+                <select id="expirySelect" class="form-select">
+                    <option value="15m">15 minutes</option>
+                    <option value="1h" selected>1 hour</option>
+                    <option value="1d">1 day</option>
+                    <option value="3d">3 days</option>
+                    <option value="7d">7 days</option>
+                </select>
+            </div>
+
+            <button type="button" id="shareBtn" class="btn btn-primary w-100 shadow-sm">
+                <i class="fas fa-share-alt me-2" aria-hidden="true"></i>Generate Share &amp; 6-digit Code
+            </button>
+
+            <div class="mt-3 text-center d-flex justify-content-center gap-3">
+                <a href="/share/files" class="text-decoration-none small" style="color:#2563EB;"><i class="fas fa-file me-1" aria-hidden="true"></i>Share Files</a>
+                <a href="/access" class="text-decoration-none small" style="color:#2563EB;"><i class="fas fa-key me-1" aria-hidden="true"></i>Access with Code</a>
+            </div>
+
+            <div id="resultSection" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- HISTORY -->
+    <div class="glass-card">
+        <div class="card-header-custom py-3 d-flex justify-content-between align-items-center">
+            <div><i class="fas fa-history me-2" aria-hidden="true"></i>Your Share History <small class="opacity-75">(saved in this browser only)</small></div>
+            <button type="button" id="clearAllHistoryBtn" class="btn btn-sm btn-outline-light rounded-pill" style="background:rgba(255,255,255,.15); border-color:rgba(255,255,255,.3);">
+                <i class="fas fa-trash-alt me-1" aria-hidden="true"></i>Clear all
+            </button>
+        </div>
+        <div class="card-body p-3" id="historyContainer">
+            <div class="empty-history">
+                <i class="fas fa-cloud-upload-alt fa-2x mb-2 opacity-50" style="color:#94A3B8;" aria-hidden="true"></i>
+                <p class="mb-0">No shares yet. Create your first share above ✨</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUICK FEATURE CARDS -->
+    <div class="mt-5 pt-3">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="bg-white p-4 rounded-4 shadow-sm border h-100">
+                    <h2 class="h5 fw-bold text-primary"><i class="fas fa-rocket me-2" aria-hidden="true"></i>Send Text Online Without Registration</h2>
+                    <p class="text-muted">Share text, messages, and code snippets from any device. No signup and no account.</p>
+                    <h3 class="h6 fw-semibold text-success mt-3">Free Online Text Sharing</h3>
+                    <p class="text-secondary small">Paste and share text with a link, QR code, or 6-digit code. Free, with no hidden charges.</p>
+                    <h3 class="h6 fw-semibold text-success mt-2">Copy &amp; Paste Text Online</h3>
+                    <p class="text-secondary small">Share messages, code snippets, and notes using a link or a 6-digit access code.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="bg-white p-4 rounded-4 shadow-sm border h-100">
+                    <h2 class="h5 fw-bold text-primary"><i class="fas fa-shield-alt me-2" aria-hidden="true"></i>Privacy-Friendly Text Sharing</h2>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>🔐 No account required – share instantly</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>📧 No email address or registration needed</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>⏰ Temporary storage with automatic expiry (15 min to 7 days)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>🔗 Share with links, QR codes, or 6-digit access codes</li>
+                    </ul>
+                    <h3 class="h6 fw-semibold text-info mt-2">Share Text Across All Devices</h3>
+                    <p class="text-secondary small">Works on PC, Mac, Android, and iPhone in any modern browser.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 bg-light p-4 rounded-4 border-start border-4 border-primary">
+            <h2 class="h5 fw-bold text-dark">Why Choose OmeBox?</h2>
+            <p class="text-secondary mb-0">Fast, simple, and free. Get a QR code and a 6-digit access code for quick sharing, with optional password protection and automatic expiry.</p>
+        </div>
+    </div>
+
+    <section class="mt-5 pt-3" aria-labelledby="article-what-heading">
+        <h2 id="article-what-heading" class="h4 fw-bold text-dark mb-3">What Is OmeBox Text Sharing?</h2>
+        <p class="text-secondary">OmeBox is a free, browser-based <strong>text and code sharing tool</strong>. You paste what you want to share, choose how long it should exist, and OmeBox generates a <strong>shareable link, a 6-digit access code, and a QR code</strong>. There is no signup, no email, no app, and no account to manage.</p>
+        <p class="text-secondary">Think of it as a <strong>Pastebin alternative built around temporary sharing</strong>. Every share expires, from <strong>15 minutes to 7 days</strong>, and is then deleted. That suits one-off code snippets, meeting notes, configuration values, and quick reminders that shouldn't stay online permanently.</p>
+        <p class="text-secondary mb-0">Whether you're a developer pasting a stack trace, a student sharing notes with a classmate, or a remote worker sending a link to a colleague, it takes a few seconds from any device.</p>
+    </section>
+
+    <section class="mt-5 pt-3" aria-labelledby="article-how-heading">
+        <h2 id="article-how-heading" class="h4 fw-bold text-dark mb-3">How to Share Text Online in 3 Steps</h2>
+        <div class="row g-3">
+            <div class="col-md-4"><div class="bg-white p-4 rounded-4 shadow-sm border h-100">
+                <div class="badge bg-primary fs-6 mb-2">1</div>
+                <h3 class="h6 fw-bold">Paste Your Text</h3>
+                <p class="text-secondary small mb-0">Type or paste up to <strong>200,000 characters</strong>. Plain text, code, JSON, XML, Markdown, and more.</p>
+            </div></div>
+            <div class="col-md-4"><div class="bg-white p-4 rounded-4 shadow-sm border h-100">
+                <div class="badge bg-primary fs-6 mb-2">2</div>
+                <h3 class="h6 fw-bold">Choose Expiry</h3>
+                <p class="text-secondary small mb-0">Pick <strong>15 minutes, 1 hour, 1 day, 3 days, or 7 days</strong>. After that, the content is deleted.</p>
+            </div></div>
+            <div class="col-md-4"><div class="bg-white p-4 rounded-4 shadow-sm border h-100">
+                <div class="badge bg-primary fs-6 mb-2">3</div>
+                <h3 class="h6 fw-bold">Share the Link or Code</h3>
+                <p class="text-secondary small mb-0">Copy the <strong>link</strong> or <strong>6-digit code</strong>, or scan the <strong>QR code</strong>. No account needed to view.</p>
+            </div></div>
+        </div>
+    </section>
+
+    <section class="mt-5 pt-3" aria-labelledby="article-uses-heading">
+        <h2 id="article-uses-heading" class="h4 fw-bold text-dark mb-3">Who Uses OmeBox? Common Use Cases</h2>
+        <p class="text-secondary">People reach for OmeBox when chat apps or email are too heavy for a quick text transfer:</p>
+        <div class="row g-3">
+            <div class="col-md-6"><div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                <h3 class="h6 fw-bold text-primary"><i class="fas fa-code me-2" aria-hidden="true"></i>Developers &amp; Engineers</h3>
+                <p class="text-secondary small mb-0">Share stack traces, log lines, SQL queries, regex patterns, or config snippets (with secrets removed) without leaving them in chat history.</p>
+            </div></div>
+            <div class="col-md-6"><div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                <h3 class="h6 fw-bold text-primary"><i class="fas fa-graduation-cap me-2" aria-hidden="true"></i>Students &amp; Teachers</h3>
+                <p class="text-secondary small mb-0">Move study notes, drafts, or question banks from laptop to phone with a QR scan. They delete themselves when they expire.</p>
+            </div></div>
+            <div class="col-md-6"><div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                <h3 class="h6 fw-bold text-primary"><i class="fas fa-laptop-house me-2" aria-hidden="true"></i>Remote Workers</h3>
+                <p class="text-secondary small mb-0">Send a meeting link or a short snippet to a colleague on another device, with no chat app needed on either end.</p>
+            </div></div>
+            <div class="col-md-6"><div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                <h3 class="h6 fw-bold text-primary"><i class="fas fa-user-shield me-2" aria-hidden="true"></i>Privacy-Conscious Users</h3>
+                <p class="text-secondary small mb-0">Share short-lived, low-risk information without creating an account or leaving a permanent trail.</p>
+            </div></div>
+            <div class="col-md-6"><div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                <h3 class="h6 fw-bold text-primary"><i class="fas fa-mobile-alt me-2" aria-hidden="true"></i>Cross-Device Transfer</h3>
+                <p class="text-secondary small mb-0">Paste on your PC, scan the QR on your phone. No sync app or USB cable.</p>
+            </div></div>
+            <div class="col-md-6"><div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                <h3 class="h6 fw-bold text-primary"><i class="fas fa-bullhorn me-2" aria-hidden="true"></i>Support &amp; Troubleshooting</h3>
+                <p class="text-secondary small mb-0">Ask a user to paste error output here and send you the code. It expires once the issue is solved.</p>
+            </div></div>
+        </div>
+    </section>
+
+    <section class="mt-5 pt-3" aria-labelledby="article-privacy-heading">
+        <h2 id="article-privacy-heading" class="h4 fw-bold text-dark mb-3">Why Anonymous Text Sharing Matters</h2>
+        <p class="text-secondary">Text you paste into a chat app is usually stored on that company's servers for as long as the account exists. <strong>Anonymous, temporary sharing</strong> separates the act of sharing from your identity and limits how long the text lives.</p>
+        <p class="text-secondary">OmeBox doesn't ask for an email or an account, and every share is stored with an automatic expiry and deleted when it ends. The site itself uses Google Analytics and Google AdSense, which may set cookies; they don't receive your shared text. See the <a href="/privacy-policy">Privacy Policy</a> for details.</p>
+        <p class="text-secondary mb-0">No web tool is perfect, so <strong>avoid sharing highly confidential information</strong> such as passwords, recovery phrases, or private keys. For everyday snippets, short-lived links are a lighter-weight option than chat or email.</p>
+    </section>
+
+    <section class="mt-5 pt-3" aria-labelledby="article-compare-heading">
+        <h2 id="article-compare-heading" class="h4 fw-bold text-dark mb-3">OmeBox vs Pastebin &amp; Chat Apps</h2>
+        <p class="text-secondary">Here's how OmeBox compares for quick, temporary text sharing:</p>
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle bg-white">
+                <thead class="table-light">
+                    <tr><th scope="col">Feature</th><th scope="col" class="text-center">OmeBox</th><th scope="col" class="text-center">Pastebin</th><th scope="col" class="text-center">Chat Apps</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>No login required</td><td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td><td class="text-center text-success"><i class="fas fa-check" aria-label="Yes (as guest)"></i></td><td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td></tr>
+                    <tr><td>Auto-expiry</td><td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td><td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td><td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td></tr>
+                    <tr><td>QR code sharing</td><td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td><td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td><td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td></tr>
+                    <tr><td>6-digit code access</td><td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td><td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td><td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td></tr>
+                    <tr><td>Works without an app</td><td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td><td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td><td class="text-center text-danger"><i class="fas fa-times" aria-label="No (usually)"></i></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="text-secondary mb-0">If you need permanent public hosting or rich syntax highlighting, a dedicated paste or code-hosting service fits better. For <strong>quick, temporary text and code sharing</strong>, OmeBox is faster to use.</p>
+    </section>
+
+    <section class="mt-5 pt-3" aria-labelledby="article-tips-heading">
+        <h2 id="article-tips-heading" class="h4 fw-bold text-dark mb-3">Tips for Sharing Text Safely</h2>
+        <ol class="text-secondary">
+            <li class="mb-2"><strong>Use the shortest expiry that works.</strong> If the recipient is online now, choose 15 minutes or 1 hour.</li>
+            <li class="mb-2"><strong>Send the code and the link separately.</strong> For example, the link by email and the 6-digit code by SMS.</li>
+            <li class="mb-2"><strong>Don't paste secrets.</strong> Avoid API keys, private keys, recovery phrases, and passwords. If a link leaks, anyone with it can read the text until it expires.</li>
+            <li class="mb-2"><strong>Clear your clipboard.</strong> After copying something sensitive, copy a harmless word to replace it, or use your OS clipboard-history tools to clear it.</li>
+            <li class="mb-0"><strong>History is local.</strong> Removing an item from "Your Share History" only removes it from this browser. The share itself stays live until it expires.</li>
+        </ol>
+    </section>
+
+    <section class="mt-5 pt-3" aria-labelledby="article-cross-heading">
+        <h2 id="article-cross-heading" class="h4 fw-bold text-dark mb-3">Cross-Device Text Sharing: PC, Phone, Mac and More</h2>
+        <p class="text-secondary">The most common use is moving text between two devices that don't share a clipboard:</p>
+        <div class="row g-3">
+            <div class="col-md-6"><div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                <h3 class="h6 fw-bold text-primary"><i class="fas fa-desktop me-2" aria-hidden="true"></i>PC to Phone</h3>
+                <p class="text-secondary small mb-0">Paste on your computer and click <strong>Generate</strong>. On your phone, open <code>/access</code> and type the 6-digit code, or scan the QR.</p>
+            </div></div>
+            <div class="col-md-6"><div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                <h3 class="h6 fw-bold text-primary"><i class="fas fa-mobile-alt me-2" aria-hidden="true"></i>Phone to PC</h3>
+                <p class="text-secondary small mb-0">Paste into OmeBox on your phone, then open <code>/access</code> on your laptop and enter the code.</p>
+            </div></div>
+            <div class="col-md-6"><div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                <h3 class="h6 fw-bold text-primary"><i class="fab fa-apple me-2" aria-hidden="true"></i>Mac to iPhone</h3>
+                <p class="text-secondary small mb-0">A handy fallback when AirDrop or Universal Clipboard isn't working. Paste once, then open it on the iPhone.</p>
+            </div></div>
+            <div class="col-md-6"><div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                <h3 class="h6 fw-bold text-primary"><i class="fab fa-android me-2" aria-hidden="true"></i>Android to PC</h3>
+                <p class="text-secondary small mb-0">No USB cable or account sync. Paste, generate, and enter the code on the other device.</p>
+            </div></div>
+        </div>
+        <p class="text-secondary mt-3 mb-0">Because the receiving side is just a URL and a 6-digit code, <strong>any device with a browser works</strong>: Windows, macOS, Linux, iOS, Android, or ChromeOS.</p>
+    </section>
+
+    <section class="mt-5 pt-3" aria-labelledby="faq-heading">
+        <h2 id="faq-heading" class="h4 fw-bold text-dark mb-3">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">How can I share text online for free?</button></h3>
+                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">OmeBox lets you share text online for free. Paste your text and instantly generate a shareable link, 6-digit code, and QR code. No signup required.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">Do I need to register to share text?</button></h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">No. OmeBox allows text sharing without registration or login. There is no account, no email, and no password to remember.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Can I share notes and messages online?</button></h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. You can share notes, messages, code snippets, and any other text using a link, a 6-digit access code, or a QR code.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Is OmeBox free to use?</button></h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. OmeBox is free for online text sharing, with no premium tiers and no hidden charges. The site is supported by ads.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">How long does my shared text stay online?</button></h3>
+                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">You choose. Expiry options range from 15 minutes to 7 days. After that, the content is deleted from OmeBox servers.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">Is the shared text encrypted?</button></h3>
+                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Content is encrypted in transit using HTTPS. Stored content is temporary and deleted at expiry. For highly sensitive data, use an end-to-end encrypted tool.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">Can I share code snippets on OmeBox?</button></h3>
+                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. OmeBox accepts up to 200,000 characters of plain text, including code in any language, JSON, XML, YAML, Markdown, and more.</div></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+</div>
+</div>
+</main>
+
+<footer class="footer-links pt-5 pb-4 mt-4">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-md-3">
+                <h2 class="h5 fw-bold" style="color:#0F172A;"><i class="fas fa-share-alt me-2" style="color:#2563EB;" aria-hidden="true"></i>OmeBox</h2>
+                <p class="small" style="color:#475569;">Free text and file sharing without signup. Online notepad and instant cross-device transfer.</p>
+            </div>
+            <div class="col-md-3">
+                <h3 class="h6 fw-semibold" style="color:#0F172A;">Quick access</h3>
+                <ul class="list-unstyled small">
+                    <li class="mb-1"><a href="/share/text"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Share Text</a></li>
+                    <li class="mb-1"><a href="/share/files"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Share Files</a></li>
+                    <li class="mb-1"><a href="/access"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Receiver (Access)</a></li>
+                    <li class="mb-1"><a href="/webnotepad" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Web Notepad</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3 class="h6 fw-semibold" style="color:#0F172A;">Company</h3>
+                <ul class="list-unstyled small">
+                    <li class="mb-1"><a href="/main"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Root</a></li>
+                    <li class="mb-1"><a href="/about"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>About Us</a></li>
+                    <li class="mb-1"><a href="/contact"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Contact Us</a></li>
+                    <li class="mb-1"><a href="/privacy-policy"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3 class="h6 fw-semibold" style="color:#0F172A;">Resources</h3>
+                <ul class="list-unstyled small">
+                    <li class="mb-1"><a href="/omebox-article"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>OmeBox Article</a></li>
+                    <li class="mb-1"><a href="/anonymous-file-share"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Anonymous Share</a></li>
+                    <li class="mb-1"><a href="/best-file-share-website"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Best File Sharing</a></li>
+                    <li class="mb-1"><a href="/best-programming-langues"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Best Programming Languages</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="mt-4 mb-3" style="border-color:#E2E8F0;">
+        <div class="text-center small" style="color:#64748B;">© <span id="copyrightYear">2026</span> OmeBox – Free text &amp; file sharing | No registration required</div>
+    </div>
+</footer>
+
+<nav class="d-md-none position-fixed bottom-0 start-0 w-100 mobile-bottom-nav shadow-lg" aria-label="Mobile navigation">
+    <div class="d-flex h-100 align-items-center justify-content-around px-2">
+        <a href="/" class="mobile-nav-item text-center"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a>
+        <a href="/share/text" class="mobile-nav-item text-center active" aria-current="page"><i class="fas fa-align-left" aria-hidden="true"></i><span>Text</span></a>
+        <a href="/share/files" class="mobile-nav-item text-center"><i class="fas fa-paperclip" aria-hidden="true"></i><span>Files</span></a>
+        <a href="/access" class="mobile-nav-item text-center"><i class="fas fa-download" aria-hidden="true"></i><span>Receive</span></a>
+        <a href="/webnotepad" class="mobile-nav-item text-center" target="_blank" rel="noopener noreferrer"><i class="fas fa-edit" aria-hidden="true"></i><span>Notepad</span></a>
+    </div>
+</nav>
+<div class="d-md-none" style="height:85px;" aria-hidden="true"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script>
+(function () {
+    'use strict';
+
+    const MAX_TEXT_LENGTH = 200000;
+    const MAX_HISTORY = 20;
+    const STORAGE_KEY = 'omebox_text_history';
+    const EXPIRY_MS = { '15m': 9e5, '1h': 36e5, '1d': 864e5, '3d': 2592e5, '7d': 6048e5 };
+
+    const $ = (id) => document.getElementById(id);
+    const textArea = $('textContent');
+    const charCounter = $('charCounter');
+    const shareBtn = $('shareBtn');
+    const expirySelect = $('expirySelect');
+    const resultSection = $('resultSection');
+    const historyContainer = $('historyContainer');
+    const clearAllBtn = $('clearAllHistoryBtn');
+    const SHARE_LABEL = '<i class="fas fa-share-alt me-2" aria-hidden="true"></i>Generate Share &amp; 6-digit Code';
+
+    let shareHistory = [];
+
+    /* ---------- helpers ---------- */
+    function escapeHtml(str) {
+        if (str === null || str === undefined) return '';
+        return String(str).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    }
+
+    // Only allow http(s) URLs in href / window.open
+    function safeHttpUrl(u) {
+        try {
+            const parsed = new URL(u, location.origin);
+            return (parsed.protocol === 'http:' || parsed.protocol === 'https:') ? parsed.href : '';
+        } catch (e) { return ''; }
+    }
+
+    function showToast(message, bg) {
+        const el = document.createElement('div');
+        el.className = 'toast-notif';
+        el.setAttribute('role', 'status');
+        el.style.background = bg || '#0F172A';
+        el.innerHTML = '<i class="fas fa-bell me-2" aria-hidden="true"></i>' + escapeHtml(message);
+        document.body.appendChild(el);
+        setTimeout(() => { el.style.opacity = '0'; setTimeout(() => el.remove(), 200); }, 2700);
+    }
+
+    function copyToClipboard(text, okMsg) {
+        const done = () => showToast(okMsg || 'Copied!', '#10B981');
+        const fail = () => showToast('Copy failed – select and copy manually', '#F59E0B');
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(done).catch(fail);
+            return;
+        }
+        // Fallback for non-secure contexts / older browsers
+        const ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy') ? done() : fail(); } catch (e) { fail(); }
+        ta.remove();
+    }
+
+    /* ---------- history storage (localStorage can throw in private mode / when full) ---------- */
+    function loadHistory() {
+        try {
+            const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            shareHistory = Array.isArray(parsed) ? parsed.filter(i => i && i.code) : [];
+        } catch (e) { shareHistory = []; }
+        pruneExpired();
+    }
+
+    function persistHistory() {
+        while (true) {
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(shareHistory)); return; }
+            catch (e) {
+                if (shareHistory.length <= 1) return;
+                shareHistory.pop(); // quota exceeded: drop oldest and retry
+            }
+        }
+    }
+
+    // Expired shares no longer work, so remove them (also removes stored text previews)
+    function pruneExpired() {
+        const now = Date.now();
+        const before = shareHistory.length;
+        shareHistory = shareHistory.filter(i => !i.expiresAt || i.expiresAt > now);
+        if (shareHistory.length !== before) persistHistory();
+    }
+
+    function addToHistory(data, preview, expiryValue, expiryLabel) {
+        shareHistory.unshift({
+            id: Date.now() + Math.random().toString(36).slice(2, 6),
+            code: data.code,
+            url: data.url,
+            qrCodeBase64: data.qr_code,
+            textPreview: preview,
+            expiryOption: expiryLabel,
+            expiresAt: EXPIRY_MS[expiryValue] ? Date.now() + EXPIRY_MS[expiryValue] : null,
+            timestamp: new Date().toISOString()
+        });
+        if (shareHistory.length > MAX_HISTORY) shareHistory.length = MAX_HISTORY;
+        persistHistory();
+        renderHistory();
+    }
+
+    function deleteHistoryItem(id) {
+        shareHistory = shareHistory.filter(i => i.id !== id);
+        persistHistory();
+        renderHistory();
+        showToast('Removed from this browser\'s history (share stays live until it expires)', '#64748B');
+    }
+
+    function clearAllHistory() {
+        if (!shareHistory.length) return;
+        if (confirm('Clear all share history from this browser? The shares themselves stay live until they expire.')) {
+            shareHistory = [];
+            persistHistory();
+            renderHistory();
+            showToast('History cleared', '#EF4444');
+        }
+    }
+
+    /* ---------- rendering ---------- */
+    function renderHistory() {
+        clearAllBtn.disabled = shareHistory.length === 0;
+        if (!shareHistory.length) {
+            historyContainer.innerHTML = '<div class="empty-history"><i class="fas fa-database fa-2x mb-2 opacity-50" style="color:#94A3B8;" aria-hidden="true"></i><p class="mb-0">✨ No shared items yet. Share some text and it will show up here.</p></div>';
+            return;
+        }
+        const rows = shareHistory.map(item => {
+            const preview = item.textPreview && item.textPreview.length > 70 ? item.textPreview.slice(0, 70) + '…' : (item.textPreview || 'Text share');
+            const dateStr = item.timestamp ? new Date(item.timestamp).toLocaleString(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : 'recent';
+            const code = escapeHtml(item.code);
+            const url = escapeHtml(safeHttpUrl(item.url));
+            const id = escapeHtml(item.id);
+            const qr = item.qrCodeBase64
+                ? `<img src="data:image/png;base64,${escapeHtml(item.qrCodeBase64)}" class="qr-img-small" width="52" height="52" alt="QR code for ${code}" loading="lazy">`
+                : '<div class="p-2 rounded" style="background:#F1F5F9;width:52px;height:52px;" aria-hidden="true"><i class="fas fa-qrcode" style="color:#94A3B8;"></i></div>';
+            return `<div class="history-item" data-id="${id}">
+                <div class="d-flex justify-content-between align-items-start flex-wrap">
+                    <div class="flex-grow-1 me-2">
+                        <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+                            <span class="history-code"><i class="fas fa-hashtag me-1" aria-hidden="true"></i>${code}</span>
+                            <span class="badge-expiry"><i class="far fa-clock me-1" aria-hidden="true"></i>${escapeHtml(item.expiryOption)}</span>
+                            <small style="color:#64748B;"><i class="far fa-calendar-alt me-1" aria-hidden="true"></i>${escapeHtml(dateStr)}</small>
+                        </div>
+                        <div class="small mt-1" style="color:#475569;"><i class="fas fa-quote-left me-1 opacity-50" aria-hidden="true"></i> ${escapeHtml(preview)}</div>
+                        <div class="mt-2 d-flex gap-2 flex-wrap align-items-center">
+                            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill" data-action="copy-code" data-code="${code}"><i class="fas fa-copy me-1" aria-hidden="true"></i>Copy 6-digit</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary rounded-pill" data-action="copy-link" data-url="${url}"><i class="fas fa-link me-1" aria-hidden="true"></i>Copy link</button>
+                            <button type="button" class="btn btn-sm btn-outline-info rounded-pill" data-action="open" data-url="${url}"><i class="fas fa-eye me-1" aria-hidden="true"></i>Open</button>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        ${qr}
+                        <button type="button" class="btn btn-link p-0" data-action="delete" data-id="${id}" aria-label="Remove ${code} from history" title="Remove from history" style="color:#EF4444;font-size:1.2rem;"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>`;
+        }).join('');
+        historyContainer.innerHTML = `<div class="history-list" style="max-height:460px;overflow-y:auto;padding-right:4px;">${rows}</div>`;
+    }
+
+    // One delegated listener instead of re-binding on every render
+    historyContainer.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-action]');
+        if (!btn) return;
+        const { action, code, url, id } = btn.dataset;
+        if (action === 'copy-code') copyToClipboard(code, 'Code copied!');
+        else if (action === 'copy-link') copyToClipboard(url, 'Link copied!');
+        else if (action === 'delete') deleteHistoryItem(id);
+        else if (action === 'open') {
+            if (url) window.open(url, '_blank', 'noopener,noreferrer');
+            else showToast('URL not available', '#F59E0B');
+        }
+    });
+
+    function displayShareResult(data) {
+        const link = safeHttpUrl(data.url);
+        const code = escapeHtml(data.code);
+        resultSection.style.display = 'block';
+        resultSection.innerHTML = `<div class="share-result-card fade-in">
+            <h3 class="h5 text-center mb-3 fw-bold" style="color:#0F172A;"><i class="fas fa-check-circle me-2" style="color:#10B981;" aria-hidden="true"></i>Successfully shared!</h3>
+            <div class="row align-items-center">
+                <div class="col-md-5 text-center">
+                    <img src="data:image/png;base64,${escapeHtml(data.qr_code)}" class="img-fluid" width="140" height="140" style="max-width:140px;border-radius:16px;background:#fff;padding:5px;border:1px solid #E2E8F0;" alt="QR code to access shared text ${code}">
+                    <div class="mt-2 small text-muted">Scan QR to open</div>
+                </div>
+                <div class="col-md-7">
+                    <div class="code-badge mb-2 d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-key" style="color:#2563EB;" aria-hidden="true"></i> ${code}</span>
+                        <button type="button" id="copyCodeQuickBtn" class="btn btn-sm btn-outline-light rounded-pill" style="border-color:#CBD5E1;color:#2563EB;"><i class="fas fa-copy" aria-hidden="true"></i> Copy</button>
+                    </div>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control form-control-sm" id="shareLinkInput" value="${escapeHtml(link)}" readonly style="background:#F8FAFC;" aria-label="Shareable link">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" id="copyLinkQuickBtn" style="border-radius:0 60px 60px 0;" aria-label="Copy link"><i class="fas fa-copy" aria-hidden="true"></i></button>
+                    </div>
+                    <a href="${escapeHtml(link)}" class="btn btn-sm btn-outline-success w-100 rounded-pill" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt me-1" aria-hidden="true"></i>Open share page</a>
+                    <div class="alert alert-info mt-2 mb-0 small p-2 text-center"><i class="fas fa-info-circle" aria-hidden="true"></i> Code &amp; link are saved in this browser's history until the share expires</div>
+                </div>
+            </div>
+        </div>`;
+        $('copyCodeQuickBtn').addEventListener('click', () => copyToClipboard(data.code, '6-digit code copied!'));
+        $('copyLinkQuickBtn').addEventListener('click', () => copyToClipboard(link, 'Link copied!'));
+        resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    /* ---------- editor ---------- */
+    function updateCounter() {
+        const len = textArea.value.length;
+        charCounter.textContent = `${len.toLocaleString()} / ${MAX_TEXT_LENGTH.toLocaleString()} characters`;
+        charCounter.classList.toggle('danger', len > MAX_TEXT_LENGTH * 0.9);
+        charCounter.classList.toggle('warning', len > MAX_TEXT_LENGTH * 0.7 && len <= MAX_TEXT_LENGTH * 0.9);
+    }
+    textArea.addEventListener('input', updateCounter);
+
+    // Replaces the old "Append" button, which just duplicated the textarea contents.
+    $('pasteBtn').addEventListener('click', async () => {
+        if (!navigator.clipboard || !navigator.clipboard.readText) { showToast('Clipboard access not supported – paste with Ctrl/Cmd+V', '#F59E0B'); return; }
+        try {
+            const clip = await navigator.clipboard.readText();
+            if (!clip) { showToast('Clipboard is empty', '#F59E0B'); return; }
+            const sep = textArea.value && !textArea.value.endsWith('\n') ? '\n' : '';
+            const combined = textArea.value + sep + clip;
+            textArea.value = combined.slice(0, MAX_TEXT_LENGTH);
+            if (combined.length > MAX_TEXT_LENGTH) showToast('Truncated to the 200,000 character limit', '#F59E0B');
+            updateCounter();
+        } catch (e) { showToast('Clipboard permission denied – paste with Ctrl/Cmd+V', '#F59E0B'); }
+    });
+
+    $('clearTextBtn').addEventListener('click', () => { textArea.value = ''; updateCounter(); textArea.focus(); });
+
+    /* ---------- share ---------- */
+    async function shareText() {
+        const text = textArea.value.trim();
+        if (!text) { showToast('Please enter some text to share', '#F59E0B'); return; }
+        const expiry = expirySelect.value;
+        const expiryLabel = expirySelect.options[expirySelect.selectedIndex].text;
+
+        shareBtn.disabled = true;
+        shareBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2" aria-hidden="true"></i>Generating…';
+
+        const formData = new FormData();
+        formData.append('text', text);
+        formData.append('expiry', expiry);
+
+        try {
+            const response = await fetch('/api/share/text', { method: 'POST', body: formData });
+            if (!response.ok) {
+                let msg = 'Server error (' + response.status + ')';
+                try {
+                    const err = await response.json();
+                    if (typeof err.detail === 'string') msg = err.detail; // FastAPI validation errors are arrays/objects
+                } catch (e) { /* keep default */ }
+                throw new Error(msg);
+            }
+            const data = await response.json();
+            if (!data || !data.code || !data.qr_code || !data.url) throw new Error('Invalid response from server');
+
+            addToHistory(data, text.length > 90 ? text.slice(0, 90) + '…' : text, expiry, expiryLabel);
+            displayShareResult(data);
+            textArea.value = '';
+            updateCounter();
+            showToast('Shared! Code: ' + data.code, '#10B981');
+        } catch (error) {
+            showToast('Share failed: ' + (error.message || 'network issue'), '#EF4444');
+        } finally {
+            shareBtn.disabled = false;
+            shareBtn.innerHTML = SHARE_LABEL;
+        }
+    }
+
+    shareBtn.addEventListener('click', shareText);
+    textArea.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); shareText(); }
+    });
+    clearAllBtn.addEventListener('click', clearAllHistory);
+
+    /* ---------- init ---------- */
+    document.addEventListener('DOMContentLoaded', () => {
+        loadHistory();
+        renderHistory();
+        updateCounter();
+        const y = $('copyrightYear');
+        if (y) y.textContent = new Date().getFullYear();
+    });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "OmeBox – Share Text",
+  "url": "https://omebox.com/share/text",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Web",
+  "isAccessibleForFree": true,
+  "description": "Share text online instantly. Create shareable links, QR codes and 6-digit codes for notes, messages, and code without registration.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Share text online", "No registration required", "QR code and 6-digit code access", "Temporary text sharing with auto-expiry", "Code snippet sharing"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How can I share text online for free?", "acceptedAnswer": { "@type": "Answer", "text": "OmeBox lets you share text online for free. Paste your text and instantly generate a shareable link, 6-digit code, and QR code. No signup required." } },
+    { "@type": "Question", "name": "Do I need to register to share text?", "acceptedAnswer": { "@type": "Answer", "text": "No. OmeBox allows text sharing without registration or login. There is no account, no email, and no password to remember." } },
+    { "@type": "Question", "name": "Can I share notes and messages online?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can share notes, messages, code snippets, and any other text using a link, a 6-digit access code, or a QR code." } },
+    { "@type": "Question", "name": "Is OmeBox free to use?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmeBox is free for online text sharing, with no premium tiers and no hidden charges. The site is supported by ads." } },
+    { "@type": "Question", "name": "How long does my shared text stay online?", "acceptedAnswer": { "@type": "Answer", "text": "You choose. Expiry options range from 15 minutes to 7 days. After that, the content is deleted from OmeBox servers." } },
+    { "@type": "Question", "name": "Is the shared text encrypted?", "acceptedAnswer": { "@type": "Answer", "text": "Content is encrypted in transit using HTTPS. Stored content is temporary and deleted at expiry. For highly sensitive data, use an end-to-end encrypted tool." } },
+    { "@type": "Question", "name": "Can I share code snippets on OmeBox?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmeBox accepts up to 200,000 characters of plain text, including code in any language, JSON, XML, YAML, Markdown, and more." } }
+  ]
+}
+</script>
+</body>
+</html>

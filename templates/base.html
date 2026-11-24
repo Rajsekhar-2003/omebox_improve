@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    
+    <title>{% block title %}OmeBox - Share Text & Files Instantly | No Signup Required{% endblock %}</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="{% block meta_description %}Free text and file sharing without signup. Share notes, code, files up to 100MB. QR code + 6-digit access.{% endblock %}">
+    <meta name="keywords" content="file sharing, text sharing, no login, anonymous share, online notepad">
+    <meta name="author" content="OmeBox">
+    
+    <!-- Bootstrap 5 + Icons + Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFFFFF;
+            color: #0F172A;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        /* Navbar Styles */
+        .navbar-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #E2E8F0;
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link-custom {
+            font-weight: 500;
+            color: #334155;
+            border-radius: 40px;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link-custom:hover,
+        .nav-link-custom.active {
+            background: #EFF6FF;
+            color: #2563EB;
+        }
+        
+        /* Mobile Bottom Navigation */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid #E2E8F0;
+            height: 70px;
+            z-index: 1050;
+        }
+        
+        .mobile-nav-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #64748B;
+            text-decoration: none;
+            padding: 8px 0;
+            border-radius: 32px;
+        }
+        
+        .mobile-nav-item i {
+            font-size: 22px;
+            margin-bottom: 4px;
+        }
+        
+        .mobile-nav-item.active {
+            color: #2563EB;
+            background: #EFF6FF;
+        }
+        
+        .mobile-nav-item span {
+            font-size: 11px;
+            font-weight: 500;
+        }
+        
+        /* Footer Styles */
+        .footer-links {
+            background: #F8FAFC;
+            border-top: 1px solid #E2E8F0;
+        }
+        
+        .footer-links a {
+            text-decoration: none;
+            color: #475569;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: #2563EB;
+        }
+        
+        /* Flash Messages */
+        .alert-flash {
+            border-radius: 60px;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar-brand span {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<!-- Skip to main content -->
+<a href="#main-content" class="skip-link" style="position: absolute; top: -40px; left: 0; background: #2563EB; color: white; padding: 8px 16px; z-index: 9999;">Skip to main content</a>
+
+<!-- ========== HEADER / NAVBAR ========== -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-glass sticky-top px-3 px-md-4">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="/">
+                <div style="width: 40px; height: 40px; background: #2563EB; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.5rem;">O</div>
+                <span style="color: #0F172A;">OmeBox</span>
+            </a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <i class="fas fa-bars fs-3"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav mx-auto gap-1 gap-lg-2 mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom px-3 py-2 {% if active_page == 'home' %}active{% endif %}" href="/">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom px-3 py-2 {% if active_page == 'share_text' %}active{% endif %}" href="/share/text">
+                            <i class="fas fa-align-left me-1"></i>Share Text
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom px-3 py-2 {% if active_page == 'share_files' %}active{% endif %}" href="/share/files">
+                            <i class="fas fa-paperclip me-1"></i>Share Files
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom px-3 py-2 {% if active_page == 'access' %}active{% endif %}" href="/access">
+                            <i class="fas fa-download me-1"></i>Receiver
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom px-3 py-2 {% if active_page == 'about' %}active{% endif %}" href="/about">
+                            <i class="fas fa-info-circle me-1"></i>About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Flash Messages -->
+{% if messages %}
+<div class="container mt-3">
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }} alert-dismissible fade show alert-flash" role="alert">
+        <i class="fas fa-{% if category == 'success' %}check-circle{% elif category == 'danger' %}exclamation-triangle{% else %}info-circle{% endif %} me-2"></i>
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- ========== MAIN CONTENT ========== -->
+<main id="main-content">
+    <div class="container px-3 px-md-4 py-4 py-md-5">
+        {% block content %}
+        <!-- Default content -->
+        <div class="text-center py-5">
+            <h1>Welcome to OmeBox</h1>
+            <p>Share text and files instantly without signup.</p>
+        </div>
+        {% endblock %}
+    </div>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer-links pt-4 pb-3 mt-4">
+    <div class="container">
+        <div class="row gy-3">
+            <div class="col-md-4">
+                <h6 class="fw-bold mb-2">OmeBox</h6>
+                <p class="small text-secondary">Free text and file sharing without signup. Instant, private, secure.</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="fw-bold mb-2">Quick Links</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="/share/text">Share Text</a></li>
+                    <li><a href="/share/files">Share Files</a></li>
+                    <li><a href="/access">Receiver</a></li>
+                    <li><a href="/about">About Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h6 class="fw-bold mb-2">Legal</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="my-3">
+        <div class="text-center small text-secondary">© 2026 OmeBox – No registration, pure privacy</div>
+    </div>
+</footer>
+
+<!-- Mobile Bottom Navigation -->
+<nav class="d-md-none mobile-bottom-nav">
+    <div class="d-flex h-100 align-items-center justify-content-around px-2">
+        <a href="/" class="mobile-nav-item text-center {% if active_page == 'home' %}active{% endif %}">
+            <i class="fas fa-home"></i><br><span>Home</span>
+        </a>
+        <a href="/share/text" class="mobile-nav-item text-center {% if active_page == 'share_text' %}active{% endif %}">
+            <i class="fas fa-align-left"></i><br><span>Text</span>
+        </a>
+        <a href="/share/files" class="mobile-nav-item text-center {% if active_page == 'share_files' %}active{% endif %}">
+            <i class="fas fa-paperclip"></i><br><span>Files</span>
+        </a>
+        <a href="/access" class="mobile-nav-item text-center {% if active_page == 'access' %}active{% endif %}">
+            <i class="fas fa-download"></i><br><span>Receive</span>
+        </a>
+        <a href="/about" class="mobile-nav-item text-center {% if active_page == 'about' %}active{% endif %}">
+            <i class="fas fa-info-circle"></i><br><span>About</span>
+        </a>
+    </div>
+</nav>
+
+<!-- Spacer for mobile bottom nav -->
+<div class="d-md-none" style="height: 80px;"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Auto-dismiss flash messages
+    document.addEventListener('DOMContentLoaded', function() {
+        const alerts = document.querySelectorAll('.alert-flash');
+        alerts.forEach(alert => {
+            setTimeout(() => {
+                const bsAlert = new bootstrap.Alert(alert);
+                bsAlert.close();
+            }, 5000);
+        });
+    });
+</script>
+
+{% block extra_js %}{% endblock %}
+</body>
+</html>

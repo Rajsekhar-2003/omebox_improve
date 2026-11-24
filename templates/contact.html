@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="theme-color" content="#2563EB">
+
+    <title>Contact OmeBox – Get Support, Send Feedback, Report Issues | OmeBox</title>
+    <meta name="description" content="Contact the OmeBox team. Send feedback, report issues, ask questions about anonymous file sharing. We reply within 24 hours.">
+    <meta name="keywords" content="contact OmeBox, file sharing support, feedback, anonymous file help, OmeBox email, report bug">
+    <meta name="author" content="OmeBox">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+
+    <link rel="canonical" href="https://omebox.com/contact">
+    <link rel="alternate" hreflang="en" href="https://omebox.com/contact">
+    <link rel="alternate" hreflang="x-default" href="https://omebox.com/contact">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1DNNDQWSD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H1DNNDQWSD');
+    </script>
+
+    <!-- AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-1872078023246662">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1872078023246662" crossorigin="anonymous"></script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact OmeBox – We'd Love to Hear From You">
+    <meta property="og:description" content="Reach out to OmeBox team. Questions, feature ideas, bug reports. We're here to help within 24 hours.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://omebox.com/contact">
+    <meta property="og:site_name" content="OmeBox">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://omebox.com/static/og-contact.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Contact OmeBox – Support, feedback, and feature requests">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact OmeBox – Support &amp; Feedback">
+    <meta name="twitter:description" content="Fast support for OmeBox file sharing. Email us directly or use the contact form.">
+    <meta name="twitter:image" content="https://omebox.com/static/og-contact.jpg">
+    <meta name="twitter:image:alt" content="Contact OmeBox – Support, feedback, and feature requests">
+    <meta name="twitter:url" content="https://omebox.com/contact">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', path='logo.png') if url_for else '/static/logo.png' }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', path='logo.png') if url_for else '/static/logo.png' }}">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        main { flex: 1 0 auto; }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #2563EB;
+            color: white;
+            padding: 8px 16px;
+            z-index: 9999;
+            text-decoration: none;
+            border-radius: 0 0 8px 0;
+            transition: top 0.2s;
+            font-weight: 600;
+        }
+        .skip-link:focus { top: 0; }
+
+        :focus-visible { outline: 3px solid #2563EB; outline-offset: 3px; border-radius: 4px; }
+
+        .navbar-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #E2E8F0;
+        }
+        .navbar-brand { font-weight: 800; font-size: 1.5rem; }
+        .nav-link-custom {
+            font-weight: 500;
+            color: #334155;
+            border-radius: 40px;
+            transition: all 0.2s ease;
+        }
+        .nav-link-custom:hover,
+        .nav-link-custom.active { background: #EFF6FF; color: #2563EB; }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0a1929 0%, #1e3a6f 100%);
+            border-radius: 28px;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: white;
+        }
+        .hero-section h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .hero-section .lead { font-size: 1.2rem; opacity: 0.95; }
+
+        .contact-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            height: 100%;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.15);
+            border-color: #2563EB;
+        }
+
+        .email-badge {
+            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+            padding: 0.85rem 1.5rem;
+            border-radius: 60px;
+            font-family: monospace;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e40af;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            word-break: break-all;
+            border: 1px solid #BFDBFE;
+            flex-wrap: wrap;
+        }
+
+        .feedback-box {
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+            border-left: 5px solid #2563EB;
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin-top: 1rem;
+        }
+
+        .btn-send {
+            background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+            color: white;
+            font-weight: 700;
+            padding: 0.9rem 2.5rem;
+            border-radius: 60px;
+            border: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        .btn-send:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+            background: linear-gradient(135deg, #1D4ED8 0%, #1E3A8A 100%);
+            color: white;
+        }
+
+        .form-control, .form-select {
+            border-radius: 16px;
+            padding: 0.85rem 1.2rem;
+            border: 2px solid #E2E8F0;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #2563EB;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+            outline: none;
+        }
+        .form-label { font-weight: 600; margin-bottom: 0.5rem; color: #0F172A; }
+
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid #E2E8F0;
+            height: 100%;
+        }
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            border-color: #2563EB;
+        }
+
+        .response-time {
+            background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+            border-radius: 16px;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+        }
+
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid #E2E8F0;
+            height: 70px;
+            z-index: 1050;
+        }
+        .mobile-nav-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #64748B;
+            text-decoration: none;
+            padding: 8px 0;
+            border-radius: 32px;
+            transition: all 0.2s;
+        }
+        .mobile-nav-item i { font-size: 22px; margin-bottom: 4px; }
+        .mobile-nav-item.active { color: #2563EB; background: #EFF6FF; }
+
+        .footer-custom {
+            background: #0F172A;
+            color: #94A3B8;
+            margin-top: 3rem;
+        }
+        .footer-custom a { color: #94A3B8; text-decoration: none; transition: color 0.2s; }
+        .footer-custom a:hover { color: #2563EB; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeInUp 0.5s ease-out; }
+
+        .alert-success-custom {
+            background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+            border: none;
+            color: #065F46;
+            border-radius: 16px;
+            padding: 1rem;
+            font-weight: 500;
+        }
+        .alert-error-custom {
+            background: #FEE2E2;
+            color: #991B1B;
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .copy-email {
+            background: white;
+            border: 1px solid #CBD5E1;
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+        .copy-email:hover {
+            background: #2563EB;
+            color: white;
+            border-color: #2563EB;
+        }
+
+        .toast-notif {
+            position: fixed;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #10B981;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            z-index: 9999;
+            font-weight: 500;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.3s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section { padding: 2rem 1rem; }
+            .hero-section h1 { font-size: 1.8rem; }
+            .hero-section .lead { font-size: 1rem; }
+            .contact-card { padding: 1.5rem; }
+            .email-badge { font-size: 0.85rem; flex-wrap: wrap; }
+            body { padding-bottom: 70px; }
+        }
+        @media (min-width: 768px) {
+            .mobile-bottom-nav { display: none !important; }
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact OmeBox Support",
+      "description": "Contact form and email addresses for OmeBox file sharing service.",
+      "url": "https://omebox.com/contact",
+      "inLanguage": "en",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "OmeBox",
+        "url": "https://omebox.com",
+        "email": "omebox24@gmail.com",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "email": "omebox24@gmail.com",
+            "contactType": "customer support",
+            "availableLanguage": ["English"],
+            "areaServed": "Worldwide",
+            "url": "https://omebox.com/contact"
+          }
+        ]
+      }
+    }
+    </script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<noscript>
+    <div class="alert alert-warning text-center m-3" role="alert">
+        <i class="fas fa-exclamation-triangle me-2" aria-hidden="true"></i>
+        JavaScript is disabled. The contact form won't work — please email us directly at
+        <a href="mailto:omebox24@gmail.com">omebox24@gmail.com</a>.
+    </div>
+</noscript>
+
+<!-- ========== HEADER ========== -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-glass sticky-top px-3 px-md-4" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-3" href="/" aria-label="OmeBox Home">
+            <img src="/static/logo.png" alt="OmeBox logo" height="48" width="48" onerror="this.style.display='none'">
+            <span style="color:#2563EB;">OmeBox</span>
+        </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fs-3" aria-hidden="true"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav mx-auto gap-1 gap-lg-2 mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2" href="/"><i class="fas fa-home me-1" aria-hidden="true"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2" href="/share/text"><i class="fas fa-align-left me-1" aria-hidden="true"></i>Share Text</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2" href="/share/files"><i class="fas fa-paperclip me-1" aria-hidden="true"></i>Share Files</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2" href="/access"><i class="fas fa-download me-1" aria-hidden="true"></i>Receiver</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2 active" href="/contact" aria-current="page"><i class="fas fa-envelope me-1" aria-hidden="true"></i>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- ========== MAIN ========== -->
+<main id="main-content" tabindex="-1">
+    <div class="container px-3 px-md-4 py-4 py-md-5">
+
+        <div class="hero-section animate-fade-in">
+            <i class="fas fa-envelope fa-3x mb-3" style="opacity: 0.9;" aria-hidden="true"></i>
+            <h1>Get in Touch</h1>
+            <p class="lead">We'd love to hear from you. Questions, feedback, or just saying hello — we reply within 24 hours.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Left Column - Contact Info -->
+            <div class="col-lg-5">
+                <div class="contact-card">
+                    <h2 class="h3 mb-4" style="color: #0F172A;">
+                        <i class="fas fa-comment-dots me-2" style="color: #2563EB;" aria-hidden="true"></i>
+                        Let's Connect
+                    </h2>
+
+                    <div class="mb-4">
+                        <p class="fw-semibold text-dark mb-2">
+                            <i class="fas fa-headset me-2" style="color: #2563EB;" aria-hidden="true"></i>
+                            General Support &amp; Feedback
+                        </p>
+                        <div class="email-badge">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <span>omebox24@gmail.com</span>
+                            <button type="button" class="btn copy-email ms-2" data-email="omebox24@gmail.com" aria-label="Copy general support email to clipboard">
+                                <i class="fas fa-copy" aria-hidden="true"></i> Copy
+                            </button>
+                        </div>
+                        <small class="text-muted mt-2 d-block">
+                            <i class="fas fa-clock me-1" aria-hidden="true"></i>Response: 6–24 hours
+                        </small>
+                    </div>
+
+                    <div class="mb-4">
+                        <p class="fw-semibold text-dark mb-2">
+                            <i class="fas fa-user-tie me-2" style="color: #2563EB;" aria-hidden="true"></i>
+                            Personal Contact (Founder)
+                        </p>
+                        <div class="email-badge">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <span>maityrajsekhar210@gmail.com</span>
+                            <button type="button" class="btn copy-email ms-2" data-email="maityrajsekhar210@gmail.com" aria-label="Copy founder email to clipboard">
+                                <i class="fas fa-copy" aria-hidden="true"></i> Copy
+                            </button>
+                        </div>
+                        <small class="text-muted mt-2 d-block">
+                            <i class="fas fa-handshake me-1" aria-hidden="true"></i>Partnerships, Press, Special Inquiries
+                        </small>
+                    </div>
+
+                    <div class="feedback-box">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="fas fa-lightbulb fs-4" style="color: #2563EB;" aria-hidden="true"></i>
+                            <strong class="fs-5">Share Your Ideas</strong>
+                        </div>
+                        <p class="mb-2">Your feedback shapes OmeBox's future. Every suggestion is read and considered.</p>
+                        <div class="email-badge bg-white mt-2">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                            omebox24@gmail.com (Subject: Feedback)
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-top">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <div class="fs-3 fw-bold" style="color: #2563EB;">24/7</div>
+                                <small class="text-muted">Support</small>
+                            </div>
+                            <div class="col-4">
+                                <div class="fs-3 fw-bold" style="color: #2563EB;">24h</div>
+                                <small class="text-muted">Response</small>
+                            </div>
+                            <div class="col-4">
+                                <div class="fs-3 fw-bold" style="color: #2563EB;">100%</div>
+                                <small class="text-muted">Human</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Contact Form -->
+            <div class="col-lg-7">
+                <div class="contact-card">
+                    <h2 class="h3 mb-4" style="color: #0F172A;">
+                        <i class="fas fa-paper-plane me-2" style="color: #2563EB;" aria-hidden="true"></i>
+                        Send Us a Message
+                    </h2>
+
+                    <div id="formSuccessMessage" class="alert alert-success-custom mb-3" role="status" aria-live="polite" style="display:none;">
+                        <div id="successText"><i class="fas fa-check-circle me-2" aria-hidden="true"></i>Message prepared.</div>
+                        <div id="successBackup" class="mt-2 small" style="display:none;">
+                            Email didn't open? Copy your message and send it manually to
+                            <strong>omebox24@gmail.com</strong>:
+                            <button type="button" id="copyFallbackBtn" class="btn btn-sm btn-outline-success rounded-pill ms-2 mt-1">
+                                <i class="fas fa-copy me-1" aria-hidden="true"></i>Copy message
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="formErrorMessage" class="alert alert-danger mb-3" role="alert" aria-live="assertive" style="display:none;"></div>
+
+                    <form id="contactForm" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">
+                                    <i class="fas fa-user me-1" aria-hidden="true"></i>Your Name
+                                </label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required autocomplete="name">
+                                <div class="alert-error-custom" id="nameError">Please enter your name.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope me-1" aria-hidden="true"></i>Email Address
+                                </label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
+                                <div class="alert-error-custom" id="emailError">Please enter a valid email.</div>
+                            </div>
+                            <div class="col-12">
+                                <label for="subject" class="form-label">
+                                    <i class="fas fa-tag me-1" aria-hidden="true"></i>Subject
+                                </label>
+                                <select class="form-select" id="subject" name="subject" required>
+                                    <option value="" disabled selected>Select a topic...</option>
+                                    <option value="Feedback / Suggestion">💡 Feedback / Suggestion</option>
+                                    <option value="Bug Report">🐛 Bug Report</option>
+                                    <option value="Feature Request">🚀 Feature Request</option>
+                                    <option value="Question">❓ Question about file sharing</option>
+                                    <option value="Partnership">🤝 Partnership / Business</option>
+                                    <option value="Other">📝 Other</option>
+                                </select>
+                                <div class="alert-error-custom" id="subjectError">Please select a subject.</div>
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label">
+                                    <i class="fas fa-comment me-1" aria-hidden="true"></i>Message
+                                </label>
+                                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Please provide as much detail as possible. We'll get back to you soon!" required></textarea>
+                                <div class="alert-error-custom" id="messageError">Please enter a message.</div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                                    <button type="submit" class="btn btn-send" id="submitBtn">
+                                        <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Send Message
+                                    </button>
+                                    <span class="text-muted small">
+                                        <i class="fas fa-shield-alt me-1" aria-hidden="true"></i>Your privacy matters
+                                    </span>
+                                </div>
+                                <small class="text-muted d-block mt-2">
+                                    <i class="fas fa-info-circle me-1" aria-hidden="true"></i>
+                                    This opens your email app with the message pre-filled. We don't store form data on our servers.
+                                </small>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Cards -->
+        <div class="row g-4 mt-4">
+            <div class="col-md-4">
+                <div class="info-card text-center">
+                    <i class="fas fa-clock fa-3x mb-3" style="color: #2563EB;" aria-hidden="true"></i>
+                    <h3 class="h5 fw-bold">Response Time</h3>
+                    <p class="small text-secondary">We aim to respond to all inquiries within 6–24 hours. Bug reports get priority.</p>
+                    <span class="response-time">⚡ 90% within 12 hours</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-card text-center">
+                    <i class="fas fa-question-circle fa-3x mb-3" style="color: #2563EB;" aria-hidden="true"></i>
+                    <h3 class="h5 fw-bold">Before Contacting</h3>
+                    <p class="small text-secondary">Check our FAQ and guides for quick answers about file sharing, QR codes, and expiration.</p>
+                    <a href="/article" class="text-decoration-none">📖 Read the Guide →</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-card text-center">
+                    <i class="fas fa-globe fa-3x mb-3" style="color: #2563EB;" aria-hidden="true"></i>
+                    <h3 class="h5 fw-bold">Follow Us</h3>
+                    <p class="small text-secondary">Stay updated with OmeBox news, features, and announcements.</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="https://github.com/Rajsekhar-2003/omebox.com" class="text-decoration-none" style="color: #2563EB;" aria-label="OmeBox on GitHub" rel="noopener">
+                            <i class="fab fa-github fa-xl" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rajsekhar-maity-200c/" class="text-decoration-none" style="color: #2563EB;" aria-label="Rajsekhar Maity on LinkedIn" rel="noopener">
+                            <i class="fab fa-linkedin fa-xl" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="/share/files" class="btn btn-primary btn-lg rounded-pill px-5 py-3" style="background: #2563EB;">
+                <i class="fas fa-upload me-2" aria-hidden="true"></i>
+                Start Sharing Files Now
+            </a>
+        </div>
+    </div>
+</main>
+
+<!-- ========== MOBILE BOTTOM NAV ========== -->
+<nav class="d-md-none mobile-bottom-nav" aria-label="Mobile navigation">
+    <div class="d-flex h-100 align-items-center justify-content-around px-2">
+        <a href="/" class="mobile-nav-item text-center"><i class="fas fa-home" aria-hidden="true"></i><br><span>Home</span></a>
+        <a href="/share/text" class="mobile-nav-item text-center"><i class="fas fa-align-left" aria-hidden="true"></i><br><span>Text</span></a>
+        <a href="/share/files" class="mobile-nav-item text-center"><i class="fas fa-paperclip" aria-hidden="true"></i><br><span>Files</span></a>
+        <a href="/access" class="mobile-nav-item text-center"><i class="fas fa-download" aria-hidden="true"></i><br><span>Receive</span></a>
+        <a href="/contact" class="mobile-nav-item text-center active" aria-current="page"><i class="fas fa-envelope" aria-hidden="true"></i><br><span>Contact</span></a>
+    </div>
+</nav>
+
+<div class="d-md-none" style="height: 80px;" aria-hidden="true"></div>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer-custom py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0 small">© <span id="copyrightYear">2025</span> OmeBox – No registration, pure privacy</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <a href="/privacy-policy" class="small mx-2">Privacy Policy</a>
+                <a href="/main" class="small mx-2">Root</a>
+                <a href="/contact" class="small mx-2">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    (function() {
+        const GENERAL_EMAIL = 'omebox24@gmail.com';
+
+        // Accessible live region for toasts
+        const toastRegion = document.createElement('div');
+        toastRegion.setAttribute('aria-live', 'polite');
+        toastRegion.setAttribute('role', 'status');
+        toastRegion.className = 'visually-hidden';
+        document.body.appendChild(toastRegion);
+
+        function showToast(message, color) {
+            const existing = document.querySelector('.toast-notif');
+            if (existing) existing.remove();
+            const el = document.createElement('div');
+            el.className = 'toast-notif';
+            if (color) el.style.background = color;
+            const span = document.createElement('span');
+            span.textContent = message;
+            el.appendChild(span);
+            document.body.appendChild(el);
+            toastRegion.textContent = message;
+            setTimeout(() => el.remove(), 2400);
+        }
+
+        // Active nav highlight (defensive — server already sets active on /contact)
+        const currentPath = window.location.pathname;
+        document.querySelectorAll('.navbar-nav .nav-link-custom').forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            }
+        });
+
+        // Copy email buttons
+        document.querySelectorAll('.copy-email').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const email = this.getAttribute('data-email');
+                if (!navigator.clipboard || !navigator.clipboard.writeText) {
+                    showToast('Copy not supported — please copy manually.', '#F59E0B');
+                    return;
+                }
+                navigator.clipboard.writeText(email)
+                    .then(() => {
+                        const original = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Copied!';
+                        showToast('Email copied to clipboard', '#10B981');
+                        setTimeout(() => { this.innerHTML = original; }, 2000);
+                    })
+                    .catch(() => showToast('Copy failed — please copy manually.', '#EF4444'));
+            });
+        });
+
+        // Form
+        const form = document.getElementById('contactForm');
+        const successDiv = document.getElementById('formSuccessMessage');
+        const successText = document.getElementById('successText');
+        const successBackup = document.getElementById('successBackup');
+        const errorDiv = document.getElementById('formErrorMessage');
+        const submitBtn = document.getElementById('submitBtn');
+        let lastMailtoBody = '';
+        let lastMailtoSubject = '';
+
+        function clearErrors() {
+            errorDiv.style.display = 'none';
+            errorDiv.textContent = '';
+            document.querySelectorAll('.alert-error-custom').forEach(el => el.style.display = 'none');
+        }
+
+        function showError(msg) {
+            errorDiv.textContent = msg;
+            errorDiv.style.display = 'block';
+            errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function validate() {
+            clearErrors();
+            let ok = true;
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const subject = document.getElementById('subject');
+            const message = document.getElementById('message');
+
+            if (!name.value.trim()) {
+                document.getElementById('nameError').style.display = 'block';
+                ok = false;
+            }
+            if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+                document.getElementById('emailError').style.display = 'block';
+                ok = false;
+            }
+            if (!subject.value) {
+                document.getElementById('subjectError').style.display = 'block';
+                ok = false;
+            }
+            if (!message.value.trim()) {
+                document.getElementById('messageError').style.display = 'block';
+                ok = false;
+            }
+            return ok;
+        }
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            if (!validate()) {
+                showError('Please fix the highlighted fields.');
+                return;
+            }
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value.trim();
+
+            const emailSubject = '[OmeBox Contact] ' + subject + ' from ' + name;
+            const body = 'Name: ' + name + '\nEmail: ' + email + '\nSubject: ' + subject + '\n\nMessage:\n' + message + '\n\n---\nSent via OmeBox contact page.';
+            lastMailtoSubject = emailSubject;
+            lastMailtoBody = body;
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2" aria-hidden="true"></i>Sending...';
+
+            // Try the real backend endpoint first.
+            let backendSucceeded = false;
+            try {
+                const resp = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: name, email: email, subject: subject, message: message })
+                });
+                if (resp.ok) backendSucceeded = true;
+            } catch (err) {
+                // /api/contact may not exist — fall back to mailto below
+            }
+
+            if (backendSucceeded) {
+                successText.innerHTML = '<i class="fas fa-check-circle me-2" aria-hidden="true"></i>Message sent! We\'ll get back to you within 24 hours.';
+                successBackup.style.display = 'none';
+            } else {
+                // Mailto fallback with clear UX
+                successText.innerHTML = '<i class="fas fa-info-circle me-2" aria-hidden="true"></i>Opening your email app with the message pre-filled...';
+                successBackup.style.display = 'block';
+
+                const mailtoLink = 'mailto:' + GENERAL_EMAIL
+                    + '?subject=' + encodeURIComponent(emailSubject)
+                    + '&body=' + encodeURIComponent(body);
+
+                // Use an anchor click (safer than location.href)
+                const a = document.createElement('a');
+                a.href = mailtoLink;
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => a.remove(), 500);
+            }
+
+            successDiv.style.display = 'block';
+            successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            setTimeout(() => {
+                successDiv.style.display = 'none';
+                successBackup.style.display = 'none';
+            }, 12000);
+
+            form.reset();
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Send Message';
+        });
+
+        // Copy fallback message button
+        document.getElementById('copyFallbackBtn').addEventListener('click', function() {
+            const full = 'To: ' + GENERAL_EMAIL + '\nSubject: ' + lastMailtoSubject + '\n\n' + lastMailtoBody;
+            if (!navigator.clipboard || !navigator.clipboard.writeText) {
+                showToast('Copy not supported.', '#F59E0B');
+                return;
+            }
+            navigator.clipboard.writeText(full)
+                .then(() => showToast('Message copied — paste it into your email app', '#10B981'))
+                .catch(() => showToast('Copy failed.', '#EF4444'));
+        });
+
+        // Dynamic year
+        const yearEl = document.getElementById('copyrightYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+    })();
+</script>
+</body>
+</html>

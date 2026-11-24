@@ -1,0 +1,28 @@
+# Never bake live secrets, runtime data or build artefacts into the image.
+.env
+.env.*
+!.env.example
+
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+
+# Local storage and backups are mounted at runtime, not copied.
+uploads/
+cache/
+backups/
+*.log
+
+# Test-only files and previous release artefacts.
+tests/
+*.tar.gz
+*.zip
+FULL_VERSION.md
+MANIFEST.sha256
+
+.git/
+.gitignore

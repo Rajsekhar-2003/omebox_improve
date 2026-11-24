@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#2563EB">
+
+    <title>Privacy Policy – OmeBox | Temporary Text &amp; File Sharing</title>
+    <meta name="description" content="OmeBox privacy policy: what data we process, how cookies and Google AdSense advertising work, how long uploads are kept, and your choices.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://omebox.com/privacy-policy">
+
+    <meta property="og:title" content="Privacy Policy – OmeBox">
+    <meta property="og:description" content="How OmeBox handles uploads, cookies, advertising and your data.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://omebox.com/privacy-policy">
+    <meta property="og:site_name" content="OmeBox">
+
+    <link rel="icon" type="image/png" href="/static/logo.png">
+    <link rel="apple-touch-icon" href="/static/logo.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --bg: #F8FAFC;
+            --text: #0F172A;
+            --text-light: #475569;
+            --border: #E2E8F0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg); color: var(--text); line-height: 1.6;
+            min-height: 100vh; display: flex; flex-direction: column;
+        }
+        main { flex: 1; }
+        .navbar-glass { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-bottom: 1px solid var(--border); padding: 0.75rem 0; }
+        .navbar-brand { font-weight: 800; font-size: 1.5rem; }
+        .nav-link-custom { font-weight: 500; color: var(--text-light); border-radius: 40px; transition: all .2s ease; padding: .5rem 1rem; }
+        .nav-link-custom:hover, .nav-link-custom.active { background: #EFF6FF; color: var(--primary); }
+        .mobile-bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.96); backdrop-filter: blur(16px); border-top: 1px solid var(--border); height: 70px; z-index: 1050; }
+        .mobile-nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 12px; color: var(--text-light); text-decoration: none; padding: 8px 0; border-radius: 32px; transition: all .2s; }
+        .mobile-nav-item i { font-size: 22px; margin-bottom: 4px; }
+        .mobile-nav-item.active { color: var(--primary); background: #EFF6FF; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: #fff; padding: 8px 16px; z-index: 9999; text-decoration: none; border-radius: 0 0 8px 0; transition: top .2s; }
+        .skip-link:focus { top: 0; }
+        .privacy-container { max-width: 1000px; margin: 0 auto; background: #fff; border-radius: 28px; padding: 2.5rem; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1); border: 1px solid var(--border); }
+        h1 { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 800; color: #0b2542; border-bottom: 3px solid #E0E7FF; padding-bottom: .75rem; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+        h2 { font-size: clamp(1.5rem, 4vw, 1.9rem); font-weight: 700; margin: 2rem 0 1rem; color: #1b3a62; border-left: 4px solid var(--primary); padding-left: 1rem; }
+        h3 { font-size: clamp(1.2rem, 3vw, 1.4rem); font-weight: 600; margin: 1.5rem 0 .8rem; color: #254b7c; }
+        p { color: var(--text-light); margin-bottom: 1.2rem; line-height: 1.7; }
+        ul, ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+        li { color: var(--text-light); margin-bottom: .5rem; line-height: 1.6; }
+        .highlight-box { background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%); border-left: 6px solid var(--primary); padding: 1.8rem; border-radius: 20px; margin: 2rem 0; }
+        .warning-note { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border: 1px solid #F59E0B; border-radius: 20px; padding: 1.5rem; margin: 2rem 0; }
+        .last-updated { background: #F1F5F9; padding: .6rem 1.2rem; border-radius: 40px; display: inline-block; font-weight: 500; font-size: .85rem; margin-bottom: 1.5rem; }
+        .badge-custom { background: #EFF6FF; color: var(--primary-dark); font-weight: 600; padding: .3rem 1rem; border-radius: 40px; display: inline-block; font-size: .8rem; border: 1px solid #BFDBFE; }
+        .badge-email { background: #EFF6FF; border-radius: 40px; padding: .25rem 1rem; font-family: 'SF Mono', 'Menlo', monospace; font-size: .9rem; font-weight: 500; color: var(--primary-dark); border: 1px solid #BFDBFE; display: inline-flex; align-items: center; gap: .3rem; }
+        .footer-links-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--border); }
+        .footer-custom { background: #0F172A; color: #94A3B8; padding: 2rem 0; margin-top: 3rem; }
+        .footer-custom a { color: #94A3B8; text-decoration: none; transition: color .2s; }
+        .footer-custom a:hover { color: var(--primary); }
+        .summary-icon-box { background: #F8FAFC; border: 1px solid var(--border); border-radius: 16px; padding: 1rem; }
+        .toc { background: #F8FAFC; border: 1px solid var(--border); border-radius: 16px; padding: 1.2rem 1.5rem; margin-bottom: 2rem; }
+        .toc ol { margin: 0; columns: 2; column-gap: 2rem; }
+        .toc a { text-decoration: none; color: var(--primary-dark); }
+        @media (max-width: 768px) {
+            .privacy-container { padding: 1.5rem; border-radius: 20px; }
+            .highlight-box, .warning-note { padding: 1.2rem; }
+            .toc ol { columns: 1; }
+            body { padding-bottom: 70px; }
+        }
+        @media (min-width: 769px) { .mobile-bottom-nav { display: none !important; } }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Privacy Policy",
+      "description": "OmeBox privacy policy: uploads, cookies, advertising and your choices",
+      "url": "https://omebox.com/privacy-policy"
+    }
+    </script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="navbar navbar-expand-lg navbar-glass sticky-top">
+    <div class="container">
+         <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-3" href="/" aria-label="OmeBox Home">
+            <img src="/static/logo.png" alt="OmeBox logo" height="48" width="48" onerror="this.style.display='none'">
+            <span style="color:#2563EB;">OmeBox</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+            <i class="fas fa-bars fs-3" style="color: var(--text);"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto gap-2">
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="/"><i class="fas fa-home me-1"></i>Home</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="/share/text"><i class="fas fa-align-left me-1"></i>Share Text</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="/share/files"><i class="fas fa-paperclip me-1"></i>Share Files</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="/access"><i class="fas fa-download me-1"></i>Receiver</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="/webnotepad"><i class="fas fa-pen me-1"></i>Web Notepad</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom active" href="/privacy-policy"><i class="fas fa-shield-alt me-1"></i>Privacy</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main id="main-content">
+    <div class="container py-4 py-md-5">
+        <div class="privacy-container">
+
+            <h1><i class="fas fa-shield-alt me-3" style="color: var(--primary);"></i>Privacy &amp; Fair Use Policy</h1>
+
+            <div class="last-updated">
+                <i class="far fa-calendar-alt me-2"></i><strong>Last updated:</strong> October 20, 2026
+            </div>
+
+            <p>Welcome to <strong>OmeBox</strong> (<a href="https://omebox.com" rel="noopener">https://omebox.com</a>), a temporary text and file-sharing platform. This policy explains what information OmeBox processes, how cookies and advertising work, how long uploads are kept, and what choices you have. By using OmeBox you acknowledge this policy.</p>
+            <p><strong>Please do not upload confidential or highly sensitive information</strong> such as passwords, financial credentials, or another person's private data.</p>
+
+            <div class="toc">
+                <strong>Contents</strong>
+                <ol>
+                    <li><a href="#s1">No registration required</a></li>
+                    <li><a href="#s2">Information we process</a></li>
+                    <li><a href="#s3">Temporary storage and retention</a></li>
+                    <li><a href="#s4">Security</a></li>
+                    <li><a href="#s5">Cookies, local storage and advertising</a></li>
+                    <li><a href="#s6">How we use information</a></li>
+                    <li><a href="#s7">Third-party services</a></li>
+                    <li><a href="#s8">Fair use and prohibited content</a></li>
+                    <li><a href="#s9">Copyright and abuse reports</a></li>
+                    <li><a href="#s10">Children's privacy</a></li>
+                    <li><a href="#s11">Your rights and choices</a></li>
+                    <li><a href="#s12">International transfers</a></li>
+                    <li><a href="#s13">Changes to this policy</a></li>
+                    <li><a href="#s14">Contact us</a></li>
+                </ol>
+            </div>
+
+            <h2 id="s1">1. No Registration Required</h2>
+            <p>OmeBox does not require an account, name, email address, or phone number for its basic sharing features. However, using any website involves technical information such as IP addresses, browser details, and server request data, which our hosting provider and other service providers may process. Using OmeBox without registration therefore does not mean that no information is processed.</p>
+
+            <h2 id="s2">2. Information We Process</h2>
+
+            <h3>A. Uploaded Text and Files</h3>
+            <p>When you share text or upload a file, we store the submitted content temporarily so it can be retrieved through its link, QR code, or access code. If you set an optional password, it is used only to restrict access to that item.</p>
+
+            <h3>B. Technical Information and Server Logs</h3>
+            <p>Our servers and hosting provider may process:</p>
+            <ul>
+                <li>IP address and connection information.</li>
+                <li>Browser type, device type, and operating system.</li>
+                <li>Request timestamps and requested URLs.</li>
+                <li>Error logs and security-related information.</li>
+            </ul>
+            <p>This is used to operate the service, troubleshoot problems, prevent abuse, maintain security, and meet legal obligations. Retention periods depend on the systems involved.</p>
+
+            <h3>C. Contact Information</h3>
+            <p>If you email us, we process your email address and the contents of your message to respond to your inquiry, investigate a complaint, or handle a removal request.</p>
+
+            <h3>D. Advertising and Cookie Data</h3>
+            <p>Advertising partners, including Google, may collect or receive identifiers such as cookie IDs, IP address, and device and browser information when ads are shown. See Section 5.</p>
+
+            <h2 id="s3">3. Temporary Storage and Data Retention</h2>
+            <p>Supported sharing features offer expiration options (for example 15 minutes, 1 hour, 1 day, or 7 days, depending on the feature). After the selected period, the service is designed to delete the corresponding content automatically. Deletion may take additional time, and technical logs or records may be kept separately where necessary for security, operational, or legal reasons. We do not guarantee that content is erased from every system at the exact moment of expiry.</p>
+            <div class="highlight-box">
+                <p class="mb-0">
+                    <i class="fas fa-envelope me-2" style="color: var(--primary);"></i>
+                    <strong>To request removal before the scheduled expiry,</strong> email
+                    <span class="badge-email"><i class="fas fa-at"></i>omebox24@gmail.com</span>
+                    with the relevant sharing link or code. We review legitimate requests and act where reasonably possible.
+                </p>
+            </div>
+
+            <h2 id="s4">4. Security</h2>
+            <p>OmeBox uses HTTPS/TLS to encrypt data between your browser and the website. We take reasonable steps to protect stored content and our systems, but no website or transmission method is completely secure.</p>
+            <p><strong>OmeBox does not provide end-to-end encryption.</strong> Content is encrypted in transit, but do not assume additional per-file encryption at rest unless explicitly stated.</p>
+            <p>Treat sharing links, QR codes, and access codes as private. Anyone who has a working link or valid code may be able to access the content, subject to any password you set.</p>
+
+            <h2 id="s5">5. Cookies, Local Storage and Advertising</h2>
+
+            <h3>Essential cookies and local storage</h3>
+            <p>OmeBox may use essential cookies or browser local storage to operate the site, maintain security, and provide features such as the Web Notepad draft auto-save. Notepad drafts saved in local storage stay in your own browser until you clear them.</p>
+
+            <h3>Google AdSense and advertising cookies</h3>
+            <p>OmeBox uses Google AdSense to display advertisements. Third-party vendors, including Google, use cookies and similar technologies to serve ads based on a user's prior visits to this website and other websites.</p>
+            <p>Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to OmeBox and/or other sites on the Internet.</p>
+            <ul>
+                <li>Users may opt out of personalized advertising by visiting <a href="https://adssettings.google.com/" target="_blank" rel="noopener">Google Ads Settings</a>.</li>
+                <li>Users may also opt out of some third-party vendors' use of cookies for personalized advertising at <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">www.aboutads.info</a>, or in Europe at <a href="https://www.youronlinechoices.com/" target="_blank" rel="noopener">www.youronlinechoices.com</a>.</li>
+                <li>Learn how Google uses information from sites that use its services: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a>.</li>
+                <li>Google's advertising technologies: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a>.</li>
+            </ul>
+
+            <h3>Visitors in the EEA, UK and Switzerland</h3>
+            <p>Where required by law, we ask for your consent through a consent management platform before ads or non-essential cookies that use personal data are enabled. You can change or withdraw your consent at any time through the privacy and cookie settings option on the site where available, or by clearing your browser cookies.</p>
+
+            <h3>US state privacy laws</h3>
+            <p>Residents of certain US states (including California) may have rights to know, delete, correct, and opt out of the sale or sharing of personal information for targeted advertising. OmeBox does not sell uploaded content. To exercise a right, contact us (Section 14) or use the opt-out tools above.</p>
+
+            <p>You can also control cookies through your browser settings. Blocking cookies may affect how some features work.</p>
+
+            <h2 id="s6">6. How We Use Information</h2>
+            <ul>
+                <li>Provide temporary text and file sharing, and generate links, QR codes, and access codes.</li>
+                <li>Keep the website reliable, secure, and performant.</li>
+                <li>Detect, investigate, and prevent abuse, fraud, and security incidents.</li>
+                <li>Respond to support requests, copyright notices, and removal requests.</li>
+                <li>Show advertising and measure its performance through our advertising partners.</li>
+                <li>Comply with applicable laws and lawful requests.</li>
+            </ul>
+            <p>We do not sell or rent uploaded file or text contents. Information may be shared with service providers, advertising partners (for ad-related data only), or authorities where needed to run the site, provide enabled services, address security issues, or comply with law.</p>
+            <p>If you are in the EEA or UK, our legal bases are: performing the service you request, our legitimate interests in security and abuse prevention, compliance with legal obligations, and your consent for advertising cookies and similar technologies.</p>
+
+            <h2 id="s7">7. Third-Party Services</h2>
+            <p>OmeBox relies on third parties for hosting and infrastructure, security, content delivery of libraries and fonts (such as Google Fonts, jsDelivr, and cdnjs), and advertising (Google AdSense). These providers may receive your IP address and device information when your browser loads their resources. Their handling of data is governed by their own policies. OmeBox does not control independent third-party sites or services.</p>
+
+            <h2 id="s8">8. Fair Use and Prohibited Content</h2>
+            <p>You must use OmeBox lawfully and responsibly. You must not use the platform to:</p>
+            <ul>
+                <li>Upload or distribute illegal content or material that violates another person's rights.</li>
+                <li>Share malware, malicious scripts, or files intended to damage or compromise systems.</li>
+                <li>Distribute copyrighted material without authorization.</li>
+                <li>Share child sexual abuse material or any content that exploits or endangers children.</li>
+                <li>Share adult, sexually explicit, violent, hateful, or otherwise harmful content.</li>
+                <li>Harass, threaten, impersonate, stalk, or dox others.</li>
+                <li>Distribute personal or confidential information without authorization.</li>
+                <li>Attempt to bypass security controls, interfere with the service, or abuse its infrastructure.</li>
+            </ul>
+            <p>You are responsible for having the rights and permissions to upload and share your content. OmeBox may restrict, remove, or disable access to content when reasonably necessary to address reported violations, protect the service, or comply with law, and may preserve records or report matters to authorities where required or permitted. We do not guarantee that uploads are reviewed before they become accessible.</p>
+            <div class="warning-note">
+                <p style="font-weight: 700; font-size: 1.15rem; margin-bottom: .75rem;"><i class="fas fa-exclamation-triangle me-2" style="color: #D97706;"></i>Responsibility disclaimer</p>
+                <p class="mb-0"><strong>You are solely responsible for content you upload and share.</strong> OmeBox does not actively monitor all content, but we remove reported illegal or prohibited material and cooperate with authorities where required or legally permitted.</p>
+            </div>
+            <p>Shared content pages are not intended as publicly indexed content. Ads are not intended to be shown alongside user-uploaded content.</p>
+
+            <h2 id="s9">9. Copyright Complaints and Abuse Reports</h2>
+            <p>If you believe content shared through OmeBox infringes your copyright, violates your privacy, or is otherwise unlawful, contact:</p>
+            <div class="highlight-box" style="display:flex;align-items:center;gap:15px;flex-wrap:wrap;">
+                <span class="badge-email" style="font-size:1rem;padding:.4rem 1.2rem;"><i class="fas fa-envelope"></i> omebox24@gmail.com</span>
+                <span style="color: var(--text-light);">— we respond to legitimate requests</span>
+            </div>
+            <p>Include the sharing URL or code, a description of the issue, and for copyright complaints, details identifying the protected work and the allegedly infringing material. We may ask for more information before acting. Please do not include unnecessary sensitive personal information in your report.</p>
+
+            <h2 id="s10">10. Children's Privacy</h2>
+            <p>OmeBox is not directed at children under 13 (or under 16 in the EEA and UK, or the applicable age in your country). We do not knowingly collect personal information from children and we do not knowingly serve personalized ads to children. If you believe a child has submitted personal information or inappropriate content, contact <span class="badge-email"><i class="fas fa-at"></i>omebox24@gmail.com</span> and we will review it.</p>
+
+            <h2 id="s11">11. Your Rights and Choices</h2>
+            <p>Depending on where you live, you may have the right to access, correct, delete, restrict, or object to the processing of personal data about you, to withdraw consent, and to lodge a complaint with your local data protection authority. Because OmeBox has no accounts, we may need your sharing link or code to locate relevant content.</p>
+            <p>You can also choose not to upload information, set a shorter expiry, add a password, manage cookies in your browser, and use the advertising opt-out tools in Section 5. Contact us to exercise your rights; we will assess requests under applicable law and our technical capabilities.</p>
+
+            <h2 id="s12">12. International Transfers</h2>
+            <p>OmeBox may be accessed worldwide, and our service providers may process information in countries other than your own, including countries with different data protection laws. Where required, we rely on appropriate safeguards offered by those providers.</p>
+
+            <h2 id="s13">13. Changes to This Policy</h2>
+            <p>We may update this policy when our services, technology, legal requirements, or advertising practices change. The updated version will be posted on this page with a new revision date. Please review it periodically.</p>
+
+            <h2 id="s14">14. Contact Us</h2>
+            <div class="highlight-box">
+                <p style="margin-bottom:.5rem;"><strong>For privacy questions, copyright concerns, abuse reports, or content requests:</strong></p>
+                <p style="margin-bottom:.35rem;"><i class="fas fa-globe me-2" style="color: var(--primary);"></i>Website: <a href="https://omebox.com" rel="noopener">https://omebox.com</a></p>
+                <p class="mb-0"><i class="fas fa-envelope me-2" style="color: var(--primary);"></i>Email: <span class="badge-email"><i class="fas fa-at"></i>omebox24@gmail.com</span></p>
+            </div>
+            <p>You can also use our <a href="/contact">Contact page</a>.</p>
+
+            <hr style="margin: 2rem 0; border-color: var(--border);">
+
+            <h3>Summary in plain words</h3>
+            <div class="row g-3">
+                <div class="col-md-6"><div class="summary-icon-box d-flex align-items-center gap-3"><i class="fas fa-user-slash fa-2x" style="color: var(--primary);"></i><span>No account required</span></div></div>
+                <div class="col-md-6"><div class="summary-icon-box d-flex align-items-center gap-3"><i class="fas fa-hourglass-half fa-2x" style="color: var(--primary);"></i><span>Uploads auto-expire after the period you choose</span></div></div>
+                <div class="col-md-6"><div class="summary-icon-box d-flex align-items-center gap-3"><i class="fas fa-lock fa-2x" style="color: var(--primary);"></i><span>HTTPS/TLS encryption in transit</span></div></div>
+                <div class="col-md-6"><div class="summary-icon-box d-flex align-items-center gap-3"><i class="fas fa-ad fa-2x" style="color: var(--primary);"></i><span>Google AdSense cookies may be used; you can opt out</span></div></div>
+            </div>
+
+            <div class="text-center mt-4 pt-3">
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                    <span class="badge-custom"><i class="fas fa-clock me-1"></i> temporary storage</span>
+                    <span class="badge-custom"><i class="fas fa-user-slash me-1"></i> no registration</span>
+                    <span class="badge-custom"><i class="fas fa-balance-scale me-1"></i> fair use</span>
+                </div>
+                <p class="mt-3 small text-muted mb-0"><strong>OmeBox — Simple, temporary text and file sharing.</strong></p>
+            </div>
+
+            <div class="footer-links-row">
+                <a href="/privacy-policy" class="text-decoration-none small"><i class="fas fa-shield-alt me-1"></i>Privacy Policy</a>
+                <a href="/about" class="text-decoration-none small"><i class="fas fa-info-circle me-1"></i>About Us</a>
+                <a href="/share/files" class="text-decoration-none small"><i class="fas fa-paperclip me-1"></i>File Sharing</a>
+                <a href="/contact" class="text-decoration-none small"><i class="fas fa-envelope me-1"></i>Contact Us</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<nav class="d-md-none mobile-bottom-nav" aria-label="Mobile navigation">
+    <div class="d-flex h-100 align-items-center justify-content-around px-2">
+        <a href="/" class="mobile-nav-item text-center"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="/share/text" class="mobile-nav-item text-center"><i class="fas fa-align-left"></i><span>Text</span></a>
+        <a href="/share/files" class="mobile-nav-item text-center"><i class="fas fa-paperclip"></i><span>Files</span></a>
+        <a href="/access" class="mobile-nav-item text-center"><i class="fas fa-download"></i><span>Receive</span></a>
+        <a href="/privacy-policy" class="mobile-nav-item text-center active"><i class="fas fa-shield-alt"></i><span>Privacy</span></a>
+    </div>
+</nav>
+
+<div class="d-md-none" style="height: 80px;"></div>
+
+<footer class="footer-custom">
+    <div class="container text-center">
+        <p class="mb-2 small">© 2026 OmeBox – Simple, temporary text and file sharing</p>
+        <p class="mb-0 small">
+            <a href="/privacy-policy">Privacy Policy</a> •
+            <a href="/about">About</a> •
+            <a href="/contact">Contact</a>
+        </p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

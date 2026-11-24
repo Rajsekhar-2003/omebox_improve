@@ -1,0 +1,30 @@
+# Secrets and environment
+.env
+.env.*
+!.env.example
+
+# Runtime data (local storage is backed up separately)
+uploads/
+cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+
+# Virtual environments
+venv/
+.venv/
+
+# Logs and local backups
+*.log
+backups/
+
+# Generated release artefacts (rebuild with tools/build_full_version.py)
+omebox-full-version/
+*.zip
+*.tar.gz
+MANIFEST.sha256
+FULL_VERSION.md

@@ -1,0 +1,24 @@
+# Kept for compatibility with existing Render deployments.
+# The primary production target is the 4 GB VPS described in DEPLOYMENT.md.
+services:
+  - type: web
+    name: omebox
+    env: python
+    plan: starter
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT --workers 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.3"
+      - key: SECRET_KEY
+        sync: false
+      - key: ENCRYPTION_KEY
+        sync: false
+      - key: MONGODB_URL
+        sync: false
+      - key: BASE_URL
+        sync: false
+      - key: ADMIN_API_KEY
+        sync: false

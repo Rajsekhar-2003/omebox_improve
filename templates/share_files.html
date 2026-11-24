@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>OmeBox – Free File Sharing Online with Link &amp; QR Code, No Login</title>
+    <meta name="description" content="Upload and share files online for free. Get a link, QR code and 6-digit code, send files between PC, iPhone and Android, and let shares expire automatically. No registration or login.">
+
+    <meta name="author" content="OmeBox">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="theme-color" content="#2563EB">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://omebox.com/share/files">
+
+    <!-- Preconnect (only origins needed for first paint; analytics/ads load after consent) -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="OmeBox – Free File Sharing Online with Link &amp; QR Code">
+    <meta property="og:description" content="Upload and share files without login. Get a link, QR code and 6-digit code. Up to 20 files of 100 MB each, with automatic expiry and optional password.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://omebox.com/share/files">
+    <meta property="og:site_name" content="OmeBox">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://omebox.com/static/og-files.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="OmeBox - Free file sharing without login">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OmeBox – Free File Sharing Online with Link &amp; QR Code">
+    <meta name="twitter:description" content="Upload and share files without login. Links, QR codes, automatic expiry, optional password.">
+    <meta name="twitter:image" content="https://omebox.com/static/og-files.jpg">
+    <meta name="twitter:image:alt" content="OmeBox - Free file sharing without login">
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', path='logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', path='logo.png') }}">
+
+    <!-- Google AdSense account (script loads only after cookie consent, see bottom of page) -->
+    <meta name="google-adsense-account" content="ca-pub-1872078023246662">
+
+    <!-- Bootstrap 5 + Icons + Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', path='files.css') }}">
+</head>
+<body>
+<a href="#main-share-files" class="skip-link">Skip to file sharing</a>
+
+<!-- ========== HEADER ========== -->
+<nav class="navbar navbar-expand-lg navbar-glass sticky-top px-3 px-md-4" aria-label="Main navigation">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-3" href="/" aria-label="OmeBox Home">
+            <img src="/static/logo.png" alt="OmeBox logo" height="48" width="48" onerror="this.style.display='none'">
+            <span style="color:#2563EB;">OmeBox</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFiles" aria-controls="navbarFiles" aria-expanded="false" aria-label="Toggle navigation" style="color: #0F172A;">
+            <i class="fas fa-bars fs-3" aria-hidden="true"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarFiles">
+            <ul class="navbar-nav mx-auto gap-1 gap-lg-2 mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2" href="/"><i class="fas fa-home me-1" aria-hidden="true"></i>Home</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2" href="/share/text"><i class="fas fa-align-left me-1" aria-hidden="true"></i>Share Text</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2 active" href="/share/files" aria-current="page"><i class="fas fa-paperclip me-1" aria-hidden="true"></i>Share Files</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2" href="/access"><i class="fas fa-download me-1" aria-hidden="true"></i>Receiver</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom px-3 py-2" href="/webnotepad" target="_blank" rel="noopener noreferrer"><i class="fas fa-edit me-1" aria-hidden="true"></i>Web Notepad</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<noscript>
+    <div class="alert alert-warning text-center m-3" role="alert">
+        <i class="fas fa-exclamation-triangle me-2" aria-hidden="true"></i>
+        OmeBox file sharing requires JavaScript. Please enable it in your browser.
+    </div>
+</noscript>
+
+<main id="main-share-files" tabindex="-1">
+    <div class="container py-4 py-lg-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-9">
+                <h1 class="h3 fw-bold text-primary mb-3">Free File Sharing Online with Link &amp; QR Code – No Login Required</h1>
+
+                <!-- MAIN SHARE CARD -->
+                <div class="glass-card mb-4">
+                    <div class="card-header-custom d-flex justify-content-between align-items-center flex-wrap">
+                        <div><i class="fas fa-paperclip me-2" aria-hidden="true"></i><strong>Share Files</strong> — QR + 6-digit code</div>
+                        <a href="/share/text" class="text-white text-decoration-none small opacity-75"><i class="fas fa-align-left me-1" aria-hidden="true"></i>Switch to Text</a>
+                    </div>
+                    <div class="card-body p-4">
+
+                        <!-- Password protection -->
+                        <div class="password-section">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="passwordSwitch" aria-controls="passwordInput">
+                                <label class="form-check-label fw-bold" for="passwordSwitch"><i class="fas fa-lock me-1" style="color: #2563EB;" aria-hidden="true"></i>Password protect</label>
+                            </div>
+                            <div id="passwordInput" style="display: none;" class="mt-2">
+                                <label for="sharePassword" class="visually-hidden">Share password</label>
+                                <input type="password" id="sharePassword" class="form-control" placeholder="Choose a password (at least 4 characters)" autocomplete="new-password" minlength="4">
+                                <small class="text-muted" style="color: #64748B !important;">Recipients will need this password to download</small>
+                            </div>
+                        </div>
+
+                        <!-- Dropzone -->
+                        <div id="dropzone" class="dropzone">
+                            <i class="fas fa-cloud-upload-alt fa-3x mb-3" style="color: #2563EB;" aria-hidden="true"></i>
+                            <p class="fw-semibold">Drag &amp; drop files here, or choose them from your device</p>
+                            <p class="text-muted small">Up to 20 files · 100 MB each · Any file type</p>
+                            <button type="button" id="browseBtn" class="btn btn-outline-light rounded-pill px-4"><i class="fas fa-folder-open me-2" aria-hidden="true"></i>Select Files</button>
+                        </div>
+                        <input type="file" id="fileInput" multiple style="display: none;" aria-label="Choose files to upload">
+
+                        <!-- File list preview -->
+                        <div id="fileList" class="mt-3" style="max-height: 280px; overflow-y: auto;"></div>
+
+                        <!-- Expiry -->
+                        <div class="mb-4 mt-3">
+                            <label for="expirySelect" class="form-label fw-bold"><i class="fas fa-hourglass-half me-2" style="color: #2563EB;" aria-hidden="true"></i>Expires after</label>
+                            <select id="expirySelect" class="form-select">
+                                <option value="15m">15 minutes</option>
+                                <option value="1h" selected>1 hour</option>
+                                <option value="1d">1 day</option>
+                                <option value="3d">3 days</option>
+                            </select>
+                        </div>
+
+                        <button type="button" id="shareBtn" class="btn btn-primary w-100 py-2 fw-semibold" disabled>
+                            <i class="fas fa-share-alt me-2" aria-hidden="true"></i>Share Files &amp; Generate 6-digit Code
+                        </button>
+
+                        <!-- Upload progress -->
+                        <div id="uploadProgress" class="mt-3" style="display: none;">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="progress flex-grow-1" role="progressbar" aria-label="Upload progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="uploadProgressWrap" style="height: 10px;">
+                                    <div class="progress-bar" id="uploadProgressBar" style="width: 0%;"></div>
+                                </div>
+                                <span class="small fw-semibold" id="uploadProgressText" style="min-width: 40px; text-align: right;">0%</span>
+                                <button type="button" id="cancelUploadBtn" class="btn btn-sm btn-outline-danger rounded-pill">Cancel</button>
+                            </div>
+                        </div>
+
+                        <div class="mt-3 text-center">
+                            <a href="/access" class="text-decoration-none small" style="color: #2563EB;"><i class="fas fa-key me-1" aria-hidden="true"></i>Access with Code</a>
+                        </div>
+
+                        <div id="resultSection" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <!-- HISTORY CARD -->
+                <div class="glass-card">
+                    <div class="card-header-custom d-flex justify-content-between align-items-center py-3">
+                        <span><i class="fas fa-history me-2" aria-hidden="true"></i>File Share History</span>
+                        <button type="button" id="clearAllHistoryBtn" class="btn btn-sm btn-outline-light rounded-pill" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3);">
+                            <i class="fas fa-trash-alt me-1" aria-hidden="true"></i>Clear all
+                        </button>
+                    </div>
+                    <div class="card-body p-3" id="historyContainer">
+                        <div class="empty-history">
+                            <i class="fas fa-upload fa-2x mb-2 opacity-50" style="color: #94A3B8;" aria-hidden="true"></i>
+                            <p class="mb-0">No file shares yet. Upload and share files above.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QUICK FEATURE CARDS -->
+                <div class="row g-4 mt-1">
+                    <div class="col-md-6">
+                        <div class="bg-white p-4 rounded-4 shadow-sm border h-100">
+                            <h2 class="h5 fw-bold text-primary">
+                                <i class="fas fa-file-upload me-2" aria-hidden="true"></i>Share Files Online Without Login
+                            </h2>
+                            <p class="text-muted">
+                                Upload and share files using links, QR codes, or 6-digit access codes. No registration required.
+                            </p>
+                            <h3 class="h6 fw-semibold text-success mt-3">File Upload &amp; Sharing Made Easy</h3>
+                            <p class="text-secondary small">
+                                Share documents, images, videos, ZIP archives, PDFs, and other files with fast access from any device.
+                            </p>
+                            <h3 class="h6 fw-semibold text-success mt-2">QR Code &amp; Link-Based File Sharing</h3>
+                            <p class="text-secondary small">
+                                Get a file-sharing link and QR code for quick transfers between desktop and mobile devices.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="bg-white p-4 rounded-4 shadow-sm border h-100">
+                            <h2 class="h5 fw-bold text-primary">
+                                <i class="fas fa-exchange-alt me-2" aria-hidden="true"></i>Fast &amp; Temporary File Transfer
+                            </h2>
+                            <ul class="list-unstyled text-muted small">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>Share files online without registration</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>Transfer files between PC, iPhone, Android &amp; Mac</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>Optional password for each share</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>Send ZIP files, documents, photos, and videos</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>Automatic deletion when the share expires</li>
+                            </ul>
+                            <h3 class="h6 fw-semibold text-info mt-2">Cross-Platform File Sharing</h3>
+                            <p class="text-secondary small">
+                                Send files across Windows, macOS, Linux, Android, and iPhone using only a browser.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 bg-light p-4 rounded-4 border-start border-4 border-primary">
+                    <p class="text-secondary mb-0">
+                        OmeBox is a simple text and file sharing tool. Share text, code snippets, documents, images, videos, and ZIP files using links, QR codes, or 6-digit access codes. No login required, optional password protection, and automatic expiry on every share.
+                    </p>
+                </div>
+
+                <!-- ARTICLE: WHAT IS OMEBOX FILE SHARING -->
+                <article class="mt-5 pt-3" aria-labelledby="art-what-heading">
+                    <h2 id="art-what-heading" class="h4 fw-bold text-dark mb-3">What Is OmeBox File Sharing?</h2>
+                    <p class="text-secondary">
+                        OmeBox is a free, browser-based <strong>file sharing tool</strong>. You upload a file and get a shareable link, a QR code, and a 6-digit access code. There's no account, no email, and no app. You can send documents, photos, videos, ZIP archives, PDFs, or code from any device to any device, directly through your browser.
+                    </p>
+                    <p class="text-secondary">
+                        Think of OmeBox as a <strong>WeTransfer alternative without a signup step</strong>. Every share is temporary: you choose an expiry from <strong>15 minutes to 3 days</strong>, and the files are deleted after that. That suits one-off transfers you don't want to leave online permanently, such as a client draft, a one-off invoice, or a photo you're moving between devices.
+                    </p>
+                    <p class="text-secondary mb-0">
+                        Whether you're sending a ZIP to a teammate, moving a photo from your phone to your laptop, or passing a signed PDF back to a client, OmeBox does it without registration.
+                    </p>
+                </article>
+
+                <!-- ARTICLE: HOW IT WORKS -->
+                <article class="mt-5 pt-3" aria-labelledby="art-how-heading">
+                    <h2 id="art-how-heading" class="h4 fw-bold text-dark mb-3">How to Share Files Online in 3 Steps</h2>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="bg-white p-4 rounded-4 shadow-sm border h-100">
+                                <div class="badge bg-primary fs-6 mb-2">1</div>
+                                <h3 class="h6 fw-bold">Select Your Files</h3>
+                                <p class="text-secondary small mb-0">
+                                    Drag up to <strong>20 files</strong> (100 MB each) into the dropzone, or click "Select Files". Any file type is accepted: images, PDFs, videos, ZIPs, CSV, JSON.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-white p-4 rounded-4 shadow-sm border h-100">
+                                <div class="badge bg-primary fs-6 mb-2">2</div>
+                                <h3 class="h6 fw-bold">Choose Expiry &amp; Password</h3>
+                                <p class="text-secondary small mb-0">
+                                    Pick an expiry (15 minutes to 3 days). Optionally turn on <strong>password protection</strong>. The recipient will need the password before downloading.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-white p-4 rounded-4 shadow-sm border h-100">
+                                <div class="badge bg-primary fs-6 mb-2">3</div>
+                                <h3 class="h6 fw-bold">Share the Link or Code</h3>
+                                <p class="text-secondary small mb-0">
+                                    You get a <strong>shareable link</strong>, a <strong>QR code</strong>, and a <strong>6-digit code</strong>. Send any of them to the recipient, who can open the share on any device.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARTICLE: USE CASES -->
+                <article class="mt-5 pt-3" aria-labelledby="art-uses-heading">
+                    <h2 id="art-uses-heading" class="h4 fw-bold text-dark mb-3">Who Uses OmeBox File Sharing? Common Use Cases</h2>
+                    <p class="text-secondary">
+                        OmeBox is handy whenever you want to send files without accounts, apps, or cloud storage quotas. Common reasons people use it:
+                    </p>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                                <h3 class="h6 fw-bold text-primary"><i class="fas fa-laptop-house me-2" aria-hidden="true"></i>Remote Workers &amp; Freelancers</h3>
+                                <p class="text-secondary small mb-0">Send a draft deck, a mockup or a signed document to a client without asking for their email or Drive access.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                                <h3 class="h6 fw-bold text-primary"><i class="fas fa-mobile-alt me-2" aria-hidden="true"></i>Cross-Device Transfers</h3>
+                                <p class="text-secondary small mb-0">Move photos from phone to laptop, or a PDF from PC to iPad, with no USB cable and no cloud sync.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                                <h3 class="h6 fw-bold text-primary"><i class="fas fa-graduation-cap me-2" aria-hidden="true"></i>Students &amp; Teachers</h3>
+                                <p class="text-secondary small mb-0">Share assignment drafts, lecture notes, or ZIP archives of course material with a QR scan. Shares delete themselves after at most 3 days.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                                <h3 class="h6 fw-bold text-primary"><i class="fas fa-briefcase me-2" aria-hidden="true"></i>Job Applicants</h3>
+                                <p class="text-secondary small mb-0">Send a resume or portfolio PDF to a recruiter with a short-lived link instead of a shared folder.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                                <h3 class="h6 fw-bold text-primary"><i class="fas fa-user-shield me-2" aria-hidden="true"></i>Privacy-Minded Users</h3>
+                                <p class="text-secondary small mb-0">Share a personal document with a password and a short expiry so it doesn't stay online longer than needed.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                                <h3 class="h6 fw-bold text-primary"><i class="fas fa-code me-2" aria-hidden="true"></i>Developers &amp; Designers</h3>
+                                <p class="text-secondary small mb-0">Send sample builds, log bundles, or design exports to a tester without adding them to your repo or design tool.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARTICLE: SECURITY & PRIVACY -->
+                <article class="mt-5 pt-3" aria-labelledby="art-security-heading">
+                    <h2 id="art-security-heading" class="h4 fw-bold text-dark mb-3">How Secure Is OmeBox File Sharing?</h2>
+                    <p class="text-secondary">
+                        Here is what OmeBox does and doesn't do, so you can decide what's safe to share:
+                    </p>
+                    <ul class="text-secondary">
+                        <li class="mb-2"><strong>Encrypted in transit.</strong> Uploads and downloads use HTTPS, so files are encrypted between your browser and OmeBox's servers.</li>
+                        <li class="mb-2"><strong>No account or email.</strong> You don't give a name, email, phone number, or payment details to share a file.</li>
+                        <li class="mb-2"><strong>Automatic expiry.</strong> Files are deleted from the servers when the expiry time you chose is reached.</li>
+                        <li class="mb-2"><strong>Optional password.</strong> Turn on the password switch and the recipient must enter your password before downloading.</li>
+                        <li class="mb-0"><strong>Cookies only with consent.</strong> Analytics and advertising scripts load only after you accept them in the cookie banner. See the <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> for what is collected.</li>
+                    </ul>
+                    <p class="text-secondary mb-0">
+                        <strong>One caveat:</strong> files are not end-to-end encrypted. For truly sensitive material such as financial records, IDs, legal documents under NDA, or password databases, use a dedicated end-to-end encrypted tool.
+                    </p>
+                </article>
+
+                <!-- ARTICLE: CROSS-DEVICE -->
+                <article class="mt-5 pt-3" aria-labelledby="art-cross-heading">
+                    <h2 id="art-cross-heading" class="h4 fw-bold text-dark mb-3">Cross-Device File Transfer: PC → iPhone → Android → Anywhere</h2>
+                    <p class="text-secondary">
+                        A common reason to use OmeBox is <strong>cross-device file transfer</strong>. You have a file on one device and need it on another, but the two don't share storage, a USB cable, or a cloud account:
+                    </p>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                                <h3 class="h6 fw-bold text-primary"><i class="fas fa-desktop me-2" aria-hidden="true"></i>PC → iPhone</h3>
+                                <p class="text-secondary small mb-0">Upload from Windows or macOS, then scan the QR code with the iPhone camera. The download page opens in Safari, no app required.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                                <h3 class="h6 fw-bold text-primary"><i class="fab fa-android me-2" aria-hidden="true"></i>Android → PC</h3>
+                                <p class="text-secondary small mb-0">Upload a photo or PDF from your Android phone, then open the link on your laptop and download it. No USB cable or drivers.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                                <h3 class="h6 fw-bold text-primary"><i class="fab fa-apple me-2" aria-hidden="true"></i>Mac → iPad</h3>
+                                <p class="text-secondary small mb-0">When AirDrop is being flaky, upload from your Mac and type the 6-digit code on the iPad in Safari. It works even when the devices are on different networks.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="bg-white p-3 rounded-4 shadow-sm border h-100">
+                                <h3 class="h6 fw-bold text-primary"><i class="fas fa-globe me-2" aria-hidden="true"></i>Any → Any</h3>
+                                <p class="text-secondary small mb-0">Because the receiving side is just a URL and a 6-digit code, <strong>any combination works</strong>: Windows, macOS, Linux, ChromeOS, iOS, Android, or a smart TV browser.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARTICLE: COMPARISON -->
+                <article class="mt-5 pt-3" aria-labelledby="art-compare-heading">
+                    <h2 id="art-compare-heading" class="h4 fw-bold text-dark mb-3">OmeBox vs WeTransfer, Google Drive &amp; Other File Sharing Tools</h2>
+                    <p class="text-secondary">
+                        Here is how OmeBox compares for the everyday "just send this one file" job. Other services change their plans often, so check their sites for current limits.
+                    </p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered align-middle bg-white">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">Feature</th>
+                                    <th scope="col" class="text-center">OmeBox</th>
+                                    <th scope="col" class="text-center">WeTransfer (free)</th>
+                                    <th scope="col" class="text-center">Google Drive</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sender needs no account or email</td>
+                                    <td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td>
+                                    <td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td>
+                                    <td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Files expire automatically</td>
+                                    <td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td>
+                                    <td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td>
+                                    <td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Choose your own expiry (15 min – 3 days)</td>
+                                    <td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td>
+                                    <td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td>
+                                    <td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>QR code sharing</td>
+                                    <td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td>
+                                    <td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td>
+                                    <td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>6-digit code access</td>
+                                    <td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td>
+                                    <td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td>
+                                    <td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Files over 100 MB</td>
+                                    <td class="text-center text-danger"><i class="fas fa-times" aria-label="No"></i></td>
+                                    <td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td>
+                                    <td class="text-center text-success"><i class="fas fa-check" aria-label="Yes"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-secondary mb-0">
+                        If you need large files, permanent storage, versioning, or team folders, a cloud drive is the right tool. For <strong>quick, temporary file sharing without an account</strong>, OmeBox is faster to use.
+                    </p>
+                </article>
+
+                <!-- ARTICLE: TIPS -->
+                <article class="mt-5 pt-3" aria-labelledby="art-tips-heading">
+                    <h2 id="art-tips-heading" class="h4 fw-bold text-dark mb-3">Tips for Safe File Sharing</h2>
+                    <p class="text-secondary">
+                        No web tool can replace basic security habits. Follow these practices when sharing anything private:
+                    </p>
+                    <ol class="text-secondary">
+                        <li class="mb-2"><strong>Use the shortest expiry that works.</strong> If the recipient is online now, choose 15 minutes. There's no reason to leave a private file available for 3 days.</li>
+                        <li class="mb-2"><strong>Use a password for anything private.</strong> A password keeps a leaked link from being useful. Send the password through a different channel than the link.</li>
+                        <li class="mb-2"><strong>Split the link and the code.</strong> Send the link by email and the 6-digit code by SMS, so one leaked message isn't enough.</li>
+                        <li class="mb-2"><strong>Check what's in your ZIP.</strong> Zipping a folder doesn't remove files you forgot were inside. Open the archive and check before uploading.</li>
+                        <li class="mb-2"><strong>Strip hidden data from photos.</strong> Photos can contain GPS location in their metadata. Remove it first if the location is private.</li>
+                        <li class="mb-0"><strong>Be careful with files from strangers.</strong> If you receive an <code>.exe</code>, <code>.dmg</code>, or <code>.apk</code> from someone you don't know, scan it (for example on VirusTotal) before opening it.</li>
+                    </ol>
+                </article>
+
+                <!-- ARTICLE: LIMITS -->
+                <article class="mt-5 pt-3" aria-labelledby="art-limits-heading">
+                    <h2 id="art-limits-heading" class="h4 fw-bold text-dark mb-3">File Size Limits &amp; Expiry Options Explained</h2>
+                    <p class="text-secondary">
+                        OmeBox is designed for quick, temporary sharing, not as a replacement for cloud storage. Here's what to expect:
+                    </p>
+                    <ul class="text-secondary">
+                        <li class="mb-2"><strong>100 MB per file.</strong> Enough for short video clips, high-resolution photos, full PDFs, and most ZIP archives. Larger files are rejected.</li>
+                        <li class="mb-2"><strong>Up to 20 files per share.</strong> Upload a batch, such as an invoice set or a photo album, in one share with one code.</li>
+                        <li class="mb-2"><strong>Expiry from 15 minutes to 3 days.</strong> Short for one-off transfers, longer for files a recipient may not open right away.</li>
+                        <li class="mb-0"><strong>Automatic deletion.</strong> When the timer runs out, the files are deleted. If the recipient missed the window, you simply share again.</li>
+                    </ul>
+                    <p class="text-secondary mb-0">
+                        Need to send something larger than 100 MB? Use a cloud drive such as Google Drive, OneDrive, or Dropbox, which are built for large and permanent files.
+                    </p>
+                </article>
+
+                <!-- FAQ (matches FAQPage schema) -->
+                <section class="mt-5 pt-3" aria-labelledby="faq-heading">
+                    <h2 id="faq-heading" class="h4 fw-bold text-dark mb-3">Frequently Asked Questions</h2>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                                    Do I need to login to share files?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    No. OmeBox allows file sharing without registration or login. Simply upload a file and share it using a link, QR code, or 6-digit access code.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                    Can I transfer files between devices?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes. OmeBox supports file transfer between PC, Mac, iPhone, Android, and tablets without installing any software.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                    Is OmeBox free?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes. OmeBox is free to use for file sharing, with no premium tiers or hidden charges. The site may show ads and uses analytics cookies, but only if you accept them.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                    How does QR code file sharing work?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    After uploading, OmeBox generates a QR code. Scan it from another device to open the shared files.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                                    What is the file size limit?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Files up to 100 MB can be shared through OmeBox, up to 20 files per share.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                                    How long are files stored?
+                                </button>
+                            </h3>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Files are deleted automatically after the expiry you choose, from 15 minutes to 3 days.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">
+                                    Can I password protect a shared file?
+                                </button>
+                            </h3>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes. Turn on "Password protect" before uploading and choose a password. The recipient will need to enter it before downloading.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false" aria-controls="faq8">
+                                    What types of files can I share?
+                                </button>
+                            </h3>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Any file type up to 100 MB: images, PDFs, documents, videos, ZIP archives, APKs, CSV, JSON, and more.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer-links pt-5 pb-4 mt-4">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-md-3">
+                <h2 class="h5 fw-bold" style="color: #0F172A;"><i class="fas fa-share-alt me-2" style="color: #2563EB;" aria-hidden="true"></i>OmeBox</h2>
+                <p class="small" style="color: #475569;">Free text and file sharing, no registration. Online notepad and instant sharing.</p>
+            </div>
+            <div class="col-md-3">
+                <h2 class="h6 fw-semibold" style="color: #0F172A;">Quick access</h2>
+                <ul class="list-unstyled small">
+                    <li class="mb-1"><a href="/share/text"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Share Text</a></li>
+                    <li class="mb-1"><a href="/share/files"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Share Files</a></li>
+                    <li class="mb-1"><a href="/access"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Receiver (Access)</a></li>
+                    <li class="mb-1"><a href="/webnotepad" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Web Notepad</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h2 class="h6 fw-semibold" style="color: #0F172A;">Company</h2>
+                <ul class="list-unstyled small">
+                    <li class="mb-1"><a href="/main"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Main page</a></li>
+                    <li class="mb-1"><a href="/about"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>About Us</a></li>
+                    <li class="mb-1"><a href="/contact"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Contact Us</a></li>
+                    <li class="mb-1"><a href="/privacy-policy" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Privacy Policy</a></li>
+                    <li class="mb-1"><a href="#" id="cookieSettingsLink"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Cookie settings</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h2 class="h6 fw-semibold" style="color: #0F172A;">Articles</h2>
+                <ul class="list-unstyled small">
+                    <li class="mb-1"><a href="/omebox-article"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>OmeBox Article</a></li>
+                    <li class="mb-1"><a href="/anonymous-file-share"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Anonymous Share</a></li>
+                    <li class="mb-1"><a href="/best-file-share-website"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Best File Sharing</a></li>
+                    <!-- NOTE: "langues" looks like a typo; rename the route to /best-programming-languages and add a redirect from the old URL -->
+                    <li class="mb-1"><a href="/best-programming-langues"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i>Best Programming Languages</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="mt-4 mb-3" style="border-color: #E2E8F0;">
+        <div class="text-center small" style="color: #64748B;">© <span id="copyrightYear">2025</span> OmeBox – Free text &amp; file sharing | No registration required</div>
+    </div>
+</footer>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="d-md-none position-fixed bottom-0 start-0 w-100 mobile-bottom-nav shadow-lg" aria-label="Mobile navigation">
+    <div class="d-flex h-100 align-items-center justify-content-around px-2">
+        <a href="/" class="mobile-nav-item text-center"><i class="fas fa-home" aria-hidden="true"></i><br><span>Home</span></a>
+        <a href="/share/text" class="mobile-nav-item text-center"><i class="fas fa-align-left" aria-hidden="true"></i><br><span>Text</span></a>
+        <a href="/share/files" class="mobile-nav-item text-center active" aria-current="page"><i class="fas fa-paperclip" aria-hidden="true"></i><br><span>Files</span></a>
+        <a href="/access" class="mobile-nav-item text-center"><i class="fas fa-download" aria-hidden="true"></i><br><span>Receive</span></a>
+        <a href="/webnotepad" class="mobile-nav-item text-center" target="_blank" rel="noopener noreferrer"><i class="fas fa-edit" aria-hidden="true"></i><br><span>Notepad</span></a>
+    </div>
+</nav>
+<div class="d-md-none" style="height: 85px;" aria-hidden="true"></div>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieDesc"
+     style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:2000; background:#0F172A; color:#fff; padding:14px 18px; box-shadow:0 -4px 20px rgba(0,0,0,.25);">
+    <div class="container d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+        <div class="small">
+            <strong id="cookieTitle">Cookies</strong>
+            <span id="cookieDesc"> — We use analytics and advertising cookies (Google Analytics, Google AdSense). They load only if you accept. Sharing files works either way.
+                <a href="/privacy-policy" class="text-white" target="_blank" rel="noopener noreferrer">Privacy Policy</a></span>
+        </div>
+        <div class="d-flex gap-2 flex-shrink-0">
+            <button type="button" id="cookieDeny" class="btn btn-sm btn-outline-light rounded-pill">Decline</button>
+            <button type="button" id="cookieAccept" class="btn btn-sm btn-primary rounded-pill">Accept</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script>
+(function () {
+    'use strict';
+
+    // ---------- COOKIE CONSENT (GA + AdSense load only after "Accept") ----------
+    const CONSENT_KEY = 'omebox_cookie_consent';
+    const GA_ID = 'G-H1DNNDQWSD';
+    const ADSENSE_CLIENT = 'ca-pub-1872078023246662';
+    const banner = document.getElementById('cookieBanner');
+    let trackingLoaded = false;
+
+    function safeGet(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
+    function safeSet(key, val) { try { localStorage.setItem(key, val); return true; } catch (e) { return false; } }
+
+    function loadTracking() {
+        if (trackingLoaded) return;
+        trackingLoaded = true;
+        const ga = document.createElement('script');
+        ga.async = true;
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(ga);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', GA_ID);
+
+        const ads = document.createElement('script');
+        ads.async = true;
+        ads.crossOrigin = 'anonymous';
+        ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + ADSENSE_CLIENT;
+        document.head.appendChild(ads);
+    }
+
+    function setConsent(value) {
+        safeSet(CONSENT_KEY, value);
+        banner.style.display = 'none';
+        if (value === 'granted') loadTracking();
+    }
+
+    document.getElementById('cookieAccept').addEventListener('click', () => setConsent('granted'));
+    document.getElementById('cookieDeny').addEventListener('click', () => setConsent('denied'));
+    document.getElementById('cookieSettingsLink').addEventListener('click', (e) => {
+        e.preventDefault();
+        banner.style.display = 'block';
+    });
+
+    const savedConsent = safeGet(CONSENT_KEY);
+    if (savedConsent === 'granted') loadTracking();
+    else if (savedConsent !== 'denied') banner.style.display = 'block';
+
+    // ---------- CONSTANTS & STATE ----------
+    const MAX_FILES = 20;
+    const MAX_FILE_SIZE = 100 * 1024 * 1024;
+    const MIN_PASSWORD_LENGTH = 4;
+    const MAX_HISTORY = 30;
+    const STORAGE_KEY = 'omebox_files_history';
+    const EXPIRY_MS = { '15m': 15 * 60e3, '1h': 3600e3, '1d': 86400e3, '3d': 3 * 86400e3 };
+    const SHARE_BTN_HTML = '<i class="fas fa-share-alt me-2" aria-hidden="true"></i>Share Files &amp; Generate 6-digit Code';
+
+    let selectedFiles = [];
+    let fileShareHistory = [];
+    let currentXhr = null;
+
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('fileInput');
+    const browseBtn = document.getElementById('browseBtn');
+    const fileListDiv = document.getElementById('fileList');
+    const shareBtn = document.getElementById('shareBtn');
+    const passwordSwitch = document.getElementById('passwordSwitch');
+    const passwordInputDiv = document.getElementById('passwordInput');
+    const passwordField = document.getElementById('sharePassword');
+    const expirySelect = document.getElementById('expirySelect');
+    const resultSection = document.getElementById('resultSection');
+    const historyContainer = document.getElementById('historyContainer');
+    const uploadProgress = document.getElementById('uploadProgress');
+    const uploadProgressBar = document.getElementById('uploadProgressBar');
+    const uploadProgressText = document.getElementById('uploadProgressText');
+    const uploadProgressWrap = document.getElementById('uploadProgressWrap');
+
+    // Accessible live region for toasts
+    const toastRegion = document.createElement('div');
+    toastRegion.setAttribute('aria-live', 'polite');
+    toastRegion.setAttribute('role', 'status');
+    toastRegion.className = 'visually-hidden';
+    document.body.appendChild(toastRegion);
+
+    // ---------- HELPERS ----------
+    function escapeHtml(str) {
+        if (str === null || str === undefined) return '';
+        return String(str).replace(/[&<>"']/g, m => ({
+            '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        }[m]));
+    }
+
+    // Only allow http(s) URLs (blocks javascript:, data:, etc.)
+    function safeHttpUrl(u) {
+        try {
+            const p = new URL(u, location.origin);
+            return /^https?:$/.test(p.protocol) ? p.href : '';
+        } catch (e) { return ''; }
+    }
+
+    function safeBase64(s) {
+        return /^[A-Za-z0-9+/=]+$/.test(s || '') ? s : '';
+    }
+
+    function formatSize(bytes) {
+        if (bytes < 1024) return bytes + ' B';
+        if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+        return (bytes / 1024 / 1024).toFixed(2) + ' MB';
+    }
+
+    function showToast(message, bgColor = '#0F172A') {
+        const toastDiv = document.createElement('div');
+        toastDiv.className = 'toast-notif';
+        toastDiv.style.background = bgColor;
+        toastDiv.innerHTML = `<i class="fas fa-bell me-2" aria-hidden="true"></i>${escapeHtml(message)}`;
+        document.body.appendChild(toastDiv);
+        toastRegion.textContent = '';
+        setTimeout(() => { toastRegion.textContent = message; }, 50);
+        setTimeout(() => {
+            toastDiv.style.opacity = '0';
+            setTimeout(() => toastDiv.remove(), 200);
+        }, 2700);
+    }
+
+    function copyToClipboard(text, successMsg = 'Copied!') {
+        const fallback = () => {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            let ok = false;
+            try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+            ta.remove();
+            showToast(ok ? successMsg : 'Copy failed, please copy manually', ok ? '#10B981' : '#F59E0B');
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text)
+                .then(() => showToast(successMsg, '#10B981'))
+                .catch(fallback);
+        } else {
+            fallback();
+        }
+    }
+
+    // ---------- HISTORY ----------
+    function loadFileHistory() {
+        try {
+            const parsed = JSON.parse(safeGet(STORAGE_KEY) || '[]');
+            fileShareHistory = Array.isArray(parsed) ? parsed.filter(item => item && item.code && item.id) : [];
+        } catch (e) {
+            fileShareHistory = [];
+        }
+        renderFileHistory();
+    }
+
+    function saveFileHistory() {
+        if (!safeSet(STORAGE_KEY, JSON.stringify(fileShareHistory))) {
+            showToast('History could not be saved on this device', '#F59E0B');
+        }
+        renderFileHistory();
+    }
+
+    function addFileShareToHistory(shareData) {
+        const names = shareData.file_names || [];
+        const previewText = names.slice(0, 2).join(', ') + (names.length > 2 ? ` +${names.length - 2} more` : '');
+        const url = safeHttpUrl(shareData.url);
+        const now = Date.now();
+        const selected = expirySelect.options[expirySelect.selectedIndex];
+        fileShareHistory.unshift({
+            id: now + Math.random().toString(36).substring(2, 8),
+            code: shareData.code,
+            url: url,
+            fullUrl: url,
+            qrCodeBase64: safeBase64(shareData.qr_code),
+            fileNames: names,
+            fileCount: names.length,
+            expiryLabel: shareData.expiry_display || (selected ? selected.text : '1 hour'),
+            expiresAt: now + (EXPIRY_MS[shareData.expiry_value] || EXPIRY_MS['1h']),
+            timestamp: new Date(now).toISOString(),
+            hasPassword: !!shareData.has_password,
+            filePreviewText: previewText
+        });
+        if (fileShareHistory.length > MAX_HISTORY) fileShareHistory.length = MAX_HISTORY;
+        saveFileHistory();
+        showToast('Share saved to history', '#10B981');
+    }
+
+    function deleteHistoryItemById(id) {
+        // id is a STRING (Date.now() + random suffix), do not parseInt
+        fileShareHistory = fileShareHistory.filter(item => item.id !== id);
+        saveFileHistory();
+        showToast('Removed from history', '#EF4444');
+    }
+
+    function clearAllFileHistory() {
+        if (confirm('Clear all file share history on this device? This cannot be undone.\n\nShares already created stay online until they expire.')) {
+            fileShareHistory = [];
+            saveFileHistory();
+            showToast('All history cleared', '#EF4444');
+        }
+    }
+
+    function renderFileHistory() {
+        if (!historyContainer) return;
+        if (fileShareHistory.length === 0) {
+            historyContainer.innerHTML = `<div class="empty-history"><i class="fas fa-database fa-2x mb-2 opacity-50" style="color: #94A3B8;" aria-hidden="true"></i><p class="mb-0">No shared files yet. Upload something and it will show up here.</p></div>`;
+            return;
+        }
+        const now = Date.now();
+        let html = `<div class="history-list" style="max-height: 480px; overflow-y: auto; padding-right: 4px;">`;
+        fileShareHistory.forEach(item => {
+            let dateStr = 'recent';
+            if (item.timestamp) {
+                const d = new Date(item.timestamp);
+                if (!isNaN(d)) dateStr = d.toLocaleString(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+            }
+            const expired = typeof item.expiresAt === 'number' && item.expiresAt < now;
+            const lockIcon = item.hasPassword
+                ? '<i class="fas fa-lock ms-1 small" style="color: #F59E0B;" role="img" aria-label="Password protected"></i>'
+                : '';
+            const expiredBadge = expired
+                ? '<span class="badge bg-secondary rounded-pill">Expired</span>'
+                : '';
+            const safeId = escapeHtml(item.id);
+            const safeCode = escapeHtml(item.code);
+            const safeUrl = escapeHtml(safeHttpUrl(item.fullUrl || ''));
+            const safeExpiry = escapeHtml(item.expiryLabel);
+            const safePreview = escapeHtml(item.filePreviewText || '');
+            const safeDate = escapeHtml(dateStr);
+            const count = Number(item.fileCount) || 0;
+            const qr = safeBase64(item.qrCodeBase64);
+            const qrImg = qr
+                ? `<img src="data:image/png;base64,${qr}" width="85" height="85" alt="QR code for ${safeCode}" loading="lazy" decoding="async">`
+                : `<div class="bg-light rounded d-flex align-items-center justify-content-center" style="width:52px;height:52px; background: #F1F5F9 !important;" aria-hidden="true"><i class="fas fa-qrcode" style="color: #94A3B8;"></i></div>`;
+            const dis = expired ? ' disabled' : '';
+
+            html += `<div class="history-item" data-id="${safeId}">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                    <div class="flex-grow-1">
+                        <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
+                            <span class="history-code"><i class="fas fa-hashtag me-1" aria-hidden="true"></i>${safeCode}</span>
+                            <span class="badge-expiry"><i class="far fa-clock me-1" aria-hidden="true"></i>${safeExpiry}</span>
+                            <span class="badge" style="background: #E2E8F0; color: #475569; border-radius: 40px; padding: 5px 12px;"><i class="fas fa-file me-1" aria-hidden="true"></i>${count} ${count === 1 ? 'file' : 'files'}</span>
+                            ${lockIcon}${expiredBadge}
+                            <small class="text-muted" style="color: #64748B !important;"><i class="far fa-calendar-alt me-1" aria-hidden="true"></i>${safeDate}</small>
+                        </div>
+                        <div class="small text-secondary mb-2" style="color: #475569 !important;"><i class="fas fa-folder-open me-1 opacity-50" aria-hidden="true"></i> ${safePreview}</div>
+                        <div class="d-flex flex-wrap gap-2 mt-1">
+                            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill" data-action="copy-code" data-code="${safeCode}"${dis}><i class="fas fa-copy me-1" aria-hidden="true"></i>Copy code</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary rounded-pill" data-action="copy-link" data-url="${safeUrl}"${dis}><i class="fas fa-link me-1" aria-hidden="true"></i>Copy link</button>
+                            <button type="button" class="btn btn-sm btn-outline-info rounded-pill" data-action="open" data-url="${safeUrl}"${dis}><i class="fas fa-eye me-1" aria-hidden="true"></i>Open</button>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        ${qrImg}
+                        <button type="button" class="btn btn-link p-0" data-action="delete" data-id="${safeId}" style="color: #EF4444; font-size: 1.2rem;" aria-label="Delete history entry ${safeCode}" title="Delete">
+                            <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>`;
+        });
+        html += `</div>`;
+        historyContainer.innerHTML = html;
+    }
+
+    // One delegated listener for all history buttons
+    historyContainer.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-action]');
+        if (!btn || btn.disabled) return;
+        const action = btn.getAttribute('data-action');
+        if (action === 'copy-code') {
+            copyToClipboard(btn.getAttribute('data-code'), 'Code copied!');
+        } else if (action === 'copy-link') {
+            const url = btn.getAttribute('data-url');
+            if (url) copyToClipboard(url, 'Link copied!');
+            else showToast('URL not available', '#F59E0B');
+        } else if (action === 'open') {
+            const url = btn.getAttribute('data-url');
+            if (url) window.open(url, '_blank', 'noopener,noreferrer');
+            else showToast('URL not available', '#F59E0B');
+        } else if (action === 'delete') {
+            deleteHistoryItemById(btn.getAttribute('data-id'));
+        }
+    });
+
+    // ---------- PASSWORD SWITCH ----------
+    passwordSwitch.addEventListener('change', () => {
+        passwordInputDiv.style.display = passwordSwitch.checked ? 'block' : 'none';
+        if (passwordSwitch.checked) passwordField.focus();
+    });
+
+    // ---------- FILE SELECTION ----------
+    browseBtn.addEventListener('click', (e) => { e.stopPropagation(); fileInput.click(); });
+    // Mouse users can click anywhere in the zone; keyboard users use the button inside it
+    dropzone.addEventListener('click', (e) => {
+        if (!e.target.closest('button')) fileInput.click();
+    });
+    fileInput.addEventListener('change', (e) => {
+        if (e.target.files) addFiles(Array.from(e.target.files));
+        fileInput.value = '';
+    });
+
+    let dragDepth = 0;
+    dropzone.addEventListener('dragenter', (e) => { e.preventDefault(); dragDepth++; dropzone.classList.add('dragover'); });
+    dropzone.addEventListener('dragover', (e) => { e.preventDefault(); });
+    dropzone.addEventListener('dragleave', () => {
+        dragDepth = Math.max(0, dragDepth - 1);
+        if (dragDepth === 0) dropzone.classList.remove('dragover');
+    });
+    dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dragDepth = 0;
+        dropzone.classList.remove('dragover');
+        if (e.dataTransfer && e.dataTransfer.files.length) addFiles(Array.from(e.dataTransfer.files));
+    });
+    // Stop the browser from navigating to a file dropped outside the dropzone
+    ['dragover', 'drop'].forEach(evt => window.addEventListener(evt, (e) => {
+        if (!dropzone.contains(e.target)) e.preventDefault();
+    }));
+
+    function addFiles(files) {
+        let added = 0;
+        for (const file of files) {
+            if (selectedFiles.length >= MAX_FILES) {
+                showToast(`Maximum ${MAX_FILES} files per share`, '#F59E0B');
+                break;
+            }
+            if (file.size > MAX_FILE_SIZE) {
+                showToast(`${file.name} is over 100 MB`, '#EF4444');
+                continue;
+            }
+            if (file.size === 0) {
+                showToast(`${file.name} is empty`, '#F59E0B');
+                continue;
+            }
+            if (!selectedFiles.find(f => f.name === file.name && f.size === file.size && f.lastModified === file.lastModified)) {
+                selectedFiles.push(file);
+                added++;
+            }
+        }
+        if (added) {
+            updateFileListUI();
+            showToast(`Added ${added} ${added === 1 ? 'file' : 'files'}`, '#10B981');
+        }
+    }
+
+    function iconFor(file) {
+        const t = file.type || '';
+        const n = file.name.toLowerCase();
+        if (t.startsWith('image/')) return ['fa-image', '#10B981'];
+        if (t.startsWith('video/')) return ['fa-file-video', '#8B5CF6'];
+        if (t.startsWith('audio/')) return ['fa-file-audio', '#F59E0B'];
+        if (t === 'application/pdf') return ['fa-file-pdf', '#EF4444'];
+        if (/\.(zip|rar|7z|tar|gz)$/.test(n)) return ['fa-file-zipper', '#64748B'];
+        return ['fa-file', '#2563EB'];
+    }
+
+    function updateFileListUI() {
+        fileListDiv.innerHTML = '';
+        if (selectedFiles.length === 0) {
+            fileListDiv.innerHTML = '<div class="text-center py-3" style="color: #64748B;"><i class="fas fa-inbox fa-2x mb-2" aria-hidden="true"></i><p>No files selected</p></div>';
+            shareBtn.disabled = true;
+            return;
+        }
+        let totalSize = 0;
+        const frag = document.createDocumentFragment();
+        selectedFiles.forEach((file, idx) => {
+            totalSize += file.size;
+            const [iconClass, color] = iconFor(file);
+            const fileDiv = document.createElement('div');
+            fileDiv.className = 'file-item';
+            fileDiv.innerHTML = `<div class="d-flex align-items-center gap-2"><i class="fas ${iconClass} fa-2x" style="color: ${color};" aria-hidden="true"></i><div><strong>${escapeHtml(file.name)}</strong><br><span class="file-size">${formatSize(file.size)}</span></div></div><button type="button" class="btn btn-sm btn-danger rounded-circle" data-remove="${idx}" aria-label="Remove ${escapeHtml(file.name)}"><i class="fas fa-trash" aria-hidden="true"></i></button>`;
+            frag.appendChild(fileDiv);
+        });
+        fileListDiv.appendChild(frag);
+
+        const summary = document.createElement('div');
+        summary.className = 'alert alert-info mt-2 py-2 small rounded-pill text-center';
+        summary.innerHTML = `<i class="fas fa-info-circle me-1" aria-hidden="true"></i> ${selectedFiles.length} ${selectedFiles.length === 1 ? 'file' : 'files'} · ${formatSize(totalSize)} total · <a href="#" id="clearSelectionLink">Clear all</a>`;
+        fileListDiv.appendChild(summary);
+        shareBtn.disabled = false;
+    }
+
+    // Delegated removal / clear
+    fileListDiv.addEventListener('click', (e) => {
+        const removeBtn = e.target.closest('[data-remove]');
+        if (removeBtn) {
+            selectedFiles.splice(parseInt(removeBtn.getAttribute('data-remove'), 10), 1);
+            updateFileListUI();
+            showToast('File removed', '#64748B');
+            return;
+        }
+        if (e.target.closest('#clearSelectionLink')) {
+            e.preventDefault();
+            selectedFiles = [];
+            updateFileListUI();
+        }
+    });
+
+    // ---------- UPLOAD (XHR for progress) ----------
+    function setProgress(pct) {
+        const v = Math.max(0, Math.min(100, Math.round(pct)));
+        uploadProgressBar.style.width = v + '%';
+        uploadProgressText.textContent = v + '%';
+        uploadProgressWrap.setAttribute('aria-valuenow', String(v));
+        shareBtn.innerHTML = `<i class="fas fa-spinner fa-spin me-2" aria-hidden="true"></i>Uploading ${v}%`;
+    }
+
+    function uploadFiles(formData) {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            currentXhr = xhr;
+            xhr.open('POST', '/api/share/files');
+            xhr.responseType = 'text';
+            xhr.upload.onprogress = (e) => { if (e.lengthComputable) setProgress((e.loaded / e.total) * 100); };
+            xhr.onload = () => {
+                let data = null;
+                try { data = JSON.parse(xhr.responseText); } catch (e) { /* non-JSON (proxy error page) */ }
+                resolve({ ok: xhr.status >= 200 && xhr.status < 300, status: xhr.status, data: data });
+            };
+            xhr.onerror = () => reject(new Error('Network error. Check your connection and try again.'));
+            xhr.onabort = () => reject(new Error('Upload cancelled'));
+            xhr.send(formData);
+        });
+    }
+
+    document.getElementById('cancelUploadBtn').addEventListener('click', () => {
+        if (currentXhr) currentXhr.abort();
+    });
+
+    shareBtn.addEventListener('click', async () => {
+        if (selectedFiles.length === 0) {
+            showToast('Select files to share', '#F59E0B');
+            return;
+        }
+        const expiry = expirySelect.value;
+        let password = '';
+        if (passwordSwitch.checked) {
+            password = passwordField.value;
+            if (password.length < MIN_PASSWORD_LENGTH) {
+                showToast(`Password must be at least ${MIN_PASSWORD_LENGTH} characters`, '#F59E0B');
+                passwordField.focus();
+                return;
+            }
+        }
+
+        const formData = new FormData();
+        formData.append('expiry', expiry);
+        if (password) formData.append('password', password);
+        selectedFiles.forEach(f => formData.append('files', f));
+
+        shareBtn.disabled = true;
+        uploadProgress.style.display = 'block';
+        setProgress(0);
+
+        try {
+            const res = await uploadFiles(formData);
+            const data = res.data || {};
+            if (res.ok && data.code && data.url) {
+                const names = selectedFiles.map(f => f.name);
+                const selected = expirySelect.options[expirySelect.selectedIndex];
+                addFileShareToHistory({
+                    code: data.code,
+                    url: data.url,
+                    qr_code: data.qr_code,
+                    file_names: names,
+                    expiry_value: expiry,
+                    expiry_display: selected ? selected.text : undefined,
+                    has_password: !!password
+                });
+                displayFileShareResult(Object.assign({}, data, { has_password: !!password || !!data.has_password }));
+                selectedFiles = [];
+                updateFileListUI();
+                if (passwordSwitch.checked) {
+                    passwordSwitch.checked = false;
+                    passwordInputDiv.style.display = 'none';
+                    passwordField.value = '';
+                }
+                showToast(`Shared! Code: ${data.code}`, '#10B981');
+            } else {
+                let msg = typeof data.detail === 'string' ? data.detail : '';
+                if (!msg) {
+                    if (res.status === 413) msg = 'Files are too large for the server';
+                    else if (res.status === 429) msg = 'Too many requests. Please wait a moment and try again.';
+                    else msg = `Upload failed (error ${res.status})`;
+                }
+                showToast(msg, '#EF4444');
+            }
+        } catch (err) {
+            showToast(err.message || 'Upload failed', '#EF4444');
+        } finally {
+            currentXhr = null;
+            uploadProgress.style.display = 'none';
+            shareBtn.disabled = selectedFiles.length === 0;
+            shareBtn.innerHTML = SHARE_BTN_HTML;
+        }
+    });
+
+    function displayFileShareResult(data) {
+        resultSection.style.display = 'block';
+        const shareUrl = safeHttpUrl(data.url);
+        const safeCode = escapeHtml(data.code);
+        const safeUrl = escapeHtml(shareUrl);
+        const safeQr = safeBase64(data.qr_code);
+        const hasPassword = !!data.has_password;
+
+        resultSection.innerHTML = `<div class="share-result-card fade-in">
+            <h2 class="h5 text-center mb-3 fw-bold" style="color: #0F172A;"><i class="fas fa-check-circle me-2" style="color: #10B981;" aria-hidden="true"></i>Files shared</h2>
+            <div class="row align-items-center">
+                <div class="col-md-5 text-center">
+                    <img src="data:image/png;base64,${safeQr}" class="img-fluid" width="140" height="140" style="max-width: 140px; border-radius: 16px;" alt="QR code to access shared files ${safeCode}">
+                    <div class="small text-muted mt-1">Scan QR to access</div>
+                </div>
+                <div class="col-md-7">
+                    <div class="code-badge d-flex justify-content-between align-items-center gap-2 mb-2">
+                        <span><i class="fas fa-key" style="color: #2563EB;" aria-hidden="true"></i> ${safeCode}</span>
+                        <button type="button" id="quickCopyCodeBtn" class="btn btn-sm btn-outline-light rounded-pill" style="border-color: #CBD5E1; color: #2563EB;"><i class="fas fa-copy" aria-hidden="true"></i> Copy</button>
+                    </div>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control form-control-sm" id="shareLinkField" value="${safeUrl}" readonly style="background: #F8FAFC;" aria-label="Share link">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" id="quickCopyLinkBtn" style="border-radius: 0 60px 60px 0;" aria-label="Copy link"><i class="fas fa-copy" aria-hidden="true"></i></button>
+                    </div>
+                    ${hasPassword ? '<div class="alert alert-warning py-1 small rounded-pill"><i class="fas fa-lock me-1" aria-hidden="true"></i>Password protected. Send the password separately.</div>' : ''}
+                    ${shareUrl ? `<a href="${safeUrl}" class="btn btn-sm btn-outline-success w-100 rounded-pill" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt me-1" aria-hidden="true"></i>Open share page</a>` : ''}
+                </div>
+            </div>
+        </div>`;
+
+        document.getElementById('quickCopyCodeBtn')?.addEventListener('click', () => copyToClipboard(data.code, '6-digit code copied!'));
+        document.getElementById('quickCopyLinkBtn')?.addEventListener('click', () => copyToClipboard(shareUrl, 'Link copied!'));
+        resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // ---------- INIT ----------
+    document.getElementById('clearAllHistoryBtn').addEventListener('click', clearAllFileHistory);
+
+    function init() {
+        loadFileHistory();
+        updateFileListUI();
+        resultSection.style.display = 'none';
+        const yearEl = document.getElementById('copyrightYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+})();
+</script>
+
+<!-- Structured data: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "OmeBox File Sharing",
+  "url": "https://omebox.com/share/files",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": "Share files online without login. Get a link, QR code and 6-digit access code, with automatic expiry and optional password protection.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": [
+    "File sharing without login",
+    "QR code file sharing",
+    "6-digit access codes",
+    "Optional password protection",
+    "Cross-device file transfer",
+    "Automatic expiry from 15 minutes to 3 days",
+    "Up to 20 files of 100 MB each"
+  ]
+}
+</script>
+
+<!-- Structured data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://omebox.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Share Files", "item": "https://omebox.com/share/files" }
+  ]
+}
+</script>
+
+<!-- Structured data: FAQPage (matches visible FAQ) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Do I need to login to share files?", "acceptedAnswer": { "@type": "Answer", "text": "No. OmeBox allows file sharing without registration or login. Simply upload a file and share it using a link, QR code, or 6-digit access code." } },
+    { "@type": "Question", "name": "Can I transfer files between devices?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmeBox supports file transfer between PC, Mac, iPhone, Android, and tablets without installing any software." } },
+    { "@type": "Question", "name": "Is OmeBox free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmeBox is free to use for file sharing, with no premium tiers or hidden charges. The site may show ads and uses analytics cookies, but only if you accept them." } },
+    { "@type": "Question", "name": "How does QR code file sharing work?", "acceptedAnswer": { "@type": "Answer", "text": "After uploading, OmeBox generates a QR code. Scan it from another device to open the shared files." } },
+    { "@type": "Question", "name": "What is the file size limit?", "acceptedAnswer": { "@type": "Answer", "text": "Files up to 100 MB can be shared through OmeBox, up to 20 files per share." } },
+    { "@type": "Question", "name": "How long are files stored?", "acceptedAnswer": { "@type": "Answer", "text": "Files are deleted automatically after the expiry you choose, from 15 minutes to 3 days." } },
+    { "@type": "Question", "name": "Can I password protect a shared file?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Turn on \"Password protect\" before uploading and choose a password. The recipient will need to enter it before downloading." } },
+    { "@type": "Question", "name": "What types of files can I share?", "acceptedAnswer": { "@type": "Answer", "text": "Any file type up to 100 MB: images, PDFs, documents, videos, ZIP archives, APKs, CSV, JSON, and more." } }
+  ]
+}
+</script>
+
+<!-- Structured data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "OmeBox",
+  "url": "https://omebox.com",
+  "logo": "https://omebox.com/static/logo.png",
+  "description": "Free file and text sharing tool. Share files online using links, QR codes, and access codes without registration."
+}
+</script>
+</body>
+</html>

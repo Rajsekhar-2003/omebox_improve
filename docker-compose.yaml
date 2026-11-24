@@ -1,0 +1,49 @@
+services:
+  mongo:
+    image: mongo:7.0
+    restart: unless-stopped
+    command: ["mongod", "--wiredTigerCacheSizeGB", "0.75", "--bind_ip_all"]
+    environment:
+      TZ: UTC
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+    mem_limit: 1200m
+
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      MONGODB_URL: mongodb://mongo:27017
+      DATABASE_NAME: ${DATABASE_NAME:-sharebin}
+      BASE_URL: ${BASE_URL:-https://omebox.com}
+      FORCE_HTTPS: ${FORCE_HTTPS:-1}
+      # Add your Docker bridge gateway if nginx runs on the host; find it with:
+      # docker network inspect bridge --format '{{(index .IPAM.Config 0).Gateway}}'
+      TRUSTED_PROXIES: ${TRUSTED_PROXIES:-127.0.0.1,172.17.0.1}
+      UPLOAD_DIR: /app/uploads
+      CACHE_DIR: /app/cache
+      WEB_CONCURRENCY: ${WEB_CONCURRENCY:-2}
+      TZ: UTC
+    volumes:
+      # Local storage: bind mounts keep backups simple on the VPS.
+      - ./uploads:/app/uploads
+      - ./cache:/app/cache
+    ports:
+      # nginx terminates TLS and proxies to this loopback port.
+      - "127.0.0.1:8000:8000"
+    mem_limit: 2600m
+
+volumes:
+  mongo_data:
+    name: omebox_mongo_data

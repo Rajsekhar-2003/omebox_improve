@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="theme-color" content="#2563EB">
+
+    <!-- PRIMARY SEO -->
+    <title>Anonymous File Sharing Without Login – What &amp; Why (2026)</title>
+    <meta name="description" content="Learn what anonymous file sharing is, its benefits, search trends, and legal use. Send files up to 100MB each (2GB total) without login — free, encrypted, cross-platform.">
+    <meta name="author" content="OmeBox">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <meta name="bingbot" content="index, follow, max-image-preview:large">
+
+    <link rel="canonical" href="https://omebox.com/anonymous-file-share">
+    <link rel="alternate" hreflang="en" href="https://omebox.com/anonymous-file-share">
+    <link rel="alternate" hreflang="x-default" href="https://omebox.com/anonymous-file-share">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://omebox.com/anonymous-file-share">
+    <meta property="og:title" content="Anonymous File Sharing Without Login – What &amp; Why (2026)">
+    <meta property="og:description" content="Understand anonymous file sharing — benefits, daily search interest, and legal use. Send files up to 100MB each (2GB total) with no account.">
+    <meta property="og:site_name" content="OmeBox">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://omebox.com/static/og-anonymous.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="OmeBox – Anonymous file sharing without login">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anonymous File Sharing Without Login – What &amp; Why (2026)">
+    <meta name="twitter:description" content="Share files anonymously without an account. Secure temporary links, auto-expiry, cross-platform.">
+    <meta name="twitter:image" content="https://omebox.com/static/og-anonymous.jpg">
+    <meta name="twitter:image:alt" content="OmeBox – Anonymous file sharing without login">
+    <meta name="twitter:url" content="https://omebox.com/anonymous-file-share">
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', path='logo.png') if url_for else '/static/logo.png' }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', path='logo.png') if url_for else '/static/logo.png' }}">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1DNNDQWSD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H1DNNDQWSD');
+    </script>
+
+    <!-- Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-1872078023246662">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1872078023246662" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --primary-light: #60A5FA;
+            --primary-gradient: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+            --radius: 20px;
+            --radius-sm: 16px;
+            --bg: #F8FAFC;
+            --bg-white: #FFFFFF;
+            --text: #0F172A;
+            --text-light: #475569;
+            --border: #E2E8F0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 0;
+        }
+        .navbar-brand { font-weight: 800; font-size: 1.5rem; }
+        .nav-link-custom {
+            font-weight: 500;
+            color: var(--text-light);
+            border-radius: 40px;
+            transition: all 0.2s ease;
+            padding: 0.5rem 1rem;
+        }
+        .nav-link-custom:hover,
+        .nav-link-custom.active { background: #EFF6FF; color: var(--primary); }
+
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            z-index: 9999;
+            text-decoration: none;
+            border-radius: 0 0 8px 0;
+            transition: top 0.2s;
+        }
+        .skip-link:focus { top: 0; }
+
+        :focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+
+        /* Breadcrumb */
+        .breadcrumb { background: transparent; padding: 0; margin-bottom: 1rem; }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb-item.active { color: var(--text-light); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+            border-radius: 32px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 60%; height: 200%;
+            background: radial-gradient(circle, rgba(37,99,235,0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-weight: 800;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .hero-gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hero p {
+            max-width: 750px;
+            margin: 0 auto;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .section-header {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            border: 1px solid var(--border);
+            height: 100%;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-light);
+        }
+        .feature-icon {
+            width: 50px; height: 50px;
+            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+        .feature-icon i { font-size: 1.75rem; color: var(--primary); }
+        .feature-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text); }
+        .feature-card p { color: var(--text-light); line-height: 1.6; margin-bottom: 0; }
+
+        .steps-container {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            border: 1px solid var(--border);
+        }
+        .step-item {
+            display: flex; align-items: flex-start; gap: 1rem;
+            padding: 1rem; border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+        }
+        .step-item:hover { background: #F8FAFC; }
+        .step-number {
+            width: 40px; height: 40px;
+            background: var(--primary-gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.1rem; flex-shrink: 0;
+        }
+        .step-content h4 { font-weight: 700; margin-bottom: 0.25rem; color: var(--text); }
+        .step-content p { color: var(--text-light); margin-bottom: 0; font-size: 0.95rem; }
+
+        .device-tag {
+            background: var(--bg-white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            border: 1px solid var(--border);
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .device-tag:hover {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        .device-tag:hover i { color: white; }
+        .device-tag i { color: var(--primary); transition: color 0.2s; }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--bg-white);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%; text-align: left;
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-white);
+            border: none; font-size: 1rem; font-weight: 600;
+            color: var(--text); cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            transition: background 0.2s ease;
+        }
+        .faq-question:hover { background: #F8FAFC; }
+        .faq-question::after {
+            content: "+"; font-size: 1.5rem; font-weight: 400;
+            color: var(--primary); transition: transform 0.2s;
+        }
+        .faq-question[aria-expanded="true"]::after { content: "−"; }
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            border-top: 1px solid transparent;
+        }
+        .faq-answer[aria-hidden="false"] {
+            padding: 1.25rem 1.5rem;
+            max-height: 900px;
+            border-top-color: var(--border);
+        }
+        .faq-answer p { color: var(--text-light); margin-bottom: 0.75rem; line-height: 1.6; }
+        .faq-answer p:last-child { margin-bottom: 0; }
+
+        .cta-section {
+            text-align: center; padding: 3rem 2rem;
+            background: var(--primary-gradient);
+            border-radius: 32px; color: white; margin: 3rem 0;
+        }
+        .cta-section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+        .cta-section p { font-size: 1.1rem; opacity: 0.95; margin-bottom: 2rem; }
+        .btn-primary-custom {
+            background: white; color: var(--primary);
+            padding: 0.9rem 2.2rem; border-radius: 40px;
+            font-weight: 700; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            transition: all 0.3s ease; border: none; cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .btn-primary-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            color: var(--primary);
+        }
+
+        .trust-badge {
+            display: flex; justify-content: center;
+            gap: 2rem; flex-wrap: wrap; margin: 2rem 0;
+        }
+        .trust-item { text-align: center; }
+        .trust-item i { font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem; }
+        .trust-item p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 0; font-weight: 500; }
+
+        .footer-links {
+            background: #0F172A;
+            color: #94A3B8;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .footer-links a { color: #94A3B8; text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-heading { font-weight: 700; font-size: 1rem; color: white; margin-bottom: 0.75rem; }
+
+        .definition-block {
+            background: linear-gradient(135deg, #EFF6FF 0%, #FFFFFF 100%);
+            border-left: 5px solid var(--primary);
+            border-radius: var(--radius-sm);
+            padding: 1.75rem;
+            margin-bottom: 2rem;
+        }
+        .definition-block h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text); }
+        .definition-block p { color: var(--text-light); font-size: 1.05rem; line-height: 1.7; margin-bottom: 0; }
+        .definition-block strong { color: var(--primary); }
+
+        .trend-block {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+        }
+        .trend-bar { height: 14px; border-radius: 8px; background: #EFF6FF; overflow: hidden; margin-top: 6px; }
+        .trend-bar > span { display: block; height: 100%; background: var(--primary-gradient); border-radius: 8px; }
+        .trend-row { margin-bottom: 1rem; }
+        .trend-row:last-child { margin-bottom: 0; }
+        .trend-label { display: flex; justify-content: space-between; font-size: 0.92rem; color: var(--text); font-weight: 500; }
+        .trend-label span:last-child { color: var(--text-light); font-weight: 600; }
+        .trend-note { font-size: 0.85rem; color: var(--text-light); margin-top: 1rem; margin-bottom: 0; font-style: italic; }
+
+        .legal-block {
+            background: linear-gradient(135deg, #FFFBEB 0%, #FFFFFF 100%);
+            border-left: 5px solid #F59E0B;
+            border-radius: var(--radius-sm);
+            padding: 1.75rem;
+        }
+        .legal-block h2 {
+            font-size: 1.6rem; font-weight: 700; margin-bottom: 0.75rem;
+            color: var(--text); display: flex; align-items: center; gap: 0.5rem;
+        }
+        .legal-block p { color: var(--text-light); line-height: 1.7; margin-bottom: 0.75rem; }
+        .legal-block p:last-child { margin-bottom: 0; }
+        .legal-block ul { padding-left: 1.25rem; margin-bottom: 0.75rem; color: var(--text-light); }
+        .legal-block ul li { margin-bottom: 0.4rem; line-height: 1.6; }
+
+        .visitor-counter {
+            background: #F1F5F9;
+            border-radius: 40px;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+        }
+
+        /* ============ MOBILE BOTTOM NAV (was missing) ============ */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid var(--border);
+            height: 70px;
+            z-index: 1050;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        }
+        .mobile-nav-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #64748B;
+            text-decoration: none;
+            padding: 8px 0;
+            border-radius: 32px;
+            transition: all 0.2s;
+        }
+        .mobile-nav-item i { font-size: 22px; margin-bottom: 4px; }
+        .mobile-nav-item.active { color: var(--primary); background: #EFF6FF; }
+        .mobile-nav-item span { font-size: 11px; font-weight: 500; }
+
+        @media (max-width: 768px) {
+            .hero { padding: 2rem 1rem; margin-bottom: 2rem; }
+            .hero p { font-size: 1rem; }
+            .section-header { font-size: 1.5rem; }
+            .feature-card { padding: 1.25rem; }
+            .steps-container { padding: 1rem; }
+            .step-item { flex-direction: column; align-items: center; text-align: center; }
+            .cta-section { padding: 2rem 1rem; }
+            .cta-section h2 { font-size: 1.5rem; }
+            .trust-badge { gap: 1rem; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://omebox.com/#website",
+          "url": "https://omebox.com/",
+          "name": "OmeBox",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://omebox.com/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://omebox.com/#organization",
+          "name": "OmeBox",
+          "url": "https://omebox.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://omebox.com/static/logo.png",
+            "width": 512,
+            "height": 512
+          },
+          "foundingDate": "2024"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://omebox.com/anonymous-file-share#webpage",
+          "url": "https://omebox.com/anonymous-file-share",
+          "name": "Anonymous File Sharing Without Login – What & Why (2026)",
+          "description": "Learn what anonymous file sharing is, its benefits, search trends, and legal use. Send files up to 100MB each (2GB total) without login.",
+          "isPartOf": { "@id": "https://omebox.com/#website" },
+          "inLanguage": "en",
+          "breadcrumb": { "@id": "https://omebox.com/anonymous-file-share#breadcrumb" },
+          "mainEntity": { "@id": "https://omebox.com/anonymous-file-share#faq" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://omebox.com/anonymous-file-share#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://omebox.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Anonymous File Sharing", "item": "https://omebox.com/anonymous-file-share" }
+          ]
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://omebox.com/anonymous-file-share#app",
+          "name": "OmeBox Anonymous File Sharing",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Web, Windows, macOS, Android, iOS",
+          "url": "https://omebox.com/anonymous-file-share",
+          "isAccessibleForFree": true,
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://omebox.com/anonymous-file-share#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is OmeBox completely anonymous?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes — OmeBox requires no account, email, or phone number. We don't store any personal identifier linked to your files. We only collect anonymous, aggregate usage statistics to keep the service running."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I send files between phone and PC?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. Upload from your phone, get a link or QR code, then open it on your PC — or vice versa. Works seamlessly across all devices without any app installation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long are files stored?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You choose the expiration time — from 15 minutes to 3 days for files. After expiry, files are automatically and permanently deleted from our servers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What's the maximum file size?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Each file can be up to 100MB. You can share up to 20 files in a single share — a total of 2GB per share. Perfect for documents, high-resolution photos, videos, and software packages."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is my file transfer encrypted?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. All transfers use TLS encryption (HTTPS). Your files are protected during upload, storage, and download. Only people with the unique link can access your content."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is anonymous file sharing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Anonymous file sharing means you can send or receive files without revealing your identity. No username, email, or any personal information is required. OmeBox generates a unique, temporary link that does not trace back to you, ensuring your privacy is maintained throughout the transfer."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why use an anonymous ID instead of logging in?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Using an anonymous ID (or no ID at all) eliminates the need to remember passwords, avoids data breaches from stored credentials, and prevents any association between your file transfers and your personal identity. It's perfect for one-time sharing, sensitive documents, or when you simply want the fastest, most private experience without creating an account."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are some examples of anonymous file sharing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Examples include sending a large video to a friend without using email or cloud storage; sharing a confidential work document with a colleague without linking it to your company account; transferring photos from your phone to your computer without installing any app; a journalist sharing sensitive materials with a source using a link that self-destructs after 24 hours; and students sharing project files without exchanging personal contact info."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is anonymous file sharing legal?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The technology and act of sharing files anonymously is legal. Legality depends on what is being shared, not on whether the transfer is anonymous. Sharing files you own or have rights to is legal everywhere. Sharing copyrighted content without permission is illegal in most countries, regardless of whether the transfer is anonymous. OmeBox is designed for legitimate, privacy-first sharing of your own files."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the disadvantages of anonymous file sharing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Honest downsides include: no permanent storage (once a share expires, it's gone forever); no recovery if you lose the link or 6-digit code; smaller size limits than paid cloud services; no shared folder or team workspace; and you must send the link separately for the recipient to access it."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<noscript>
+    <div class="alert alert-info text-center m-3" role="alert">
+        <i class="fas fa-info-circle me-2" aria-hidden="true"></i>
+        JavaScript is disabled. This page works without it, but the FAQ accordion won't expand interactively.
+    </div>
+</noscript>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar navbar-expand-lg navbar-glass sticky-top" aria-label="Main navigation">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-3" href="/" aria-label="OmeBox Home">
+            <img src="/static/logo.png" alt="OmeBox logo" height="48" width="48" onerror="this.style.display='none'">
+            <span style="color:#2563EB;">OmeBox</span>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars fs-3" style="color: var(--text);" aria-hidden="true"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto gap-2">
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="/"><i class="fas fa-home me-1" aria-hidden="true"></i>Home</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="/share/text"><i class="fas fa-align-left me-1" aria-hidden="true"></i>Share Text</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="/share/files"><i class="fas fa-paperclip me-1" aria-hidden="true"></i>Share Files</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="/access"><i class="fas fa-download me-1" aria-hidden="true"></i>Receiver</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom active" href="/anonymous-file-share" aria-current="page"><i class="fas fa-user-secret me-1" aria-hidden="true"></i>Anonymous</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="/about"><i class="fas fa-info-circle me-1" aria-hidden="true"></i>About</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main id="main-content" tabindex="-1">
+    <div class="container py-4 py-md-5">
+
+       
+
+        <section class="hero">
+            <h1>
+                Anonymous File Sharing <br>
+                <span class="hero-gradient-text">Without Login</span>
+            </h1>
+            <p>
+                Share files instantly without creating an account. OmeBox allows secure file transfer between
+                PC, Mac, Android, and iPhone using temporary links that expire automatically.
+            </p>
+            <div class="mt-4">
+                <a href="/share/files" class="btn-primary-custom" aria-label="Start sharing files anonymously">
+                    <i class="fas fa-upload" aria-hidden="true"></i> Start Sharing Now
+                </a>
+            </div>
+        </section>
+
+        <div class="trust-badge">
+            <div class="trust-item"><i class="fas fa-user-secret" aria-hidden="true"></i><p>No Registration</p></div>
+            <div class="trust-item"><i class="fas fa-lock" aria-hidden="true"></i><p>Secure Transfer</p></div>
+            <div class="trust-item"><i class="fas fa-globe" aria-hidden="true"></i><p>Cross-Platform</p></div>
+            <div class="trust-item"><i class="fas fa-infinity" aria-hidden="true"></i><p>100% Free</p></div>
+            <div class="trust-item"><i class="fas fa-clock" aria-hidden="true"></i><p>Auto-Expiry</p></div>
+        </div>
+
+        <section class="mt-5" aria-labelledby="what-is-heading">
+            <div class="definition-block">
+                <h2 id="what-is-heading"><i class="fas fa-info-circle me-2" style="color: var(--primary);" aria-hidden="true"></i>What Is Anonymous File Sharing?</h2>
+                <p>
+                    <strong>Anonymous file sharing</strong> is the process of sending, receiving, or storing files
+                    over the internet <strong>without revealing your identity</strong>. No username, no email,
+                    no phone number, and no account is required. The sender uploads a file, the service generates
+                    a unique, temporary link or code, and the recipient uses that link to download the file —
+                    without either party ever exposing personal data.
+                </p>
+                <p class="mt-3">
+                    Unlike traditional cloud services (Google Drive, Dropbox, OneDrive) where every file is
+                    tied to a verified account, anonymous file sharing decouples the file from the person.
+                    That means <strong>no profile, no activity log, and no permanent footprint</strong>. Once
+                    the link expires, the file is gone and there is nothing left to trace.
+                </p>
+            </div>
+        </section>
+
+        <section class="mt-5" aria-labelledby="benefits-heading">
+            <h2 id="benefits-heading" class="section-header">Why Users Choose Anonymous File Sharing — Key Benefits</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-user-slash" aria-hidden="true"></i></div>
+                        <h3>Total Privacy</h3>
+                        <p>No account means no personal data to leak. Your identity is never stored or linked to the files you send.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
+                        <h3>Faster Transfers</h3>
+                        <p>Skip signup forms, email verification, and password creation. Upload and share in under 10 seconds.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-user-check" aria-hidden="true"></i></div>
+                        <h3>No Barrier to Entry</h3>
+                        <p>Recipients don't need an account either. Anyone with the link or 6-digit code can access the file instantly.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-hourglass-end" aria-hidden="true"></i></div>
+                        <h3>Automatic Cleanup</h3>
+                        <p>Choose expiry from 15 minutes to 3 days. After that, files self-destruct — no manual delete required.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-shield-virus" aria-hidden="true"></i></div>
+                        <h3>Smaller Attack Surface</h3>
+                        <p>No credentials to breach, no stored tokens, no persistent sessions. Fewer targets for attackers.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-universal-access" aria-hidden="true"></i></div>
+                        <h3>Universal Access</h3>
+                        <p>Works on PC, Mac, Android, iPhone, iPad, Linux — any device with a browser. No apps to install.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-dollar-sign" aria-hidden="true"></i></div>
+                        <h3>100% Free</h3>
+                        <p>No premium tiers, no hidden fees, no credit card. Free forever for personal use.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-random" aria-hidden="true"></i></div>
+                        <h3>Ideal for One-Time Shares</h3>
+                        <p>Perfect for sending a file to someone you may never contact again — no relationship needed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-5" aria-labelledby="why-omebox-heading">
+            <h2 id="why-omebox-heading" class="section-header">Why Use OmeBox for Anonymous Sharing?</h2>
+            <p class="mb-4" style="color: var(--text-light); font-size: 1.05rem; line-height: 1.7;">
+                There are many file-sharing services, but <strong>OmeBox (also known as Ome Box)</strong> is built from the
+                ground up for <strong>truly anonymous, no-login file transfer</strong>. Here's what sets it apart:
+            </p>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+                        <h3>Zero Friction</h3>
+                        <p>No signup page, no email loop, no popups. Paste the file, click Share, done. The fastest anonymous share flow on the web.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-qrcode" aria-hidden="true"></i></div>
+                        <h3>QR + 6-Digit Code</h3>
+                        <p>Every share gets a QR code and a short 6-digit code — perfect for phone-to-PC transfers without typing long URLs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-lock" aria-hidden="true"></i></div>
+                        <h3>Optional Password</h3>
+                        <p>Add a password to any share for an extra layer of security — even when you don't want to create an account.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-file-archive" aria-hidden="true"></i></div>
+                        <h3>Up to 20 Files per Share</h3>
+                        <p>Send multiple files, ZIP archives, PDFs, images, videos, or documents — up to 100MB each (2GB total) — all in one share.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-user-secret" aria-hidden="true"></i></div>
+                        <h3>Minimal Data Collection</h3>
+                        <p>No personal accounts, no marketing profiles. We only collect anonymous usage statistics to keep the service running.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
+                        <h3>Also for Text &amp; Notes</h3>
+                        <p>Beyond files, OmeBox shares text, code snippets, and notes with the same privacy-first design.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-5" aria-labelledby="trend-heading">
+            <h2 id="trend-heading" class="section-header">Anonymous File Sharing — Daily Search &amp; Popularity Trends</h2>
+            <p class="mb-4" style="color: var(--text-light); font-size: 1.05rem; line-height: 1.7;">
+                Interest in <strong>anonymous file sharing</strong> and <strong>no-login file transfer</strong> has grown steadily
+                as more users look for privacy-first alternatives to traditional cloud storage. Below is an illustrative
+                snapshot of relative search interest for the most common privacy-focused sharing terms.
+            </p>
+
+            <div class="trend-block">
+                <div class="trend-row">
+                    <div class="trend-label"><span>Anonymous file sharing</span><span>High</span></div>
+                    <div class="trend-bar"><span style="width: 88%;"></span></div>
+                </div>
+                <div class="trend-row">
+                    <div class="trend-label"><span>File sharing without login</span><span>High</span></div>
+                    <div class="trend-bar"><span style="width: 82%;"></span></div>
+                </div>
+                <div class="trend-row">
+                    <div class="trend-label"><span>Send files without registration</span><span>Medium-High</span></div>
+                    <div class="trend-bar"><span style="width: 74%;"></span></div>
+                </div>
+                <div class="trend-row">
+                    <div class="trend-label"><span>Temporary file transfer</span><span>Medium-High</span></div>
+                    <div class="trend-bar"><span style="width: 68%;"></span></div>
+                </div>
+                <div class="trend-row">
+                    <div class="trend-label"><span>Secure file sharing no account</span><span>Medium</span></div>
+                    <div class="trend-bar"><span style="width: 60%;"></span></div>
+                </div>
+                <div class="trend-row">
+                    <div class="trend-label"><span>PC to phone file transfer</span><span>Medium</span></div>
+                    <div class="trend-bar"><span style="width: 55%;"></span></div>
+                </div>
+                <div class="trend-row">
+                    <div class="trend-label"><span>Anonymous file upload</span><span>Medium</span></div>
+                    <div class="trend-bar"><span style="width: 50%;"></span></div>
+                </div>
+                <div class="trend-row">
+                    <div class="trend-label"><span>No signup file share</span><span>Rising</span></div>
+                    <div class="trend-bar"><span style="width: 44%;"></span></div>
+                </div>
+
+                <p class="trend-note">
+                    Illustrative ranking of relative keyword interest. For live data, see <a href="https://trends.google.com/" target="_blank" rel="noopener noreferrer">Google Trends</a>.
+                </p>
+            </div>
+        </section>
+
+        <section class="mt-5" aria-labelledby="legal-heading">
+            <div class="legal-block">
+                <h2 id="legal-heading"><i class="fas fa-scale-balanced" style="color: #F59E0B;" aria-hidden="true"></i>Is Anonymous File Sharing Legal?</h2>
+
+                <p><strong>Short answer:</strong> Yes — the technology and the act of sharing files anonymously is legal. Legality depends on <strong>what you share</strong>, not on whether the transfer is anonymous.</p>
+
+                <p><strong>What is legal:</strong></p>
+                <ul>
+                    <li>Sharing files you created yourself — documents, photos, videos, code, designs.</li>
+                    <li>Sharing files you have explicit permission or a license to distribute.</li>
+                    <li>Sharing public-domain or open-licensed content (CC0, CC-BY, MIT, GPL, etc.).</li>
+                    <li>Sharing your own backups between your own devices (phone → PC, laptop → tablet).</li>
+                    <li>Sending confidential work or personal documents to a specific recipient.</li>
+                </ul>
+
+                <p><strong>What is illegal in most countries:</strong></p>
+                <ul>
+                    <li>Sharing copyrighted movies, music, software, books, or games without permission.</li>
+                    <li>Distributing malware, illegal content, or material that violates local law.</li>
+                    <li>Sharing private data of other people without their consent.</li>
+                </ul>
+
+                <p><strong>OmeBox's position:</strong> We provide a neutral, privacy-first tool for legitimate file transfer. We do not host, promote, or encourage the sharing of infringing content. Users are solely responsible for the files they upload, and we cooperate with lawful takedown requests where required.</p>
+            </div>
+        </section>
+
+        <section class="mt-5" aria-labelledby="usecases-heading">
+            <h2 id="usecases-heading" class="section-header">Real-World Use Cases for Anonymous File Sharing</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
+                        <h3>Freelancers &amp; Clients</h3>
+                        <p>Send deliverables without exposing your personal email or adding clients to your cloud account.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-newspaper" aria-hidden="true"></i></div>
+                        <h3>Journalists &amp; Sources</h3>
+                        <p>Receive sensitive documents with temporary links that leave no trace after the expiry window.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+                        <h3>Students &amp; Teachers</h3>
+                        <p>Share assignments and study materials without exchanging personal contact info or creating school accounts.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-mobile-screen" aria-hidden="true"></i></div>
+                        <h3>Phone ↔ PC Transfer</h3>
+                        <p>Move photos, videos, or documents between devices without installing any app or signing into iCloud/Google.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-user-shield" aria-hidden="true"></i></div>
+                        <h3>Privacy-Conscious Users</h3>
+                        <p>Anyone who simply doesn't want a permanent record of every file they've shared living on a server.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
+                        <h3>One-Time Collaboration</h3>
+                        <p>Working with someone you may never contact again? No need to add them to your contacts or cloud.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-5" aria-labelledby="core-features-heading">
+            <h2 id="core-features-heading" class="section-header">Core Features of OmeBox</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-lock" aria-hidden="true"></i></div>
+                        <h3>No Account Required</h3>
+                        <p>Upload and share files instantly without registration or providing any personal data. Complete privacy guaranteed.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-hourglass-half" aria-hidden="true"></i></div>
+                        <h3>Temporary Secure Links</h3>
+                        <p>Shared files automatically expire after your selected time — from 15 minutes up to 3 days for maximum privacy.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-exchange-alt" aria-hidden="true"></i></div>
+                        <h3>Cross-Device Transfer</h3>
+                        <p>Send files seamlessly between PC, Mac, Android, iPhone, iPad, and tablets without any software.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+                        <h3>Fast &amp; Free</h3>
+                        <p>Transfer documents, images, code, and archives in seconds. No hidden fees or premium tiers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-5" aria-labelledby="how-it-works-heading">
+            <h2 id="how-it-works-heading" class="section-header">How Anonymous File Sharing Works</h2>
+            <div class="steps-container">
+                <div class="row g-3">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Upload File</h4>
+                                <p>Select file or paste text content</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Set Expiry</h4>
+                                <p>Choose 15 min to 3 days</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Generate Link</h4>
+                                <p>Get secure link &amp; QR code</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Share</h4>
+                                <p>Send link for instant download</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-5" aria-labelledby="devices-heading">
+            <h2 id="devices-heading" class="section-header">Supported Devices &amp; Platforms</h2>
+            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                <span class="device-tag"><i class="fab fa-windows" aria-hidden="true"></i> Windows PC</span>
+                <span class="device-tag"><i class="fab fa-apple" aria-hidden="true"></i> MacOS</span>
+                <span class="device-tag"><i class="fab fa-android" aria-hidden="true"></i> Android</span>
+                <span class="device-tag"><i class="fab fa-apple" aria-hidden="true"></i> iPhone &amp; iPad</span>
+                <span class="device-tag"><i class="fab fa-linux" aria-hidden="true"></i> Linux</span>
+                <span class="device-tag"><i class="fas fa-tablet-alt" aria-hidden="true"></i> Tablets</span>
+                <span class="device-tag"><i class="fab fa-chrome" aria-hidden="true"></i> Any Browser</span>
+            </div>
+        </section>
+
+        <section class="mt-5" aria-labelledby="faq-heading">
+            <h2 id="faq-heading" class="section-header">Frequently Asked Questions</h2>
+            <div class="mt-3">
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq1">
+                        <span><i class="fas fa-user-secret me-2" aria-hidden="true"></i>Is OmeBox completely anonymous?</span>
+                    </button>
+                    <div id="faq1" class="faq-answer" aria-hidden="true">
+                        <p>Yes — OmeBox requires no account creation, email, or phone number. We don't store any personal identifier linked to your files. We only collect anonymous, aggregate usage statistics to keep the service running.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq2">
+                        <span><i class="fas fa-mobile-alt me-2" aria-hidden="true"></i>Can I send files between phone and PC?</span>
+                    </button>
+                    <div id="faq2" class="faq-answer" aria-hidden="true">
+                        <p>Absolutely. Upload from your phone, get a link or QR code, then open it on your PC — or vice versa. Works seamlessly across all devices without any app installation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq3">
+                        <span><i class="fas fa-clock me-2" aria-hidden="true"></i>How long are files stored?</span>
+                    </button>
+                    <div id="faq3" class="faq-answer" aria-hidden="true">
+                        <p>You choose the expiration time — from 15 minutes to 3 days for files. After expiry, files are automatically and permanently deleted from our servers.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq4">
+                        <span><i class="fas fa-database me-2" aria-hidden="true"></i>What's the maximum file size?</span>
+                    </button>
+                    <div id="faq4" class="faq-answer" aria-hidden="true">
+                        <p>Each file can be up to 100MB. You can share up to 20 files in a single share — a total of 2GB per share. Perfect for documents, high-resolution photos, videos, and software packages.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq5">
+                        <span><i class="fas fa-shield-alt me-2" aria-hidden="true"></i>Is my file transfer encrypted?</span>
+                    </button>
+                    <div id="faq5" class="faq-answer" aria-hidden="true">
+                        <p>Yes. All transfers use TLS encryption (HTTPS). Your files are protected during upload, storage, and download. Only people with the unique link can access your content.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq6">
+                        <span><i class="fas fa-question-circle me-2" aria-hidden="true"></i>What is anonymous file sharing?</span>
+                    </button>
+                    <div id="faq6" class="faq-answer" aria-hidden="true">
+                        <p><strong>Anonymous file sharing</strong> means you can send or receive files without revealing your identity. No username, email, or any personal information is required. OmeBox generates a unique, temporary link that does not trace back to you, ensuring your privacy is maintained throughout the transfer.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq7">
+                        <span><i class="fas fa-id-card me-2" aria-hidden="true"></i>Why use an anonymous ID instead of logging in?</span>
+                    </button>
+                    <div id="faq7" class="faq-answer" aria-hidden="true">
+                        <p>Using an <strong>anonymous ID</strong> (or no ID at all) eliminates the need to remember passwords, avoids data breaches from stored credentials, and prevents any association between your file transfers and your personal identity. It's perfect for one-time sharing, sensitive documents, or when you simply want the fastest, most private experience without creating an account.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq8">
+                        <span><i class="fas fa-lightbulb me-2" aria-hidden="true"></i>What are some examples of anonymous file sharing?</span>
+                    </button>
+                    <div id="faq8" class="faq-answer" aria-hidden="true">
+                        <p><strong>Examples:</strong></p>
+                        <p>• Sending a large video to a friend without using email or cloud storage.</p>
+                        <p>• Sharing a confidential work document with a colleague without linking it to your company account.</p>
+                        <p>• Transferring photos from your phone to your computer without installing any app.</p>
+                        <p>• A journalist sharing sensitive materials with a source using a link that self-destructs after 24 hours.</p>
+                        <p>• Students sharing project files without exchanging personal contact info.</p>
+                        <p>All these are possible with OmeBox's anonymous, link-based sharing.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq9">
+                        <span><i class="fas fa-scale-balanced me-2" aria-hidden="true"></i>Is anonymous file sharing legal?</span>
+                    </button>
+                    <div id="faq9" class="faq-answer" aria-hidden="true">
+                        <p>Yes. The technology and act of sharing files anonymously is legal. Legality depends on <strong>what</strong> is being shared, not on whether the transfer is anonymous. Sharing files you own or have rights to is legal everywhere. Sharing copyrighted content without permission is illegal in most countries, regardless of whether the transfer is anonymous. OmeBox is designed for legitimate, privacy-first sharing of your own files.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq10">
+                        <span><i class="fas fa-ban me-2" aria-hidden="true"></i>What are the disadvantages of anonymous file sharing?</span>
+                    </button>
+                    <div id="faq10" class="faq-answer" aria-hidden="true">
+                        <p>Honest downsides include:</p>
+                        <p>• <strong>No permanent storage</strong> — once a share expires, it's gone forever.</p>
+                        <p>• <strong>No recovery</strong> if you lose the link or 6-digit code.</p>
+                        <p>• <strong>Smaller size limits</strong> than paid cloud services.</p>
+                        <p>• <strong>No shared folder or team workspace</strong> — it's for one-off transfers, not collaboration.</p>
+                        <p>• <strong>You must send the link separately</strong> (chat, SMS, email) for the recipient to access it.</p>
+                        <p>For one-time, privacy-first shares, these trade-offs are worth it. For ongoing collaboration, a traditional cloud service is still better.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Start Anonymous File Sharing Today</h2>
+            <p>Upload your file and generate a secure link instantly. No registration, no email, no personal data required.</p>
+            <a href="/share/files" class="btn-primary-custom">
+                <i class="fas fa-link me-2" aria-hidden="true"></i> Create Secure Share Link →
+            </a>
+        </section>
+
+        <div class="text-center mt-4">
+            <div class="visitor-counter">
+                <i class="fas fa-users me-2" style="color: var(--primary);" aria-hidden="true"></i>
+                <span>Thousands of secure transfers completed worldwide</span>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer-links" aria-label="Site footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 mb-3 mb-md-0">
+                <h6 class="footer-heading"><i class="fas fa-share-alt me-2" style="color: var(--primary);" aria-hidden="true"></i>OmeBox</h6>
+                <p class="small">Free text and file sharing without signup. Instant, private, cross-platform.</p>
+            </div>
+            <div class="col-md-3 mb-3 mb-md-0">
+                <h6 class="footer-heading">Quick Links</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="/share/text">Share Text</a></li>
+                    <li><a href="/share/files">Share Files</a></li>
+                    <li><a href="/access">Receiver</a></li>
+                    <li><a href="/webnotepad">Web Notepad</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-3 mb-md-0">
+                <h6 class="footer-heading">Company</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li><a href="/privacy-policy"">Terms of Service</a></li>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h6 class="footer-heading">Articles</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="/omebox-article">OmeBox Article</a></li>
+                    <li><a href="/anonymous-file-share">Anonymous File Sharing</a></li>
+                    <li><a href="/best-file-share-website">Best File Sharing</a></li>
+                    <li><a href="/best-programming-langues">Best Programming Languages</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="my-3" style="border-color: #334155;">
+        <div class="text-center small">© <span id="copyrightYear">2025</span> OmeBox – Instant file &amp; text sharing | No registration required</div>
+    </div>
+</footer>
+
+<!-- ========== MOBILE BOTTOM NAV ========== -->
+<nav class="d-md-none mobile-bottom-nav" aria-label="Mobile navigation">
+    <div class="d-flex h-100 align-items-center justify-content-around px-2">
+        <a href="/" class="mobile-nav-item text-center"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a>
+        <a href="/share/text" class="mobile-nav-item text-center"><i class="fas fa-align-left" aria-hidden="true"></i><span>Text</span></a>
+        <a href="/share/files" class="mobile-nav-item text-center"><i class="fas fa-paperclip" aria-hidden="true"></i><span>Files</span></a>
+        <a href="/access" class="mobile-nav-item text-center"><i class="fas fa-download" aria-hidden="true"></i><span>Receive</span></a>
+        <a href="/anonymous-file-share" class="mobile-nav-item text-center active" aria-current="page"><i class="fas fa-user-secret" aria-hidden="true"></i><span>Anonymous</span></a>
+    </div>
+</nav>
+
+<div class="d-md-none" style="height: 80px;" aria-hidden="true"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true' ? false : true;
+                const answer = document.getElementById(this.getAttribute('aria-controls'));
+                if (answer) {
+                    this.setAttribute('aria-expanded', expanded);
+                    answer.setAttribute('aria-hidden', !expanded);
+                }
+            });
+        });
+
+        // Dynamic copyright year
+        const yearEl = document.getElementById('copyrightYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
+</script>
+</body>
+</html>

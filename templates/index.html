@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Share Text &amp; Files Online Free – No Login | OmeBox</title>
+<meta name="description" content="Share text &amp; files online instantly. No login, no registration. Cross-device transfer with QR codes &amp; auto-expiry. 100% free.">
+<link rel="canonical" href="https://omebox.com/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="OmeBox">
+<meta name="theme-color" content="#2563EB">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Share Text &amp; Files Online Free – No Login | OmeBox">
+<meta property="og:description" content="Share text &amp; files instantly between PC, Mac, iPhone &amp; Android. No login. Secure access codes. Auto-expiry. 100% free.">
+<meta property="og:url" content="https://omebox.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OmeBox">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://omebox.com/static/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="OmeBox – Share text and files online free without login">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Share Text &amp; Files Online Free – No Login | OmeBox">
+<meta name="twitter:description" content="Share text &amp; files instantly between any devices. No registration. Secure &amp; temporary.">
+<meta name="twitter:image" content="https://omebox.com/static/og-cover.png">
+<meta name="twitter:image:alt" content="OmeBox – Free cross-device file sharing">
+
+<link rel="icon" type="image/png" href="/static/logo.png">
+<link rel="apple-touch-icon" href="/static/logo.png">
+
+<!-- Preconnect -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1DNNDQWSD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H1DNNDQWSD');
+</script>
+
+<!-- AdSense: add back once you have a real publisher ID (a placeholder ID throws console errors)
+<meta name="google-adsense-account" content="ca-pub-YOUR_ID">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ID" crossorigin="anonymous"></script>
+-->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+<style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter','Segoe UI',system-ui,-apple-system,sans-serif; background: whitesmoke; min-height: 100vh; color: #0F172A; }
+    :focus-visible { outline: 3px solid #2563EB; outline-offset: 2px; }
+
+    /* Navbar */
+    .navbar-glass { background: rgba(255,255,255,.95); backdrop-filter: blur(16px); border-bottom: 1px solid #E2E8F0; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+    .nav-link-custom { color: #475569; font-weight: 500; transition: .2s; margin: 0 4px; border-radius: 40px; padding: 8px 20px !important; }
+    .nav-link-custom:hover, .nav-link-custom.active { color: #2563EB; background: rgba(37,99,235,.08); }
+
+    /* Choice cards (now real links) */
+    .choice-card { display: block; height: 100%; background: #fff; border: 1px solid #E2E8F0; border-radius: 24px; padding: 2rem 1.8rem; text-align: center; text-decoration: none; color: inherit; transition: transform .25s, box-shadow .3s; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+    .choice-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -8px rgba(0,0,0,.1); border-color: #2563EB; color: inherit; }
+    .choice-icon { font-size: 3.5rem; margin-bottom: 1.2rem; color: #2563EB; }
+    .choice-title { font-size: 1.8rem; font-weight: 700; margin-bottom: .75rem; color: #0F172A; }
+    .choice-desc { color: #475569; margin-bottom: 1.5rem; font-size: .95rem; }
+    .btn-choice { display: inline-block; background: #2563EB; color: #fff; border-radius: 60px; padding: .75rem 1.8rem; font-weight: 600; transition: .2s; }
+    .choice-card:hover .btn-choice { background: #1D4ED8; }
+
+    /* Stats */
+    .stats-bar { background: #fff; border-radius: 24px; padding: 1.5rem 1rem; margin-top: 50px; border: 1px solid #E2E8F0; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+    .stat-number { font-size: 1.6rem; font-weight: 800; letter-spacing: -.3px; }
+    .stat-label { font-size: .85rem; text-transform: uppercase; font-weight: 500; color: #64748B; }
+
+    /* Feature grid */
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+    .feature-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 16px; padding: 24px 20px; text-align: center; transition: .3s; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,.1); border-color: #2563EB; }
+    .feature-card .emoji { font-size: 2.2rem; margin-bottom: 12px; display: block; }
+    .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: .85rem; color: #475569; margin: 0; line-height: 1.5; }
+
+    /* Access pill */
+    .access-pill { background: #fff; border-radius: 60px; padding: 14px 28px; display: inline-flex; align-items: center; gap: 12px; transition: .2s; border: 1px solid #E2E8F0; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+    .access-pill:hover { border-color: #2563EB; box-shadow: 0 4px 12px rgba(37,99,235,.15); transform: translateY(-2px); }
+    .access-pill span { color: #0F172A; font-weight: 500; }
+
+    /* Mobile bottom nav */
+    .mobile-bottom-nav { height: 70px; z-index: 1050; background: rgba(255,255,255,.98); backdrop-filter: blur(16px); border-top: 1px solid #E2E8F0; box-shadow: 0 -2px 10px rgba(0,0,0,.05); padding-bottom: env(safe-area-inset-bottom); }
+    .mobile-nav-item { flex: 1; text-align: center; padding: 8px 4px; border-radius: 24px; transition: .2s; color: #64748B; text-decoration: none; }
+    .mobile-nav-item.active { color: #2563EB; background: rgba(37,99,235,.1); }
+    .mobile-nav-item i { font-size: 1.5rem; margin-bottom: 3px; }
+    .mobile-nav-item span { font-size: .7rem; font-weight: 500; display: block; }
+
+    /* Footer */
+    .footer-links { background: #fff; border-top: 1px solid #E2E8F0; }
+    .footer-links a { color: #475569; text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: #2563EB; }
+
+    /* Article */
+    .article-section { background: #fff; border: 1px solid #E2E8F0; border-radius: 24px; padding: 2.5rem 2rem; margin-top: 2rem; }
+    .article-section h2 { font-size: 1.6rem; font-weight: 800; margin: 2rem 0 .75rem; line-height: 1.3; scroll-margin-top: 90px; }
+    .article-section h2:first-child { margin-top: 0; }
+    .article-section h3 { font-size: 1.15rem; font-weight: 700; color: #1D4ED8; margin: 1.25rem 0 .5rem; scroll-margin-top: 90px; }
+    .article-section p, .article-section li { color: #334155; line-height: 1.75; }
+    .article-section ul, .article-section ol { padding-left: 1.35rem; margin-bottom: 1rem; }
+    .article-section a:not(.btn) { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .article-section a:not(.btn):hover { color: #1D4ED8; }
+    .article-section strong { color: #0F172A; }
+    .article-section table thead th { font-weight: 700; color: #0F172A; vertical-align: middle; background: #EFF6FF; }
+    .article-section table tbody td { color: #334155; }
+
+    .toc { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; }
+    .article-section .toc h3 { font-size: .95rem; text-transform: uppercase; letter-spacing: .5px; color: #64748B; margin: 0 0 .75rem; }
+    .toc ol { margin-bottom: 0; padding-left: 1.2rem; }
+    .toc li { font-size: .92rem; line-height: 1.9; }
+    .article-section .toc a { text-decoration: none; }
+    .article-section .toc a:hover { text-decoration: underline; }
+
+    .article-cta { background: linear-gradient(135deg,#EFF6FF,#DBEAFE); border: 1px solid #BFDBFE; border-radius: 16px; padding: 1.5rem; margin-top: 2rem; text-align: center; }
+    .article-cta p { margin-bottom: 1rem; color: #1E3A8A; font-weight: 500; }
+
+    .skip-link { position: absolute; top: -40px; left: 0; background: #2563EB; color: #fff; padding: 8px 16px; z-index: 9999; text-decoration: none; border-radius: 0 0 8px 0; }
+    .skip-link:focus { top: 0; color: #fff; }
+
+    @media (max-width: 768px) {
+        .choice-card { padding: 1.5rem; }
+        .choice-title { font-size: 1.5rem; }
+        .stat-number { font-size: 1.3rem; }
+        .feature-grid { grid-template-columns: repeat(2,1fr); gap: 14px; }
+        .article-section { padding: 1.5rem 1rem; }
+        .article-section h2 { font-size: 1.35rem; }
+        .article-section h3 { font-size: 1.05rem; }
+    }
+    @media (max-width: 480px) {
+        .choice-icon { font-size: 2.6rem; }
+        .feature-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition: none !important; }
+    }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="navbar navbar-expand-lg navbar-glass sticky-top px-3 px-md-4" aria-label="Main navigation">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-3" href="/" aria-label="OmeBox Home">
+            <img src="/static/logo.png" alt="OmeBox logo" height="48" width="48" onerror="this.style.display='none'">
+            <span style="color:#2563EB;">OmeBox</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fas fa-bars fs-3" aria-hidden="true"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav mx-auto gap-1 gap-lg-2 mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link nav-link-custom active" href="/" aria-current="page"><i class="fas fa-home me-1"></i>Home</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="/share/text"><i class="fas fa-align-left me-1"></i>Share Text</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="/share/files"><i class="fas fa-paperclip me-1"></i>Share Files</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="/access"><i class="fas fa-download me-1"></i>Receiver</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="/webnotepad" target="_blank" rel="noopener"><i class="fas fa-edit me-1"></i>Web Notepad</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main id="main-content" tabindex="-1">
+<div class="container px-3 px-md-4 py-4 py-md-5">
+
+    <h1 class="text-center fw-bold">Share Text Online Free &amp; File Sharing Without Login</h1>
+    <p class="text-center text-secondary">Share instantly between any devices. 🔒 Secure transfer • ⏱️ Auto-expiry • 📱 Cross-platform</p>
+
+    <div class="row g-4 mt-2">
+        <div class="col-sm-6">
+            <a class="choice-card" href="/share/text" aria-label="Share text content instantly">
+                <div class="choice-icon"><i class="fas fa-align-left" aria-hidden="true"></i></div>
+                <h2 class="choice-title">Share Text</h2>
+                <p class="choice-desc">Share notes, code, articles, or any text content. Append more text anytime. Perfect for quick collaboration.</p>
+                <span class="btn-choice"><i class="fas fa-arrow-right me-2" aria-hidden="true"></i>Share Text</span>
+            </a>
+        </div>
+        <div class="col-sm-6">
+            <a class="choice-card" href="/share/files" aria-label="Share files up to 100 MB">
+                <div class="choice-icon"><i class="fas fa-paperclip" aria-hidden="true"></i></div>
+                <h2 class="choice-title">Share Files</h2>
+                <p class="choice-desc">Upload multiple files, preview images &amp; PDFs directly. Fast transfer with password protection option.</p>
+                <span class="btn-choice"><i class="fas fa-arrow-right me-2" aria-hidden="true"></i>Share Files</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="stats-bar text-center">
+        <div class="row g-3">
+            <div class="col-md-4 col-6">
+                <div class="stat-number"><i class="fas fa-hourglass-half me-2" style="color:#2563EB;" aria-hidden="true"></i>15 min – 7 days</div>
+                <div class="stat-label">Expiry Options</div>
+            </div>
+            <div class="col-md-4 col-6">
+                <div class="stat-number"><i class="fas fa-qrcode me-2" style="color:#2563EB;" aria-hidden="true"></i>QR + 6-digit</div>
+                <div class="stat-label">Easy Access</div>
+            </div>
+            <div class="col-md-4 col-12 mt-2 mt-md-0">
+                <div class="stat-number"><i class="fas fa-shield-alt me-2" style="color:#10B981;" aria-hidden="true"></i>Auto Delete</div>
+                <div class="stat-label">Private &amp; Secure</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="mt-5" aria-labelledby="features-title">
+        <h2 id="features-title" class="text-center fw-bold">Why OmeBox is the Best Free File Sharing Platform</h2>
+        <div class="feature-grid">
+            <div class="feature-card"><span class="emoji" aria-hidden="true">📁</span><h3>File Sharing Without Login</h3><p>Share files instantly without creating an account. No registration, no email required.</p></div>
+            <div class="feature-card"><span class="emoji" aria-hidden="true">📱</span><h3>PC to iPhone File Transfer</h3><p>Transfer files between PC, Mac, iPhone, and Android seamlessly. Cross-platform compatibility.</p></div>
+            <div class="feature-card"><span class="emoji" aria-hidden="true">🗜️</span><h3>Zip File Sender</h3><p>Send large files and zip archives up to 100 MB. Perfect for sharing multiple files at once.</p></div>
+            <div class="feature-card"><span class="emoji" aria-hidden="true">📝</span><h3>Online Web Notepad</h3><p>Write and edit notes instantly in your browser. Download as PDF, TXT, or Word. 100% free.</p></div>
+            <div class="feature-card"><span class="emoji" aria-hidden="true">🔐</span><h3>Anonymous &amp; Secure</h3><p>No account and no personal details needed. Your files are removed automatically when they expire.</p></div>
+            <div class="feature-card"><span class="emoji" aria-hidden="true">📋</span><h3>6-Digit Code Access</h3><p>Share using a simple 6-digit code. No links needed — just type the code to access content.</p></div>
+        </div>
+    </section>
+
+    <!-- Structured data lives in JSON-LD below; microdata removed to avoid duplicate Article markup -->
+    <article class="article-section">
+
+        <h2 id="share-files-text-online">Share Files and Text Online Without an Account – OmeBox</h2>
+        <p>Send files, share text, and transfer content between devices with <strong>OmeBox</strong>. No account, software installation, or complicated setup is required. Upload your files or paste your text, generate a shareable link or short access code, and access your content from another device in seconds.</p>
+        <p>Whether you need to send large files to someone, transfer a document from your phone to your laptop, or share a quick text snippet with a friend, OmeBox makes online sharing simple.</p>
+
+        <nav class="toc" aria-label="Table of contents">
+            <h3><i class="fas fa-list-ul me-1" aria-hidden="true"></i> On this page</h3>
+            <ol>
+                <li><a href="#send-files">Send files to anyone without an account</a></li>
+                <li><a href="#share-between-devices">Share text and files between devices</a></li>
+                <li><a href="#who-can-use">Who can use OmeBox?</a></li>
+                <li><a href="#why-omebox">Why use OmeBox for online file sharing?</a></li>
+                <li><a href="#any-device">Share files online from any device</a></li>
+                <li><a href="#security-privacy">Security &amp; privacy</a></li>
+                <li><a href="#browsers-devices">Supported browsers &amp; devices</a></li>
+                <li><a href="#limits-expiry">File size &amp; expiry limits</a></li>
+                <li><a href="#tips">Tips for faster sharing</a></li>
+                <li><a href="#faq">Frequently asked questions</a></li>
+            </ol>
+        </nav>
+
+        <h2 id="send-files">Send Files to Anyone Without an Account</h2>
+        <p>Need to send photos, videos, documents, or other files? OmeBox turns your files into a shareable link and a 6-digit code that you can send to anyone.</p>
+        <p>Simply select your files, wait for the upload to finish, and share the generated link or code. You don't need to install an application or create an account. The recipient can open the link in a web browser and download the shared files.</p>
+        <p>A file transfer is organised into a data package. A package can contain multiple files with a combined size of up to <strong>100 MB</strong>, and stays available until its expiry time (default: 3 days; you can choose anything from 15 minutes to 7 days).</p>
+
+        <h3>What File Types Can You Share?</h3>
+        <p>OmeBox supports most common file types. Here's a quick reference:</p>
+        <div class="table-responsive my-3">
+            <table class="table table-sm table-bordered align-middle" style="font-size:.9rem;">
+                <thead><tr><th scope="col">Category</th><th scope="col">Examples</th><th scope="col">Inline Preview</th></tr></thead>
+                <tbody>
+                    <tr><td>📷 Images</td><td>JPG, PNG, GIF, WebP, SVG, HEIC</td><td>✅ Yes</td></tr>
+                    <tr><td>🎬 Videos</td><td>MP4, MOV, WebM, AVI</td><td>✅ Yes (browser-supported formats)</td></tr>
+                    <tr><td>📄 Documents</td><td>PDF, DOCX, XLSX, PPTX, TXT, CSV</td><td>✅ PDF only; others download</td></tr>
+                    <tr><td>🗜️ Archives</td><td>ZIP, RAR, 7z, TAR.GZ</td><td>❌ Download only</td></tr>
+                    <tr><td>💻 Code &amp; text</td><td>JS, JSON, HTML, CSS, PY, MD, XML</td><td>✅ Plain text</td></tr>
+                    <tr><td>🎵 Audio</td><td>MP3, WAV, OGG, M4A</td><td>✅ Yes</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>How to Send Files Online</h3>
+        <ol>
+            <li><strong>Select your files:</strong> Click Share Files or drag and drop files into the upload area.</li>
+            <li><strong>Upload your files:</strong> Wait for the upload to finish. Large transfers take longer on slow connections.</li>
+            <li><strong>Get your link and code:</strong> Once the upload is complete, OmeBox gives you a link, a 6-digit code, and a QR code.</li>
+            <li><strong>Share with the recipient:</strong> Send the link through email, messaging apps, or any other channel.</li>
+            <li><strong>Download the files:</strong> The recipient opens the link in a browser and downloads the package.</li>
+        </ol>
+
+        <h3>Send Large Files Without Email Attachments</h3>
+        <p>Email services commonly restrict attachment sizes, which makes it hard to send large videos, high-resolution photos, presentations, and design files.</p>
+        <p>With OmeBox you share a link instead of attaching files. Link-based sharing also avoids the compression that messaging apps apply to photos and videos, so the recipient downloads the originals.</p>
+
+        <h3>OmeBox vs Email Attachments vs Cloud Storage</h3>
+        <p>Not all sharing methods are equal. Here's a quick comparison:</p>
+        <div class="table-responsive my-3">
+            <table class="table table-bordered align-middle" style="font-size:.92rem;">
+                <thead><tr><th scope="col">Feature</th><th scope="col">OmeBox</th><th scope="col">Email Attachments</th><th scope="col">Cloud Storage</th></tr></thead>
+                <tbody>
+                    <tr><td>Account required</td><td>✅ No</td><td>⚠️ Email account needed</td><td>❌ Yes</td></tr>
+                    <tr><td>Max size (typical)</td><td>100 MB per package</td><td>10–25 MB</td><td>2–15 GB free</td></tr>
+                    <tr><td>Auto-expiry</td><td>✅ Yes (15 min – 7 days)</td><td>❌ No</td><td>⚠️ Manual</td></tr>
+                    <tr><td>Works across devices</td><td>✅ Yes (any browser)</td><td>⚠️ Limited</td><td>✅ Yes (with app sync)</td></tr>
+                    <tr><td>Mobile-friendly sharing</td><td>✅ Link, code &amp; QR</td><td>⚠️ Attachment only</td><td>⚠️ Links only</td></tr>
+                    <tr><td>Anonymous by default</td><td>✅ Yes</td><td>❌ No (tied to your email)</td><td>❌ No</td></tr>
+                    <tr><td>Setup time</td><td>⚡ Seconds</td><td>⚡ Seconds</td><td>⏱️ Minutes (signup + upload)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="share-between-devices">Share Text and Files Between Devices in Seconds</h2>
+        <p>Stop emailing yourself links, notes, and code snippets. OmeBox makes it easy to transfer text and files between your phone, laptop, desktop, or tablet.</p>
+        <p>Paste your text, generate a short access code, and enter that code on another device to retrieve your content. Use it when switching devices, sharing a website link, transferring code, or moving important notes.</p>
+
+        <h3>How Text Sharing Works</h3>
+        <ol>
+            <li><strong>Paste your text:</strong> Open OmeBox and enter your text, URL, notes, or code in the text-sharing section.</li>
+            <li><strong>Generate a short code:</strong> Submit your content to get a unique access code.</li>
+            <li><strong>Open another device:</strong> Visit OmeBox on your second device, or scan the QR code.</li>
+            <li><strong>Retrieve your content:</strong> Enter the code or scan the QR code, then copy your text.</li>
+        </ol>
+
+        <h2 id="who-can-use">Who Can Use OmeBox?</h2>
+        <p>OmeBox is designed for everyday file and text-sharing situations. Here are the most common scenarios:</p>
+        <div class="table-responsive my-3">
+            <table class="table table-bordered align-middle" style="font-size:.92rem;">
+                <thead><tr><th scope="col">User</th><th scope="col">What They Share</th><th scope="col">Why OmeBox Helps</th></tr></thead>
+                <tbody>
+                    <tr><td>👨‍💻 Developers</td><td>Code snippets, logs, JSON, config files</td><td>Type on phone, paste on laptop in seconds</td></tr>
+                    <tr><td>🎓 Students</td><td>Notes, PDFs, research links, screenshots</td><td>No email attachments needed</td></tr>
+                    <tr><td>💼 Professionals</td><td>Meeting notes, decks, documents</td><td>Optional password + auto-expiry</td></tr>
+                    <tr><td>📸 Photographers</td><td>High-res images, previews</td><td>Original quality — no messaging-app compression</td></tr>
+                    <tr><td>🛠️ Freelancers</td><td>Drafts, invoice PDFs, client previews</td><td>Anonymous links, no client login</td></tr>
+                    <tr><td>👨‍👩‍👧 Families</td><td>Photos, contact info, links</td><td>Works on any phone, no app needed</td></tr>
+                    <tr><td>🎮 Gamers</td><td>Save files, screenshots, mod links</td><td>Fast, cross-platform</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Developers Sharing Code Snippets</h3>
+        <p>Need to move a code snippet from your phone to your computer? Paste it into OmeBox, generate a short code, and retrieve it on your laptop. It works for HTML, CSS, JavaScript, Python, SQL, and other snippets.</p>
+        <h3>Students Sharing Notes and Study Materials</h3>
+        <p>Move study notes, PDF links, research references, and documents between devices without depending on email attachments.</p>
+        <h3>Professionals Sharing Work Files</h3>
+        <p>Move documents, meeting notes, and URLs between devices using a link or access code. Always follow your organisation's security policies when sharing confidential information.</p>
+        <h3>Transferring Content to a New Device</h3>
+        <p>Setting up a new phone or laptop often means moving links and notes. OmeBox lets you transfer them without retyping.</p>
+        <h3>Sharing Photos and Screenshots</h3>
+        <p>Need a screenshot from your phone on your laptop? Upload it to OmeBox and open the link on the other device, with no compression from messaging apps.</p>
+
+        <h2 id="why-omebox">Why Use OmeBox for Online File Sharing?</h2>
+        <ul>
+            <li><strong>No account required:</strong> Share content without signing up.</li>
+            <li><strong>Simple sharing links:</strong> Generate a link to share uploaded files.</li>
+            <li><strong>Text sharing:</strong> Transfer notes, URLs, and code snippets between devices.</li>
+            <li><strong>Short access codes:</strong> Retrieve shared content using a 6-digit code.</li>
+            <li><strong>QR code support:</strong> Scan a QR code to open a share on your phone.</li>
+            <li><strong>Cross-device compatibility:</strong> Works in a web browser on any supported device.</li>
+            <li><strong>Temporary sharing:</strong> Shares are deleted when the expiry period ends.</li>
+            <li><strong>Easy to use:</strong> No software installation.</li>
+        </ul>
+
+        <h2 id="any-device">Share Files Online From Any Device</h2>
+        <p>OmeBox works through a web browser, so you can start on an Android phone and retrieve your files on a Windows computer, or share text from a laptop and open it on another phone. All you need is an internet connection and a browser.</p>
+
+        <h2 id="security-privacy">Security &amp; Privacy: How OmeBox Protects Your Content</h2>
+        <p>Sharing personal or work content online raises a fair question: <em>who can see it?</em> Here's how your content is handled.</p>
+
+        <h3>Anonymous by Design</h3>
+        <ul>
+            <li><strong>No account required</strong> — you never hand over an email, phone number, or password to share.</li>
+            <li><strong>No advertising profiles from your shares</strong> — your text and files are not scanned for advertising.</li>
+            <li><strong>Site analytics only</strong> — we use Google Analytics and Cloudflare to measure general site traffic. They don't receive the content of your shares. See our <a href="/privacy-policy">Privacy Policy</a> for details.</li>
+        </ul>
+
+        <h3>Automatic Expiry</h3>
+        <p>Every share has a built-in lifespan. When the expiry window ends, the content is deleted from OmeBox servers. You choose the window when creating the share:</p>
+        <ul>
+            <li>15 minutes — one-time codes or sensitive snippets</li>
+            <li>1 hour, 24 hours — everyday sharing</li>
+            <li>3 days — the default for file packages</li>
+            <li>7 days — maximum, for larger transfers</li>
+        </ul>
+
+        <h3>Optional Password Protection</h3>
+        <p>For sensitive documents, enable password protection. The recipient must enter the password before the file or text is displayed. The password is not embedded in the QR code or the share link.</p>
+
+        <h3>What We Don't Do</h3>
+        <ul>
+            <li>❌ We don't sell your data.</li>
+            <li>❌ We don't show your shared content in search results.</li>
+            <li>❌ We don't require you to sign in to download.</li>
+            <li>❌ We don't keep expired shares "just in case."</li>
+        </ul>
+        <p>If you're sharing work documents, we recommend following your organisation's internal data-handling rules.</p>
+
+        <h2 id="browsers-devices">Supported Browsers &amp; Devices</h2>
+        <p>OmeBox runs entirely in your browser — there's nothing to install.</p>
+        <div class="row g-3 my-3">
+            <div class="col-md-6">
+                <h3>Browsers</h3>
+                <ul>
+                    <li>✅ Chrome (desktop &amp; mobile)</li>
+                    <li>✅ Firefox (desktop &amp; mobile)</li>
+                    <li>✅ Safari (macOS &amp; iOS)</li>
+                    <li>✅ Microsoft Edge</li>
+                    <li>✅ Brave, Opera, Vivaldi</li>
+                    <li>⚠️ Internet Explorer — not supported (use Edge)</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3>Devices</h3>
+                <ul>
+                    <li>✅ Windows PCs &amp; laptops</li>
+                    <li>✅ macOS (Intel &amp; Apple Silicon)</li>
+                    <li>✅ Linux (Ubuntu, Fedora, etc.)</li>
+                    <li>✅ Android phones &amp; tablets</li>
+                    <li>✅ iPhone &amp; iPad</li>
+                    <li>✅ Chromebooks</li>
+                </ul>
+            </div>
+        </div>
+        <p><strong>All you need</strong> is an internet connection and a modern browser. No app store, no plugins, no extensions.</p>
+
+        <h2 id="limits-expiry">File Size &amp; Expiry — Quick Reference</h2>
+        <div class="table-responsive my-3">
+            <table class="table table-bordered align-middle" style="font-size:.92rem;">
+                <thead><tr><th scope="col">Item</th><th scope="col">Limit</th></tr></thead>
+                <tbody>
+                    <tr><td>Max size per file package</td><td><strong>100 MB</strong> (combined across all files)</td></tr>
+                    <tr><td>Number of files per package</td><td>Multiple (subject to total size)</td></tr>
+                    <tr><td>Default expiry</td><td>3 days</td></tr>
+                    <tr><td>Minimum expiry</td><td>15 minutes</td></tr>
+                    <tr><td>Maximum expiry</td><td>7 days</td></tr>
+                    <tr><td>Account required</td><td>❌ No</td></tr>
+                    <tr><td>Password protection</td><td>✅ Optional</td></tr>
+                    <tr><td>Download speed</td><td>Depends on your connection</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="tips">Tips for Faster, Smoother File Sharing</h2>
+        <ul>
+            <li><strong>Compress before uploading.</strong> A large folder of photos can often be zipped to fit under 100 MB.</li>
+            <li><strong>Use strong Wi-Fi or a wired connection</strong> for uploads above 50 MB. Mobile data can be slow and may incur charges.</li>
+            <li><strong>Send the 6-digit code through a different channel</strong> than the link — this adds a second layer of security.</li>
+            <li><strong>Pick the shortest expiry that works.</strong> If the recipient is downloading now, 15 minutes is plenty.</li>
+            <li><strong>Use QR codes for phone transfers.</strong> Scanning is faster than typing a code.</li>
+            <li><strong>Keep the share tab open</strong> until the upload finishes. Closing it early can interrupt large transfers.</li>
+            <li><strong>Check the expiry for other time zones.</strong> A 24-hour share sent at 11 PM may expire before the recipient wakes up — use a longer window.</li>
+        </ul>
+
+        <h2 id="faq">Frequently Asked Questions</h2>
+
+        <h3>Can I share files online without creating an account?</h3>
+        <p>Yes. OmeBox lets you upload and share files without an account.</p>
+        <h3>How can I send large files to someone?</h3>
+        <p>Upload your files to OmeBox, then send the generated link or code to the recipient. They can open it in a browser and download the files.</p>
+        <h3>Can I transfer files from my phone to my laptop?</h3>
+        <p>Yes. Upload on your phone, then open the link, scan the QR code, or enter the 6-digit code on your laptop.</p>
+        <h3>Can I share text between two devices?</h3>
+        <p>Yes. Paste your text into the text-sharing feature, generate an access code, and use it to retrieve your content on another device.</p>
+        <h3>Does OmeBox support QR codes?</h3>
+        <p>Yes. After creating a share you can scan the QR code to open it on another device.</p>
+        <h3>How long do shared files remain available?</h3>
+        <p>By default 3 days. You can choose any expiry from 15 minutes to 7 days when creating the share.</p>
+        <h3>Do recipients need to install an application?</h3>
+        <p>No. Recipients only need a web browser.</p>
+        <h3>What types of files can I share?</h3>
+        <p>Common file types such as images, videos, documents, and archives, up to 100 MB per package.</p>
+        <h3>Is OmeBox really free?</h3>
+        <p>Yes. There are no premium tiers, no subscriptions, and no credit card required.</p>
+        <h3>Is OmeBox anonymous?</h3>
+        <p>You don't need an account, and we don't ask for your name, email, or phone number to share. Basic site analytics are used to measure traffic (see our <a href="/privacy-policy">Privacy Policy</a>), and all content auto-expires.</p>
+        <h3>Can I share files without an internet connection?</h3>
+        <p>No. Both the sender and receiver need an active internet connection.</p>
+        <h3>Do shared files expire automatically?</h3>
+        <p>Yes. Every share has an expiry you choose when creating it. When it ends, the content is deleted from OmeBox.</p>
+        <h3>Can I cancel or delete a share before it expires?</h3>
+        <p>Yes. After creating a share, use the "delete" option on the confirmation screen. The code and link stop working immediately.</p>
+        <h3>Can more than one person access the same share?</h3>
+        <p>Yes. The 6-digit code or link works for anyone who has it until the share expires. For per-person control, create a separate share for each recipient.</p>
+        <h3>Is there a file-size limit per package?</h3>
+        <p>Yes — 100 MB per package, combined across all files. For larger transfers, split the content into several packages or compress it with ZIP first.</p>
+        <h3>Does OmeBox work on slow connections?</h3>
+        <p>Yes, but large uploads take longer. Compress files first or split big transfers into smaller packages.</p>
+        <h3>Can I use OmeBox for business or commercial sharing?</h3>
+        <p>Yes, for everyday business use. Follow your organisation's data-handling policies for confidential documents. For enterprise compliance (GDPR, SOC 2), consult your legal team.</p>
+        <h3>Does OmeBox require cookies to work?</h3>
+        <p>Sharing works without an account or login cookies. Analytics services may set their own cookies; see our <a href="/privacy-policy">Privacy Policy</a>.</p>
+        <h3>What happens to my files if I close the browser?</h3>
+        <p>Once the upload is complete, your files stay on OmeBox servers until the expiry time. Closing the browser doesn't delete them.</p>
+        <h3>Can I share text with formatting (bold, links, code blocks)?</h3>
+        <p>Text sharing preserves line breaks and plain text. Code is shown as plain monospace text. Rich formatting (bold, italics) is not supported — the receiver gets exactly what you pasted.</p>
+        <h3>How do I know if my share was successful?</h3>
+        <p>After uploading, OmeBox shows a confirmation screen with the code, link, and QR code. You can test it by opening the link in a private browser window.</p>
+        <h3>Does OmeBox work in incognito or private mode?</h3>
+        <p>Yes. It works in any modern browser's private mode.</p>
+
+        <h2 id="start-sharing">Start Sharing With OmeBox</h2>
+        <p>Sharing files and text between devices should be simple. Whether you're a student, developer, professional, or everyday internet user, OmeBox helps you move content without unnecessary steps.</p>
+        <p><strong>Upload files, share text, generate a link, and access your content from another device.</strong></p>
+
+        <div class="article-cta">
+            <p>Visit <strong>OmeBox</strong> and start sharing online without an account.</p>
+            <a href="/share/files" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold"><i class="fas fa-arrow-right me-2" aria-hidden="true"></i> Get Started – No Login Required</a>
+            <div class="mt-3 small text-muted"><strong>OmeBox – Simple Online File and Text Sharing.</strong></div>
+        </div>
+    </article>
+
+    <div class="text-center mt-4 mb-4">
+        <a href="/access" class="text-decoration-none">
+            <div class="access-pill">
+                <i class="fas fa-qrcode fa-fw fs-4" style="color:#2563EB;" aria-hidden="true"></i>
+                <span class="fw-semibold">Have a 6-digit code? Access your shared content here</span>
+                <i class="fas fa-chevron-right ms-2" style="color:#94A3B8;" aria-hidden="true"></i>
+            </div>
+        </a>
+    </div>
+
+    <div class="row g-4 mt-3">
+        <div class="col-lg-6">
+            <div class="rounded-4 p-4 border h-100" style="background:#F1F5F9;">
+                <div class="d-flex align-items-center gap-3 flex-wrap">
+                    <i class="fas fa-download fa-3x" style="color:#2563EB;" aria-hidden="true"></i>
+                    <div>
+                        <h2 class="h5 fw-bold mb-1">Receiver Dashboard</h2>
+                        <p class="mb-2 text-secondary">Retrieve texts or files using code / QR. Works on any device: iPhone, Android, PC.</p>
+                        <a href="/access" class="btn btn-sm btn-outline-primary rounded-pill px-3"><i class="fas fa-download me-1" aria-hidden="true"></i> Go to Receiver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="rounded-4 p-4 border h-100" style="background:#F1F5F9;">
+                <div class="d-flex align-items-center gap-3 flex-wrap">
+                    <i class="fas fa-edit fa-3x" style="color:#F59E0B;" aria-hidden="true"></i>
+                    <div>
+                        <h2 class="h5 fw-bold mb-1">Web Notepad (Online Editor)</h2>
+                        <p class="mb-2 text-secondary">Write, edit, save as .txt, auto-save draft. Real-time word counter. Instant sharing.</p>
+                        <a href="/webnotepad" target="_blank" rel="noopener" class="btn btn-sm btn-outline-warning rounded-pill px-3"><i class="fas fa-external-link-alt me-1" aria-hidden="true"></i> Open Notepad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5 p-4 rounded-4 border" style="background:#F1F5F9;">
+        <div class="row align-items-center text-center text-md-start">
+            <div class="col-md-8">
+                <h2 class="h4 fw-bold"><i class="fas fa-sync-alt me-2" style="color:#2563EB;" aria-hidden="true"></i> Cross-device file sharing without login</h2>
+                <p class="mb-0 text-secondary">Send from PC to iPhone, Android to laptop, or any browser. QR code + 6-digit code makes receiving effortless.</p>
+            </div>
+            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <span class="badge px-3 py-2 rounded-pill" style="background:rgba(37,99,235,.1); color:#2563EB;"><i class="fas fa-check-circle me-1" style="color:#10B981;" aria-hidden="true"></i> No registration</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+</main>
+
+<footer class="footer-links pt-5 pb-4 mt-4">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-md-3">
+                <h2 class="h5 fw-bold"><i class="fas fa-share-alt me-2" style="color:#2563EB;" aria-hidden="true"></i> OmeBox</h2>
+                <p class="small text-secondary">Free text and file sharing without signup. Online notepad and instant cross-device transfer.</p>
+            </div>
+            <div class="col-md-3">
+                <h3 class="h6 fw-semibold">Quick access</h3>
+                <ul class="list-unstyled small">
+                    <li class="mb-1"><a href="/share/text"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i> Share Text</a></li>
+                    <li class="mb-1"><a href="/share/files"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i> Share Files</a></li>
+                    <li class="mb-1"><a href="/access"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i> Receiver</a></li>
+                    <li class="mb-1"><a href="/webnotepad" target="_blank" rel="noopener"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i> Web Notepad</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3 class="h6 fw-semibold">Company</h3>
+                <ul class="list-unstyled small">
+                    <li class="mb-1"><a href="/about"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i> About Us</a></li>
+                    <li class="mb-1"><a href="/contact"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i> Contact Us</a></li>
+                    <li class="mb-1"><a href="/privacy-policy"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i> Privacy Policy</a></li>
+                    <li class="mb-1"><a href="/main"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i> Root</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3 class="h6 fw-semibold">Resources</h3>
+                <ul class="list-unstyled small">
+                    <li class="mb-1"><a href="/omebox-article"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i> OmeBox Article</a></li>
+                    <li class="mb-1"><a href="/anonymous-file-share"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i> Anonymous Share</a></li>
+                    <li class="mb-1"><a href="/best-file-share-website"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i> Best File Sharing</a></li>
+                    <li class="mb-1"><a href="/best-programming-langues"><i class="fas fa-chevron-right fa-xs me-1" aria-hidden="true"></i> Best Programming Languages</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="mt-4 mb-3">
+        <p class="text-center small text-secondary">✓ File Sharing Without Login ✓ PC to iPhone File Transfer ✓ Zip File Sender ✓ Anonymous File Sharing ✓ Online Notepad ✓ Cross Device Transfer</p>
+        <div class="text-center small text-muted">© 2026 OmeBox — Free text &amp; file sharing | No registration required</div>
+    </div>
+</footer>
+
+<nav class="d-md-none position-fixed bottom-0 start-0 w-100 mobile-bottom-nav shadow-lg" aria-label="Mobile bottom navigation">
+    <div class="d-flex h-100 align-items-center justify-content-around px-2">
+        <a href="/" class="mobile-nav-item active" aria-label="Home" aria-current="page"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a>
+        <a href="/share/text" class="mobile-nav-item" aria-label="Share Text"><i class="fas fa-align-left" aria-hidden="true"></i><span>Text</span></a>
+        <a href="/share/files" class="mobile-nav-item" aria-label="Share Files"><i class="fas fa-paperclip" aria-hidden="true"></i><span>Files</span></a>
+        <a href="/access" class="mobile-nav-item" aria-label="Receiver / Access"><i class="fas fa-download" aria-hidden="true"></i><span>Receive</span></a>
+        <a href="/webnotepad" class="mobile-nav-item" target="_blank" rel="noopener" aria-label="Web Notepad"><i class="fas fa-edit" aria-hidden="true"></i><span>Notepad</span></a>
+    </div>
+</nav>
+<div class="d-md-none" style="height:80px;"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script>
+(function () {
+    var p = location.pathname;
+    var idx = p.includes('/share/text') ? 1 : p.includes('/share/files') ? 2 : p.includes('/access') ? 3 : p.includes('/webnotepad') ? 4 : 0;
+    document.querySelectorAll('.navbar-nav .nav-link-custom, .mobile-nav-item').forEach(function (el) {
+        el.classList.remove('active'); el.removeAttribute('aria-current');
+    });
+    [document.querySelectorAll('.navbar-nav .nav-link-custom'), document.querySelectorAll('.mobile-nav-item')].forEach(function (list) {
+        if (list[idx]) { list[idx].classList.add('active'); list[idx].setAttribute('aria-current', 'page'); }
+    });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://omebox.com/#organization",
+      "name": "OmeBox",
+      "url": "https://omebox.com/",
+      "logo": { "@type": "ImageObject", "url": "https://omebox.com/static/logo.png" },
+      "description": "OmeBox is a free online platform for sharing text and files instantly across any device without login."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://omebox.com/#website",
+      "url": "https://omebox.com/",
+      "name": "OmeBox",
+      "publisher": { "@id": "https://omebox.com/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://omebox.com/#webapp",
+      "name": "OmeBox – Share Text & Files Online Free",
+      "url": "https://omebox.com/",
+      "description": "Free online platform to share text, code, and files instantly between any devices. No login required.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "browserRequirements": "Requires a modern web browser (Chrome, Firefox, Safari, Edge)",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": [
+        "Share text online free",
+        "File sharing without login",
+        "Cross-device file transfer (PC, Mac, iPhone, Android)",
+        "QR code and 6-digit code sharing",
+        "Online web notepad",
+        "Auto-expiry (15 minutes to 7 days)",
+        "Password-protected file sharing"
+      ],
+      "screenshot": "https://omebox.com/static/og-cover.png",
+      "publisher": { "@id": "https://omebox.com/#organization" }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://omebox.com/#article",
+      "headline": "Share Files and Text Online Without an Account – OmeBox",
+      "description": "Send files, share text, and transfer content between devices with OmeBox. No account, software installation, or complicated setup required.",
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-11-04",
+      "inLanguage": "en",
+      "author": { "@type": "Organization", "name": "OmeBox", "url": "https://omebox.com/" },
+      "publisher": { "@id": "https://omebox.com/#organization" },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://omebox.com/" },
+      "image": "https://omebox.com/static/og-cover.png"
+    }
+  ]
+}
+</script>
+<!-- Cloudflare beacon / challenge snippets removed: Cloudflare injects them automatically and they were copied from a browser "save page". -->
+</body>
+</html>
