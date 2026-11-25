@@ -19,7 +19,7 @@ COPY --chown=omebox:omebox . .
 RUN mkdir -p /app/uploads /app/cache && chown -R omebox:omebox /app/uploads /app/cache
 
 USER omebox
-EXPOSE 8000
+EXPOSE 3000
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
     CMD curl -fsS http://127.0.0.1:8000/health || exit 1
