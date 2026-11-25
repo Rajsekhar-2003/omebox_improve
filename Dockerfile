@@ -25,4 +25,4 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
     CMD curl -fsS http://127.0.0.1:8000/health || exit 1
 
 # 2 workers fits in 4 GB RAM.  WORKERS is accepted for older .env files.
-CMD ["sh", "-c", "export WEB_CONCURRENCY=\"${WEB_CONCURRENCY:-${WORKERS:-2}}\"; exec uvicorn app:app --host 0.0.0.0 --port 8000 --workers \"${WEB_CONCURRENCY}\" --no-access-log"]
+CMD ["sh", "-c", "export WEB_CONCURRENCY=\"${WEB_CONCURRENCY:-${WORKERS:-2}}\"; exec uvicorn app:app --host 0.0.0.0 --port 3000 --workers \"${WEB_CONCURRENCY}\" --no-access-log"]
