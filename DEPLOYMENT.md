@@ -181,3 +181,39 @@ sudo chmod +x /opt/omebox/deploy/backup.sh
 - The full-version package is rebuilt with
   `python3 tools/build_full_version.py`; verify downloads with
   `sha256sum -c MANIFEST.sha256`.
+
+## 9. FastAPI Cloud
+
+FastAPI Cloud expects the application at the **root of the repository**. No
+Application Directory setting is needed for this repo: `app.py` at the root
+exports `app`, and FastAPI Cloud auto-detects `app.py`, `main.py` or
+`app/main.py`.
+
+```bash
+cd ~/D/OMEBOX_check
+source venv/bin/activate
+pip install -r requirements-dev.txt   # includes fastapi[standard] + CLI
+fastapi dev                           # must start without a path argument
+fastapi deploy                        # deploys the repository root
+```
+
+If you connect GitHub in the FastAPI Cloud dashboard, leave **Application
+Directory** empty (repository root). To make the entry point explicit, add:
+
+```toml
+[tool.fastapi]
+entrypoint = "app:app"
+```
+
+Set these as FastAPI Cloud environment variables (`.env` is git-ignored and is
+not uploaded): `SECRET_KEY`, `ENCRYPTION_KEY`, `MONGODB_URL`, `ADMIN_API_KEY`,
+`BASE_URL`, `FORCE_HTTPS`, `TRUSTED_PROXIES`. Use
+`fastapi cloud env set --secret NAME value` for the secrets.
+
+**Important limitation:** this app stores uploads on the local filesystem
+(`UPLOAD_DIR`, default `<repo>/uploads`). Serverless/multi-instance platforms
+may have ephemeral or instance-local disks, so downloaded files can disappear
+after a redeploy or land on a different instance. FastAPI Cloud is fine for a
+text-share-only deployment; for file sharing in production use a VPS with a
+persistent volume (sections 2A/2B) or port `omebox/storage.py` to object
+storage (S3/R2).
